@@ -1,0 +1,518 @@
+body{
+    margin: 0px;
+}
+
+#vmain{
+    /* border: 1px solid black; */
+    width: 100%;
+    /* height: 100px; */
+    padding-top: 95px;
+    
+}
+#vnavbar{
+    width: 100%;
+
+    border-bottom: 1px solid rgb(167, 167, 167);
+    position: fixed;
+    background-color: white;
+} 
+#vtopblackbar{
+    background-color: black;
+    color: white;
+    margin: 0px;
+}
+#vtopblackbar > p{
+    margin: 0px;
+    font-family: Trade Gothic LH Extended;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px;
+}
+#vtheoryhome > p{
+    font-size: 42px;
+    margin: 8px;
+    text-align: center;
+    font-family: Trade Gothic LH Extended;
+    font-weight: bolder;
+}
+
+
+/* navBar Ends */
+
+
+#voptions{
+    display: flex;
+    /* border: 1px solid black; */
+    margin-top: 15px;
+    gap: 15px;
+    justify-content: end;
+    width: 80%;
+    margin-left: 5%;
+	font-family: Theory-web-ul;
+
+    /* margin: auto; */
+    padding: 10px 0px;
+    margin-top: 20px;
+}
+#vlanguage > p{
+    margin: 0px;
+    font-size: 17px;
+    padding-top: 7px;
+    font-weight: 600;
+}
+
+#vselectoptions > select{
+    background-color: transparent;
+    border: 1px solid gray;
+    height: 35px;
+    border-radius: 5px;
+    padding: 3px 0px;
+    font-weight: 550;
+
+}
+
+
+/* option Ends */
+
+
+#vcartshow{
+    width: 80%;
+    /* margin: auto; */
+    margin-left: 5%;
+    overflow: auto;
+
+    /* border: 1px solid black; */
+    height: 400px;
+    margin-top: 5px;
+}
+
+/* Cart Ends */
+
+/* 1st Box Startks */
+
+#vaddressBox{
+    /* border:1px solid black; */
+    width: 80%;
+    /* margin: auto; */
+    margin-top: 40px;
+    display: flex;
+    gap: 35px;
+    padding: 10px;
+    margin-left: 5%;
+	font-family: Theory-web-ul;
+
+}
+
+#vbox1{
+    /* border: 1px solid red; */
+    flex: 1;
+    /* height: 100px; */
+}
+
+#vbox1 > h2{
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+	/* font-family: Theory-web-ul; */
+
+
+}
+
+#vbox2{
+    /* border: 1px solid blue; */
+    flex: 1;
+
+
+}
+
+#vboxflex{
+    width: 95%;
+    padding: 5px 10px;
+    /* border: 1px solid black; */
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#vlabel{
+    /* border: 1px solid black; */
+
+    flex: 1;
+    font-size: 16px;
+    padding-top: 10px;
+}
+#vinput{
+    flex: 2;
+}
+
+#vinput > input{
+    width: 98%;
+    height: 32px;
+    font-size: 13px;
+    padding: 0px 8px;
+    border: 1px solid black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#vstar{
+    font-size: 10px;
+}
+
+
+/* right Side Second Box */
+
+#vboxflex2{
+    width: 95%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#vbox2 > h2{
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+	/* font-family: Theory-web-ul; */
+
+
+}
+
+#vradio{
+    flex: .5;
+    padding: 10px 8px;
+}
+#radio{
+    height: 18px;
+    width: 15px;
+}
+
+#vdet{
+    flex: 10 ;
+    font-size: 16px;
+    padding-top: 10px; 
+}
+
+
+/* Shipping Method  */
+
+#vshipbox{
+    /* border: 1px solid black; */
+    width: 81%;
+    margin-left: 5%;
+    margin-top: 55px;
+    height: 150px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+	font-family: Theory-web-ul;
+
+   
+}
+
+#vshipbox > h2{
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+
+    
+}
+
+#vshipflex{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+#vfreebox{
+    display: flex;
+
+}
+.vfree{
+    /* border: 1px solid black; */
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.vpre{
+    /* border: 1px solid black; */
+    margin: 5px;
+    margin-left: 20px;
+    color: gray;
+    font-size: 11px;
+    font-weight: lighter;
+}
+
+
+#vshipbox1{
+    /* border: 1px solid black; */
+    width: 81%;
+    margin-left: 5%;
+    margin-top: 55px;
+    height: 170px;
+    /* border-bottom: 1px solid rgb(206, 206, 206); */
+	font-family: Theory-web-ul;
+
+   
+}
+
+#vshipbox1 > h2{
+    border-bottom: 1px solid black;
+}
+
+#vboxflex3{
+    width: 95%;
+    display: flex;
+    margin-bottom: 5px;
+ 
+}
+
+#radio1{
+    height: 18px;
+    width: 15px;
+}
+
+#vdet1{
+    flex: 10 ;
+    font-size: 16px;
+    padding-top: 10px; 
+}
+
+/* payment Box */
+
+#vpaymentname{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    border-bottom: 1px solid black;
+}
+
+#vpaymentname > h2,h5{
+    /* border: 1px solid black; */
+    margin: 10px;
+}
+#vpaymentname > h5{
+ padding-top: 9px;   
+}
+
+#vflex{
+    display: flex;
+    width: 30%;
+    gap: 10px;
+}
+#vbord{
+    /* border: 1px solid black; */
+    height: 70px;
+    background-color: rgb(242,242,242);
+}
+
+#vbord:hover{
+    border: 1px solid rgb(78, 78, 78);
+    background-color: white;
+}
+
+#vimg{
+    width: 100%;
+    padding-top: 20px;
+}
+#vflex1{
+    display: flex;
+    width: 50%;
+    gap: 10px;
+}
+#vbord1{
+    /* border: 1px solid black; */
+    height: 80px;
+    /* background-color: rgb(242,242,242); */
+}
+#vimg2{
+    width: 100%;
+    /* padding-top: 20px; */
+}
+#vimg3{
+    width: 65%;
+    padding-top: 10px;
+}
+#vimg1{
+    width: 100%;
+    padding-top: 20px;
+}
+
+.vcardflex{
+    display: flex;
+    /* width: 30%; */
+    gap: 20px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.vinput{
+    flex: 2;
+
+}
+#vcode{
+    flex: 1.8;
+    /* border: 1px solid black; */
+    padding-top: 10px;
+
+}
+
+.vmonth{
+    flex: 1;
+}
+.vyear{
+    flex: 1;
+}
+
+
+.vmonth, .vyear{
+    background-color: transparent;
+    border: 1px solid gray;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.vinputcvv{
+    flex: 1;
+    /* border: 1px solid black; */
+}
+.vinputcvv > input{
+    /* border: 1px solid black; */
+    height: 30px;
+
+}
+.vthis{
+    flex: 2;
+}
+
+.vthis > u{
+    font-size: 10.5px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    padding:10px 10px;
+    cursor: pointer;
+}
+
+#vtopspace{
+    margin-top: 10%;
+}
+
+#vbutton{
+    padding: 18px 70px;
+    font-size: 23px;
+    color: white;
+    background-color: black;
+    margin-top: 30px;
+}
+
+#vprice{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    /* border-bottom: 1px solid black; */
+    font-size: 17px;
+}
+
+#vall{
+    padding: 0px 15px;
+    font-size: 16px;
+}
+#vfoot{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 40px;
+	font-family: Theory-web-ul;
+    
+}
+
+#vfoot > p:nth-child(3){
+    /* border: 1px solid black; */
+    font-size: 8px;
+    margin: 0px ;
+}
+
+
+/* Table CSS */
+
+
+#vcartshow{
+  padding: 15px;
+    /* border-top: 1px solid black; */
+}
+
+
+table{
+    /* width: 100%; */
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+	font-family: Theory-web-ul;
+
+}
+
+#vamountshow{
+	font-family: Theory-web-ul;
+
+}
+th{
+    border-bottom: 1px solid black;
+}
+
+
+.showimagev{
+    width: 50%  ;
+}
+.showimagev > td:nth-child(1){
+    /* border: 1px solid black; */
+    width: 20%;
+    border-bottom: none;
+}
+
+
+
+.image00v{
+    width: 95%;
+    /* border: 1px solid black; */
+}
+
+#vamountshow{
+    width: 80%;
+    margin-left: 5%;
+    /* border: 1px solid black; */
+    margin-top: 5px;    
+    height: 60px;
+    display: flex;
+    justify-content: right;
+}
+#vamountshow > div{
+    /* border: 1px solid black; */
+    font-size: 20px;
+
+}
+#vamountshow > div:nth-child(1){
+    /* padding-left: 150px; */
+    width: 12%;
+padding-left: 60px;
+
+    text-align: left;
+
+}
+
+#vamountshow > div:nth-child(2){
+    /* padding-left: 150px; */
+    width: 15%;
+padding-left: 60px;
+    text-align: left;
+
+}
+
+hr{
+    width: 196.5%;
+    border: 0.1px solid black;
+    /* height: 0px; */
+    background-color: black;
+}
+
+#vdiscount{
+    font-size: 9px;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="stylesheet" type="text/css" href="../styles/navbar.css">
+	<link rel="stylesheet" type="text/css" href="../styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="../styles/product.css">
+
+    <title> Product's | Theory</title>
+    <link rel="shortcut icon" href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="product">
+		<div class="product-filter">
+			<p>Women</p>
+			<div class="short_line"></div>
+			<div class="filter-div">
+				<div class="filter-head">
+					<p>New + Now</p>
+					 <i class="fa fa-angle-down"></i>
+				</div>
+				<div class="filter-option">
+					<ul>
+						<li>New Arrivals</li>
+						<li>Bestsellers</li>
+						<li>Pant Theory</li>
+						<li>Cashmere Shop</li>
+						<li>Sweaters + Outerwear</li>
+						<li>The New 9 To 5</li>
+						<li>Theory For Good</li>
+					</ul>
+				</div>
+			</div>
+			<div class="filter-div">
+				<div class="filter-head">
+					<p>Clothing</p>
+					 <i class="fa fa-angle-down"></i>
+				</div>
+				<div class="filter-option">
+					<ul>
+						<li>View All</li>
+						<li>Pants & Shorts</li>
+						<li>Blazers & Jackets</li>
+						<li>Dresses & Jumpsuits</li>
+						<li>Loungewear</li>
+						<li>Outerwear</li>
+						<li>Sweaters</li>
+						<li>Skirts</li>
+						<li>Suits</li>
+						<li>T-Shirts</li>
+						<li>Tops</li>
+					</ul>
+				</div>
+			</div>
+			<div class="filter-div">
+				<div class="filter-head">
+					<p>Accessories</p>
+					 <i class="fa fa-angle-down"></i>
+				</div>
+				
+				<div class="filter-option">
+					<ul>
+						<li>Shoes</li>
+						<li>Bags</li>
+						<li>Gloves, Hats & Scarves</li>
+						<li>Belts</li>
+					</ul>
+				</div>
+			</div>
+			<div class="filter-div">
+				<div class="filter-head">
+					<p>Sale</p>
+					 <i class="fa fa-angle-down"></i>
+				</div>
+				
+				<div class="filter-option">
+					<ul>
+						<li>View All</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--Product Filter end -->
+		<div class="products-side">
+			<h2>New Arrivals</h2>
+			<div class="product-sorting">
+				<div>
+					<ul>
+						<li>10 Results</li>
+						<li>
+							<div class="filter-head">
+								<p>Colors</p>
+								 <i class="fa fa-angle-down"></i>
+							</div>
+							<!-- <div class="filter-option">
+								<ul>
+									<li>New Arrivals</li>
+									<li>Bestsellers</li>
+									<li>Pant Theory</li>
+									<li>Cashmere Shop</li>
+									<li>Sweaters + Outerwear</li>
+									<li>The New 9 To 5</li>
+									<li>Theory For Good</li>
+								</ul>
+							</div> -->
+						</li>
+						<li>
+							<div class="filter-head">
+								<p>Size</p>
+								 <i class="fa fa-angle-down"></i>
+							</div>
+							<!-- <div class="filter-option">
+								<ul>
+									<li>New Arrivals</li>
+									<li>Bestsellers</li>
+									<li>Pant Theory</li>
+									<li>Cashmere Shop</li>
+									<li>Sweaters + Outerwear</li>
+									<li>The New 9 To 5</li>
+									<li>Theory For Good</li>
+								</ul>
+							</div> -->
+						</li>
+						<li>
+							<div class="filter-head">
+								<p>Categorey</p>
+								 <i class="fa fa-angle-down"></i>
+							</div>
+							<!-- <div class="filter-option">
+								<ul>
+									<li>New Arrivals</li>
+									<li>Bestsellers</li>
+									<li>Pant Theory</li>
+									<li>Cashmere Shop</li>
+									<li>Sweaters + Outerwear</li>
+									<li>The New 9 To 5</li>
+									<li>Theory For Good</li>
+								</ul>
+							</div> -->
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="sorting_header">Sort</p>
+					<div class="sorting_div">
+						<ul>
+							<li class="sortPrice" id="Recommended">RECOMMENDED</li>
+							<li class="sortPrice" id="Newest">NEWEST</li>
+							<li class="sortPrice" id="Best sellers">BEST SELLERS</li>
+							<li class="sortPrice" id="High">PRICE HIGH</li>
+							<li class="sortPrice" id="Low">PRICE LOW</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!--Append function -->
+			<div id="SearchResult" class="products-show no-result"></div>
+		</div>
+	</div>
+    <div id="footer"></div>
+</body>
+</html>
+
+<!-- <script src="../scripts/searchfunc.js"></script> -->
+
+<script type="module">
+    import navbar from '../components/navbar.js'
+	import footer from '../components/footer.js'
+    import getdata  from "../components/fetchdata.js"
+	let nav = document.getElementById("navbar")
+	nav.innerHTML = navbar()
+
+	let foot = document.getElementById("footer")
+	foot.innerHTML = footer()
+    
+    let query = localStorage.getItem("query")
+
+    getdata(query)
+
+	let btn = document.querySelector("#searchbtn")
+	btn.addEventListener("click" , searchData)
+    function searchData(){
+        let search = document.querySelector("#Search").value
+        getdata(search)
+    }
+    
+
+
+</script>
+<script type="text/javascript" src="../scripts/header.js"></script>

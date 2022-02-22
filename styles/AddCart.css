@@ -1,0 +1,230 @@
+
+  @font-face{
+	font-family: Trade Gothic LH Extended;
+	src : url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+	src :local("TradeGothicLH-Extended") , url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+ }
+
+@font-face{
+	font-family: Theory-web-ul;
+	src : url("../font/Theory-web-ul.ttf") format("truetype");
+	src :local("Theory-web-ul") , url("../font/Theory-web-ul.ttf") format("truetype");
+}
+        #shoppingnames {
+            width: 35%;
+           margin: 30px auto;
+            display: flex;
+           align-items: center;
+           font-size: 13px;
+           font-weight: 600;
+           font-family: Theory-web-ul;
+        }
+
+        .arr {
+            margin-left: 40px;
+            margin-right: 20px;
+            font-size: 16px;
+            color: gray;
+           
+        }
+
+        #grayclr {
+            color: gray;
+           
+        }
+
+        #maincart {
+            width: 70%;
+            height: 380px;
+            margin: auto;
+            display: flex;
+            gap: 33px;
+        }
+
+        #cartdiv {
+          flex: 2;
+          border: black 1px solid;
+          height: 95%;
+          overflow-y: auto;
+        }
+
+        /* ::-webkit-scrollbar{
+            border-radius: 10px;
+            background-color: rgb(228, 228, 228);
+            width: 5px;
+            height: 0px;
+        } */
+
+        #promocode {
+            flex: 1;
+        }
+
+        #promodiv{
+            width: 108%;
+            height: 38%;
+            border:  black 1px solid;
+        }
+        #promodiv h4 {
+            margin-left: 17px;
+            margin-bottom: 4%;
+            margin-top: 4%;
+            font-family: Trade Gothic LH Extended;
+        }
+
+        #code{
+            margin-top: 27px;
+            margin-left: 15px;
+            margin-right: 8px;
+            padding: 12px 15px;
+
+        }
+        #apply {
+            padding: 12px 25px;
+            background-color: black;
+            color: white;
+            border: 0;
+        }
+
+        #orderdiv {
+            width: 108%;
+            height: 38%;
+            border: black 1px solid;
+            margin-top: 25px;
+        }
+
+        #orderdiv h4 {
+            margin-left: 17px;
+            margin-bottom: 4%;
+            margin-top: 4%;
+            font-family: Trade Gothic LH Extended;
+        }
+
+        #checkoutbtn {
+            width: 108%;
+            height: 40px;
+            margin-top: 22px;
+            background-color: black;
+            color: white;
+            border: 0;
+        }
+
+        #Recommend {
+            width: 70%;
+            height: 500px;
+            margin: 70px auto;
+        }
+
+        #Recommend>h2 {
+            font-family: Trade Gothic LH Extended;
+        }
+
+        #rcmndData {
+            width: 100%;
+            height: 480px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 430px;
+            grid-gap:10px;
+
+        }
+
+        #rcmndData img {
+            width: 100%;
+        }
+
+        #rcmndData p{
+            line-height: 25px;
+            font-size: 16px;
+            color: rgb(59, 56, 56);
+            font-family: Theory-web-ul;
+        }
+        #clr {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            gap:10px ;
+        }
+
+        #clr div{
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        #cartempty {
+
+           margin:80px 0px;
+            text-align: center;
+            font-family: Theory-web-ul;
+            letter-spacing: 2px;
+            font-size: 25px;
+            font-weight: lighter;
+            color: rgb(58, 54, 54);
+            display: none;
+        }
+
+
+        /* Table data from localstorage css */
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+           
+        }
+       
+th{
+    border-bottom: 1px solid black;
+  width: 20%;
+  height: 30px;
+ 
+ 
+}
+
+.image{
+    width:70%;
+   
+}
+
+td {
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 13px;
+    border-top: 1px solid black;
+   
+}
+
+td p {
+    margin-top: -40px;
+    font-size: 16px;
+}
+#tabledata {
+    padding: 20px;
+}
+
+
+
+.edit{
+    margin-top: 50px;
+    font-size: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sTotal {
+    margin-top: 0px;
+
+}
+
+#subTotal {
+
+    display: flex;
+   margin: 20px 20px;
+  justify-content: space-between;
+  color: rgb(82, 77, 77);
+}
+#Total {
+    display: flex;
+   margin: 0px 20px;
+  justify-content: space-between;
+}

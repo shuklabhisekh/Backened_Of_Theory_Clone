@@ -1,0 +1,233 @@
+@font-face {
+  font-family: Trade Gothic LH Extended;
+  src: url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+  src: local("TradeGothicLH-Extended"),
+    url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Theory-web-ul;
+  src: url("../font/Theory-web-ul.ttf") format("truetype");
+  src: local("Theory-web-ul"),
+    url("../font/Theory-web-ul.ttf") format("truetype");
+}
+
+.imgpants {
+  width: 85%;
+  margin: auto;
+  margin-top: 2.3%;
+  position: relative;
+}
+.imgpants > img {
+  width: 100%;
+}
+
+.imgpants--child {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  text-align: center;
+  font-family: Theory-web-ul;
+  transform: translate(-52%, -50%);
+}
+.imgpants--child h2 {
+  font-size: 24px;
+  font-family: Trade Gothic LH Extended;
+  color: black;
+  line-height: 28.8px;
+  font-weight: 800;
+}
+.imgpants--child p {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.imgpants--links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8%;
+  text-align: center;
+  font-size: 13px;
+  font-family: Theory-web-ul;
+  margin-top: -4%;
+}
+.imgpants--links a {
+  color: black;
+  letter-spacing: 1.33333px;
+  font-weight: 600;
+}
+.smallbox0 {
+  width: 87%;
+  margin: auto;
+  margin-top: 50px;
+  font-family: Theory-web-ul;
+  margin-bottom: 70px;
+}
+.smallbox0 > p {
+  width: 49%;
+  font-size: 15px;
+  font-family: Theory-web-ul;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 10px 0px;
+  margin-left: 8px;
+}
+.smallbox1 {
+  font-size: 23px;
+  font-family: Trade Gothic LH Extended;
+  line-height: 34.5px;
+  font-weight: 600;
+  color: #212529;
+  margin-left: 8px;
+  margin-bottom: 20px;
+}
+.smallbox2 {
+  display: flex;
+  /* grid-template-columns: repeat(2, 49%); */
+  justify-content: center;
+  grid-gap: 8px;
+}
+.smallbox2 .slick-slide {
+  margin: 0 5px;
+}
+.smallbox2 > div {
+  cursor: pointer;
+  position: relative;
+}
+.smallbox2 > div > img {
+  height: 100%;
+  width: 100%;
+}
+.smallbox2 .slick-slide img {
+  width: 100%;
+  height: 100%;
+}
+.smallbox3 {
+  display: grid;
+  grid-template-columns: repeat(6, 16%);
+  justify-content: space-between;
+}
+.smallbox3 > div {
+  height: 260px;
+  text-align: center;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: Theory-web-ul;
+}
+.smallbox3 > div > img {
+  height: 90%;
+  width: 100%;
+  margin-bottom: 5px;
+}
+#smallbox2BothSide {
+  display: grid;
+  grid-template-columns: repeat(2, 49%);
+  justify-content: space-between;
+  font-size: 15px;
+  margin: 10px 0;
+  line-height: 20px;
+  margin-left: 8px;
+}
+#smallbox2Journal {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: 180px;
+  justify-content: space-between;
+}
+#smallbox2Journal > div {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-content: space-between;
+}
+#smallbox2Journal > div > div {
+  height: 180px;
+  font-family: Theory-web-ul;
+}
+#smallbox2Journal > div > div > img {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.smallbox2JournalHearder {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+}
+.smallbox2JournalPara {
+  font-weight: lighter;
+  color: rgb(40, 45, 49);
+  font-size: 15px;
+  line-height: 22.5px;
+  margin-top: 10px;
+}
+/* .smallbox2hover {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  align-content: center;
+  height: 60px;
+  position: absolute;
+  background-color: white;
+  margin-top: -80px;
+  /* display: none; 
+  font-family: Theory-web-ul;
+} */
+
+.smallbox2hover {
+  background-color: #fff;
+  width: 96%;
+  margin: 10px;
+  /* margin: auto; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  height: 60px;
+  display: none;
+}
+.smallbox2 .slick-slide .smallbox2hover {
+  width: 11.8%;
+}
+.mens.smallbox2 .slick-slide .smallbox2hover {
+  width: 9.5%;
+}
+.smallbox2 > div:hover .smallbox2hover {
+  display: flex;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .smallbox2 {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  #smallbox2Journal {
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 10px;
+  }
+
+  #smallbox2Journal > div {
+    grid-template-columns: 49% 55%;
+    grid-gap: 12px;
+  }
+
+  .smallbox0 > p {
+    width: 100%;
+  }
+
+  .smallbox3 {
+    grid-template-columns: repeat(3, 32%);
+    grid-gap: 10px;
+  }
+  .smallbox3 > div {
+    height: auto;
+  }
+
+  .smallbox3 > div:nth-child(4),
+  .smallbox3 > div:nth-child(5),
+  .smallbox3 > div:nth-child(6) {
+    display: none;
+  }
+}
