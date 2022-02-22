@@ -1,0 +1,326 @@
+/* @font-face{
+	font-family: Trade Gothic LH Extended;
+	src : url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+	src :local("TradeGothicLH-Extended") , url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+}
+
+@font-face{
+	font-family: Theory-web-ul;
+	src : url("../font/Theory-web-ul.ttf") format("truetype");
+	src :local("Theory-web-ul") , url("../font/Theory-web-ul.ttf") format("truetype");
+} */
+
+#smallbox0 {
+  /* border: 4px solid red; */
+  display: grid;
+  grid-template-columns: 50% 48%;
+  height: 1500px;
+  justify-content: space-between;
+  font-family: Theory-web-ul;
+}
+/* #smallbox0 > div {
+  /* border: 1px solid blue; */
+/* height: auto; 
+} */
+#smallbox1 {
+  /* border: 1px solid green; */
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  height: 1500px;
+  overflow: auto;
+}
+
+#smallbox1 > div > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#smallbox2 {
+  padding: 40px 80px;
+  padding-right: 60px;
+}
+#smallbox2box2 {
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+#smallbox2box3 {
+  display: flex;
+  margin-top: 25px;
+}
+#smallbox2box3star {
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#smallbox2box3review {
+  padding-top: 6px;
+  font-size: 13px;
+  display: flex;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#smallbox2box4 {
+  font-size: 12px;
+  margin-top: 40px;
+}
+#smallbox2box5 {
+  margin-top: 15px;
+  height: 22px;
+  width: 130px;
+  display: grid;
+  grid-template-columns: repeat(4, 16%);
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+#smallbox2box5 > div {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#smallbox2box5 > div:first-child {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#smallbox2box5box1 {
+  height: 80%;
+  width: 80%;
+  text-align: center;
+  border-radius: 50%;
+  background-color: black;
+}
+#smallbox2box5box2 {
+  height: 80%;
+  width: 80%;
+  text-align: center;
+  border-radius: 50%;
+  background-color: gray;
+}
+#smallbox2box5box3 {
+  height: 80%;
+  width: 80%;
+  text-align: center;
+  border-radius: 50%;
+  background-color: maroon;
+}
+#smallbox2box5box4 {
+  height: 80%;
+  width: 80%;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgb(174, 174, 190);
+}
+#smallbox2box6 {
+  /* border: 1px solid blue; */
+  font-size: 12px;
+}
+#smallbox2box7 {
+  margin-top: 15px;
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  cursor: pointer;
+}
+#smallbox2box7 > div:hover {
+  text-decoration: underline;
+}
+#smallbox2box8 {
+  margin-top: 90px;
+  border-bottom: 1px solid rgb(153, 151, 151);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  height: 25px;
+  text-align: center;
+}
+#smallbox2box8 > div {
+  width: 33%;
+}
+#smallbox2box8 > div:first-child {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  width: 33%;
+}
+#smallbox2box9 {
+  margin-top: 40px;
+  line-height: 24px;
+}
+#smallbox2box10 {
+  margin-top: 40px;
+}
+#smallbox2box11 {
+  /* border: 1px solid salmon; */
+  margin-top: 15px;
+  padding-left: 20px;
+  line-height: 24px;
+}
+#smallbox2box11 > ul {
+  list-style-type: none;
+}
+#smallbox2box11 > ul li:before {
+  content: "\2011";
+  position: absolute;
+  margin-left: -10px;
+}
+#smallbox2box12 {
+  /* border: 1px solid yellowgreen; */
+  margin-top: 60px;
+}
+#smallbox2box13 {
+  margin-top: 15px;
+  padding-left: 20px;
+  line-height: 24px;
+}
+#smallbox2box13 > ul {
+  list-style-type: none;
+}
+#smallbox2box13 > ul li::before {
+  content: "\2011";
+  position: absolute;
+  margin-left: -10px;
+}
+#smallbox2box14 {
+  margin-top: 40px;
+}
+#smallbox2box15 {
+  margin-top: 15px;
+}
+#smallbox2box16fixed {
+  /* border: 3px solid green; */
+  margin-top: 350px;
+  position: fixed;
+  bottom: 0px;
+  width: 38%;
+  background-color: white;
+  height: 100px;
+}
+.addToCartFixed_scroll#smallbox2box16fixed {
+  display: none;
+}
+#smallbox2box16 {
+  text-align: center;
+  font-size: 13px;
+}
+#smallbox2box17 {
+  /* border: 3px solid pink; */
+  /* position: fixed;
+    bottom: 0px; */
+  margin-top: 10px;
+  display: flex;
+  /* grid-template-columns: 13% 72% 13%; */
+  width: 100%;
+  /* justify-content: space-between; */
+  text-align: center;
+  height: 60px;
+  gap: 5px;
+}
+/* #smallbox2box17 > div {
+  /* border: 2px solid blue; 
+} */
+#smallbox2box17box1 {
+  border: 1px solid rgb(122, 119, 119);
+  /* display: grid;
+    align-items: center;
+    justify-content: center; */
+  padding-top: 18px;
+  text-align: center;
+}
+#smallbox2box17box1 > select {
+  border: none;
+  /* border: 1px solid maroon; */
+  width: 100%;
+  font-size: 20px;
+  padding: 0px 15px;
+  margin-right: 5px;
+}
+#smallbox2box17box1 > select > option {
+  width: 100%;
+}
+#smallbox2box17box2 {
+  border: 1px solid black;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+#smallbox2box17box3 {
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 24px;
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+}
+
+#smallbox2box17box3,
+#smallbox2box17box1 {
+  flex-basis: 65px;
+}
+#smallbox3 {
+  margin-top: 100px;
+  /*border: 2px solid lawngreen;*/
+  width: 1360px;
+  height: 700px;
+}
+#smallbox3box1 {
+  /* border: 1px solid saddlebrown; */
+  font-size: 24px;
+  padding-left: 15px;
+  font-family: Trade Gothic LH Extended;
+  font-weight: 700;
+}
+#smallbox3box2 {
+  margin-top: 30px;
+  /* border:  1px solid sandybrown; */
+  margin-left: 30px;
+}
+
+#smallbox4 {
+  /*border: 1px solid darkmagenta;*/
+  /* width: 1360px; */
+  margin-top: 850px;
+  margin-left: -710px;
+  /*height: 600px;*/
+}
+
+/* sanket div inside smallbox3 */
+
+#rcmndData {
+  width: 100%;
+  height: 480px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 430px;
+  grid-gap: 10px;
+}
+
+#rcmndData img {
+  width: 100%;
+}
+
+#rcmndData p {
+  line-height: 25px;
+  font-size: 16px;
+}
+#clr {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+#clr div {
+  padding: 8px;
+  border-radius: 50%;
+}

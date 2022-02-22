@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <div id="navbar"></div>
+    <%- include("navbar.ejs") -%>
     <div class="firstBox page--header">Accessories</div>
     <div class="firstSectionSlider">
         <div class="firstBox">
@@ -317,18 +317,10 @@
 <div class="firstSection">
 <div class="viewMore"><a href="#"> View More Now Trending </a></div>
 </div>
-<div id="footer"></div>
+<%- include("footer.ejs") -%>
 </body>
 </html>
 
-<script type="module">
-	import navbar from '../components/navbar.js'
-	import footer from '../components/footer.js'
-	let nav = document.getElementById("navbar")
-	nav.innerHTML = navbar()
 
-	let foot = document.getElementById("footer")
-	foot.innerHTML = footer()
-</script>
 
 <script type="text/javascript" src="../scripts/header.js"></script>
