@@ -175,7 +175,7 @@ let getUser = async(user,token) => {
 
         console.log(data);
         let obj = {
-           data: data.first_name,
+            data: data.first_name,
             token,
         }
         localStorage.setItem("loginData", JSON.stringify(obj));
