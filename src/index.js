@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use("products", productController);
+app.use("/products", productController);
 
 app.listen(4000, async () => {
   try {

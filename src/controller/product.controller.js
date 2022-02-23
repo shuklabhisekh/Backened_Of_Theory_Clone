@@ -1,25 +1,16 @@
 const express = require("express");
 
-const {
-  upload,
-  uploadMultiple,
-} = require("../middlewares/file-upload");
 
 const Product = require("../model/product.model");
 
 const router = express.Router();
 
 
-router.post("/multiple", uploadMultiple("images"), async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const filePaths = req.files.map((file) => file.path);
-    const product = await Product.create({
-      name: req.body.name,
-      price: req.body.price,
-      category: req.body.category,
-      type: req.body.type,
-      images: filePaths,
-    });
+    const product = await Product.create(
+        req.body
+    );
 
     return res.send(product);
   } catch (err) {
