@@ -8,13 +8,18 @@ const User = require("../models/user.model");
 
 router.get("", async (req, res) => {
     try {
-        const user = await User.find().lean().exec();
+        if (req.query.email) {
+            const items = await User.findOne({ email: req.query.email }).lean().exec();
+            return res.status(200).send(items);
+        }
+        else {
+            const user = await User.find().lean().exec();
 
-        return res.status(201).send(user);
+                    return res.status(201).send(user);
+        }
+    } catch (err) {
+      return res.status(500).send(err.message);
     }
-    catch (e) {
-        return res.status(400).send({ message: e.message });
-    }
-});
+  });
 
 module.exports = router
