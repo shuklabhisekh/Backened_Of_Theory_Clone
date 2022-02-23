@@ -38,4 +38,31 @@ router.get("", async (req, res) => {
   }
 });
 
+router.get("/:category",async(req,res)=>{
+    try {
+        const product = await Product.find({category:req.params.category}).lean().exec()
+        return res.send(product)
+    } catch (error) {
+        return res.status(500).send({ message: err.message });
+    }
+})
+
+router.patch("/:id",async(req,res)=>{
+    try {
+        const product = await Product.findByIdAndUpdate(req.params.id,req.body,{new:true})
+        res.send(product)
+    } catch (error) {
+        return res.status(500).send({ message: err.message });
+    }
+})
+
+router.delete("/:id",async(req,res)=>{
+    try {
+        const product = await Product.findByIdAndDelete(req.params.id)
+        res.send(product)
+    } catch (error) {
+        return res.status(500).send({ message: err.message });
+    }
+})
+
 module.exports = router;
