@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #buttons{
+        /* border: 1px solid red; */
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    #buttons>div {
+      width: 14%;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      height: 210px;
+    }
+    input,
+    button {
+      margin-top: 10px;
+    }
+    #display{
+        width: 20%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    table,th,td{
+        border: 1px solid rgb(0, 0, 0);
+        font-size: 26px;
+        border-collapse: collapse;
+        padding: 15px;
+    }
+    th{
+        background-color: rgb(223, 219, 219);
+    }
+  </style>
+<body>
+    <div id="buttons">
+        <div>
+            <h2>Add Product</h2>
+            <input type="number" placeholder="id" id="id" />
+      
+            <input type="name" placeholder="name" id="name" />
+      
+            <input type="number" placeholder="price" id="price" />
+      
+            <button onclick="addProduct()">Add Product</button>
+          </div>
+          <div>
+            <h2>Update Product</h2>
+            <input type="number" placeholder="id" id="idUpdate" />
+      
+            <input type="name" placeholder="name" id="nameUpdate" />
+      
+            <input type="number" placeholder="price" id="priceUpdate" />
+      
+            <button onclick="updateProduct()">Update Product</button>
+          </div>
+    
+          <div>
+            <h2>Delete Product</h2>
+      
+            <input type="text" id="delete_id" placeholder="Enter id to Delete" />
+      
+            <button onclick="deleteProduct()">Delete Product</button>
+          </div>
+    </div>
+   <div id="display">
+       <table>
+           <thead>
+               <tr>
+                   <th>Id No.</th>
+                   <th>Name</th>
+                   <th>price</th>
+               </tr>
+        </thead>
+           <tbody id="tbody"></tbody>
+       </table>
+   </div>
+</body>
+</html>
+
+<script>
+    // Function to create database
+    async function addProduct(){
+        try {
+            let data= {
+            id:document.getElementById("id").value,
+            name:document.getElementById("name").value,
+            price:document.getElementById("price").value
+        }
+        data=JSON.stringify(data)
+        let response= await fetch('http://127.0.0.1:3000/api/products',{
+            method:'POST',
+            body:data,
+            headers:{
+                "Content-Type":'application/json'
+            }
+        })
+        let d= await response.json()
+        //  displayData(d)
+
+        } catch (error) {
+            console.log(error)
+        }
+      
+    }
+//function to append on dom
+displayData()
+  async function displayData(){
+    try {
+        //     let data= {
+        //     id:document.getElementById("id").value,
+        //     name:document.getElementById("name").value,
+        //     price:document.getElementById("price").value
+        // }
+        // data=JSON.stringify(data)
+        let response= await fetch('http://127.0.0.1:3000/api/products')
+        // let response= await fetch('http://127.0.0.1:3000/api/products',{
+        //     method:'GET',
+        //     body:data,
+        //     headers:{
+        //         "Content-Type":'application/json'
+        //     }
+        // })
+        let d= await response.json()
+        // console.log(d,"iajoj")
+         showData(d)
+        // d.forEach((elem)=>{
+        //     console.log(elem)
+        //     let display=document.getElementById("display")
+        //     let tbody=document.getElementById("tbody")
+        //     let trow=document.createElement("tr")
+        //     let th1=document.createElement("td")
+        //     th1.textContent=elem.id
+        //     let th2=document.createElement("td")
+        //     th2.textContent=elem.name
+        //     let th3=document.createElement("td")
+        //     th3.textContent=elem.price
+
+        //     trow.append(th1,th2,th3)
+        //     console.log(trow)
+        //     tbody.append(trow)
+        //     display.append(tbody)
+        // })
+
+        } catch (error) {
+            console.log(error)
+        }
+   }
+
+    function showData(data){
+       console.log(data,"huahk")
+        let display=document.getElementById("display")
+
+            let tableBody=document.getElementById("tbody")
+            tableBody.innerText=""
+       data.map((elem)=>{
+            console.log(elem,"test")
+            
+            
+            let trow=document.createElement("tr")
+            let th1=document.createElement("td")
+            th1.textContent=elem.id
+            let th2=document.createElement("td")
+            th2.textContent=elem.name
+            let th3=document.createElement("td")
+            th3.textContent=elem.price
+
+            trow.append(th1,th2,th3)
+            tableBody.append(trow)
+        })
+   }
+
+    // Update Product
+    async function updateProduct(){
+        var idChange=document.getElementById("idUpdate").value
+        try {
+            let data={
+                id:document.getElementById("idUpdate").value,
+                name:document.getElementById("nameUpdate").value,
+                price:document.getElementById("priceUpdate").value
+            }
+            data=JSON.stringify(data)
+            let response= await fetch(`http://127.0.0.1:3000/api/products/${idChange}`,{
+            method:'PUT',
+            body:data,
+            headers:{
+                "Content-Type":'application/json'
+            }
+        })
+        let d = await response.json()
+
+        } catch (error) {
+            console.log(error)
+        }
+       
+    }
+
+
+
+
+    //Function to delete from database
+    async function deleteProduct(){
+        try {
+            let id=document.getElementById("delete_id").value
+            let response= await fetch(`http://127.0.0.1:3000/api/products/${id}`,{
+                method:'DELETE',
+                headers:{
+                "Content-Type":'application/json'
+            }
+            })
+
+            let d= await response.json()
+
+
+        } catch (error) {
+            
+        }
+    }
+</script>
