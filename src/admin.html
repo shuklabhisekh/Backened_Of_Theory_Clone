@@ -91,7 +91,6 @@
 <script>
     // Function to create database
     async function addProduct(){
-        // let arrayData=[]
         try {
             let data= {
             image1:document.getElementById("image1").value,
@@ -102,19 +101,17 @@
             type:document.getElementById("type").value,
         }
         data=JSON.stringify(data)
-        // arrayData.push(data)
         console.log(data,"data")
-        let response= await fetch('http://127.0.0.1:4000/products',{mode:"no-cors"},{
-            // mode:"no-cors",
+        let response= await fetch('http://localhost:4000/products',{mode:"no-cors"},{
             method:'POST',
             body:data,
             headers:{
-                "Content-Type":'application/json',
-                // 'Access-Control-Allow-Origin':'*',
+                "Content-Type":"application/json",
             }
         })
-        let d= await response.json()
+        let d = await response.json()
         console.log(d)
+        console.log("kuhk")
 
         } catch (error) {
             // console.log(error)
@@ -189,7 +186,7 @@ vikram()
                 type:document.getElementById("typeUpdate").value,
             }
             data=JSON.stringify(data)
-            let response= await fetch(`http://127.0.0.1:3000/api/products/${idChange}`,{
+            let response= await fetch(`http://127.0.0.1:4000/api/products/${idChange}`,{
             // mode:"no-cors",
             method:'PUT',
             body:data,
@@ -213,16 +210,16 @@ vikram()
     async function deleteProduct(){
         try {
             let id=document.getElementById("delete_id").value
-            let response= await fetch(`http://127.0.0.1:3000/api/products/${id}`,{
+            let response= await fetch(`http://127.0.0.1:4000/products/${id}`,{mode:"no-cors"},{
                 method:'DELETE',
                 headers:{
-                "Content-Type":'application/json'
+                'Content-Type':'application/json'
             }
             })
 
             let d= await response.json()
 
-
+            console.log(d)
         } catch (error) {
             
         }
