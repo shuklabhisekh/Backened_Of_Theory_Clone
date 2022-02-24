@@ -1,0 +1,11 @@
+@font-face{
+	font-family: Trade Gothic LH Extended;
+	src : url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+	src :local("TradeGothicLH-Extended") , url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+}
+
+@font-face{
+	font-family: Theory-web-ul;
+	src : url("../font/Theory-web-ul.ttf") format("truetype");
+	src :local("Theory-web-ul") , url("../font/Theory-web-ul.ttf") format("truetype");
+}

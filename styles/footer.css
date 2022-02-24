@@ -1,0 +1,283 @@
+#footerMain{
+    height:500px ;
+    width: 100%;
+    flex-wrap: wrap;
+    /* border: 2px solid green; */
+    margin-right: 20px;
+    background-color:rgb(246, 244, 245);
+    font-family: Theory-web-ul;
+    font-size: 12px;
+    padding:30px 25px;
+    }
+    #footerTop{
+        display: flex;
+        /* border: 2px solid red; */
+        height: 85%;
+        display: flex;
+
+    }
+    #serverBox{
+        border: aqua;
+        width:20% ;
+        /* border: 2px solid orange; */
+        height: 55%;
+    
+    }
+    #serverBox>div{
+        /* border:2px solid rgb(39, 158, 158); */
+        height: 100%;
+    }
+    #connectBox{
+        width: 45%;
+        display: flex;
+        margin-left: 5%;
+    }
+    #singUpBox{
+        width: 21%;
+        height: 100%;
+        line-height: 18px;
+        /* border: 1px solid aqua; */
+       margin: auto;
+    }
+    
+    .h2{
+
+    font-weight: 600;
+    margin-bottom: 28px;
+    font-size: 16px;
+    font-family: Trade Gothic LH Extended;
+    /* border:1px solid blueviolet; */
+    
+    }
+    .list{
+    /* display: block; */
+    list-style: none;
+    color: black;
+    line-height: 28px;
+    text-align: left;
+}
+.box{
+    width: 50%;
+    height: 45%;
+    /* border:1px solid  blue; */
+}
+#input1{
+    padding:3% 28%;
+    width:70%;
+    padding-left:10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+
+#containt{
+    /* border:2px solid rgb(162, 0, 255); */
+    width: 90%;
+    height: 100%;
+}
+#bottomBox{
+    width: 100%;
+    height: 30%;
+    margin-top:10%;
+    /* border: 2px solid red; */
+    
+    
+}
+#bottomBox>.iconBox1{
+    width: 100%;
+    height: 30%;
+    /*margin-top: -8%;*/
+    margin-bottom: 15%;
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-evenly;
+}
+#bottomBox>.iconBox2{
+    width: 100%;
+    height:60%;
+     /*border:1px solid rgb(162, 0, 255); */
+    margin-top:-2%;
+    display: flex;
+    gap: 10px;
+
+}
+.icon{
+    height: 80%;
+    width:12%;
+    /* border: 1px solid green; */
+    
+    
+}
+.googleIcon{
+    height: 80%;
+    width:45%;
+    /* border: 1px solid green; */
+    margin-left: 2%;
+    margin-right: 3%;
+}
+#footerBottom{
+    /*height:12%;*/
+    width: 100%;
+
+    /* border: 1px solid greenyellow; */
+}
+#fb{
+    height:100%;
+    width: 40%;
+    margin: auto;
+    /* border: 1px solid rgb(47, 255, 127); */
+    display: flex;
+}
+.fb1{
+    margin-top: 20px;
+    height:70%;
+    width: 20%;
+
+    /* border: 1px solid rgb(47, 255, 127); */
+}
+#myForm{
+    width: 100%;
+    height:70%;
+    /*margin-top: -15px;*/
+    /* border: 1px solid rgb(54, 255, 47); */
+}
+#upperBox{
+    width: 100%;
+    height:70%;
+    /* border: 1px solid rgb(255, 47, 168); */
+}
+#fOrder{
+    width: 100%;
+    height:15%;
+    /* border: 1px solid rgb(255, 47, 168); */
+}
+#forEmail{
+    width: 100%;
+    height:15%;
+    /* border: 1px solid rgb(255, 47, 168); */
+}
+#forCheckBox{
+    margin-top:8%;
+    width: 100%;
+    height:50%;
+    /* border: 1px solid rgb(255, 47, 168); */
+    display: flex;
+}
+#checkboxBox{
+    width: 10%;
+    height:100%;
+    /* border: 1px solid rgb(255, 47, 168); */
+}
+#checkbox{
+    height: 12%;
+    width: 85%;
+    /* border:1px solid rgb(13, 98, 209);  */
+}
+#subscribe{
+    color: #fff;
+}
+
+#button{
+    margin-top: 10%;
+    height:18%;
+    width: 102%;
+    border: none;
+    margin-left: 8px;
+    background-color: #cecece;
+    /* border: 1px solid black; */
+}
+
+hr{
+    margin-top:2%;
+}
+
+#server_connect--box{
+    display: contents;
+}
+@media screen and (max-width:450px){
+            
+        #footerMain {
+            height: 110vh;
+            font-size: 13px;           
+        }
+        #server_connect--box{
+            display: flex;
+        }
+
+        #footerTop{
+            flex-direction: column;
+            height: auto;
+        }
+
+        #connectBox {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #serverBox {
+            width:100%;
+            height: auto;
+        }
+
+        .box {
+            width: 90%;
+            height: 45%;
+        }
+
+        .list {
+            line-height: 35px;
+        }
+
+        #singUpBox {
+            width: 100%;
+            margin-top: 39px;
+        }
+
+        #forCheckBox {
+            height: auto;
+            width: 110%;
+            margin-top:1%;
+        }
+
+        #checkbox {
+            height:auto;
+            
+        }
+
+        #upperBox {
+            width: 85%;
+            height: 45%;
+        }
+
+        #input1{
+            width: 76%;
+        }
+        #myForm {
+            margin-top: 15px;
+            width: 95%;
+        }
+        #button{
+            padding: 20px;
+            width: 110%;
+            margin-left: 0;
+        }
+        .list > li > p{
+            line-height: 18px;
+        }
+        #fb{
+            width: 100%;
+            justify-content: center;
+            gap:30px;
+            margin-left: -10px;
+        }
+
+        .fb1{
+            width: auto;
+        }
+        .fb1:nth-child(4)  , .fb1:nth-child(5){
+            display: none;
+        }
+        hr{
+            width: 90%;
+        }
+}
