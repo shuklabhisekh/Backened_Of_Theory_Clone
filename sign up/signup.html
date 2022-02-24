@@ -43,23 +43,31 @@
                 <!------ Create Account Form start------->
                 <form action="#" class="signup">
                     <div class="field" id="ak-name-box">
-                        <input type="text" id="ak-sign-input"  class="first_name" placeholder="*First Name" required>
+                    <div class="s_input">
+                        <input type="text" id="ak-sign-input"  class="first_name" placeholder="*First Name" required data-errors="name is not valid">
+                        <p id="first_name" class="errr"></p>
+                    </div>
+                    <div  class="s_input">
                         <input type="text" id="ak-sign-input"  class="last_name" placeholder="*Last Name" required>
+                      <p id="last_name" class="errr"></p>
+                    </div>
                     </div>
                     <!-- <div class="field">
                         
                     </div> -->
                     <div class="field">
                         <input type="text" id="ak-signup-input" class="ak-email" placeholder="*Email Address" required>
+                        <p id="email" class="errr"></p>
                     </div>
                    <div class="field">
                       <input type="text" id="ak-signup-input" placeholder="*Confirm Email Address" required>
                    </div>
                    <div class="field">
                       <input type="password" id="ak-signup-input" class="ak-pass" placeholder="*Password (8 - 255 characters)" required>
-                   </div>
+                      <p id="password" class="errr"></p>
+                    </div>
                    <div class="field">
-                      <input type="password" id="ak-signup-input" placeholder="*Confirm Password">
+                      <input type="password" id="ak-signup-input" placeholder="*Confirm Password" required>
                    </div>
                    <div id="ak-birth-day">
                        <p id="ak-birthday">Birthday Date</p>

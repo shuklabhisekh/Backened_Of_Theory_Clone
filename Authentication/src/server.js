@@ -17,25 +17,24 @@ app.use(cors());
 app.post("/register",
     
     body("first_name")    
-    .isString()  
-    .isLowercase()    
+    .isString()      
     .isLength({ min: 3, max: 20 })   
     .withMessage("First name should be 3 to 20 characters long"),
     
-    body("last_name").isLowercase().isLength({ min: 3, max: 20 })
+    body("last_name").isString().isLength({ min: 3, max: 20 })
     .withMessage("Last name should be 3 to 20 characters long"),
          body("email")
         .isEmail()
-        .withMessage("Invalid Email"),
+        .withMessage("Please enter a valid E-Mail address"),
          
         body("password")
-        .isLength({ min: 5, max: 20 })
+        .isLength({ min: 8, max: 20 })
         .custom((value) => {
           let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
           if (pattern.test(value)) {
             return true;
           }
-          throw new Error("Password is not strong");
+          throw new Error("Your password must contain at least 8 characters, one uppercase letter, one number, and one special character.");
         }),
 
     

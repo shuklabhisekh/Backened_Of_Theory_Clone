@@ -79,17 +79,51 @@ async function signup(e) {
     // alert(data.error.message)
     console.log("data:", data);
 
-    // if (errors) {
-    //     function errors(data) {
-    //         data.errors.forEach((el) => {
-    //             console.log(el.message);
-    //         })
-    //     }
-    // }
+    let first_name_err = document.getElementById("first_name");
+    let last_name_err = document.getElementById("last_name");
+    let email_err = document.getElementById("email");
+    let password_err = document.getElementById("password");
 
-    if (data.status === "ok") {
+            first_name_err.textContent = "";
+            last_name_err.textContent = "";
+            email_err.textContent = "";
+            password_err.textContent = "";
+
+    if (data.errors != undefined) {
+
+       console.log(data.message)
+       
+        data.errors.forEach((el) => {
+            console.log(el.message, el.key);
+
+           
+               
+                
+            if (el.key == "first_name") {
+                   
+                first_name_err.textContent = el.message
+            }
+            if (el.key == "last_name") {
+                   
+                last_name_err.textContent = el.message
+            }
+            if (el.key == "email") {
+                   
+                email_err.textContent = el.message
+            }
+            if (el.key == "password") {
+                   
+                password_err.textContent = el.message
+            }
+        })
+        
+    }
+   
+
+      else if (data.status === "ok") {
         
         alert("Registration Successfull");
+        
         
             Login = document.querySelector(".login")
             Login.style.display = "block";
@@ -101,11 +135,12 @@ async function signup(e) {
             headsignin.style.borderBottom = "3px solid black";
             headcreateaccount.style.borderBottom = "none";
            
-    }
+        }
 
-    else {
-        alert(data.message);
-    }
+        else {
+            alert(data.message);
+        }
+    
 }
 
 document.querySelector(".login").addEventListener("submit",signIn);
@@ -175,7 +210,7 @@ let getUser = async(user,token) => {
 
         console.log(data);
         let obj = {
-            data: data.first_name,
+           data: data.first_name,
             token,
         }
         localStorage.setItem("loginData", JSON.stringify(obj));
