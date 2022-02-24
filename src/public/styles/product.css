@@ -22,9 +22,16 @@
 .product {
   display: flex;
   padding: 20px 0;
+  justify-content: flex-end;
   font-family: Theory-web-ul;
 }
+.searchresult {
+  margin-bottom: 40px;
+}
 
+.searchresult > div {
+  padding: 10px;
+}
 .product-filter {
   flex-basis: 15%;
   /*border: 1px solid black;*/
@@ -64,7 +71,7 @@
 }
 .products-side {
   /*border: 1px solid black;*/
-  flex: 1;
+  width: 80%;
   padding-right: 20px;
 }
 .products-side h2 {

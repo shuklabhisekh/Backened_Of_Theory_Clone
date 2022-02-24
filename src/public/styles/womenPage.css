@@ -314,7 +314,7 @@ a {
 }
 } */
 .firstSectionSlider {
-  /* height: 700px; */
+  height: 550px;
   margin: auto;
   width: 100%;
   margin-bottom: 20px;
@@ -323,10 +323,10 @@ a {
 
 /* slide css*/
 #slider {
-  width: 85%;
-  height: 600px;
+  width: 88%;
+  height: 550px;
   position: absolute;
-  left: 10%;
+  left: 7%;
   top: 50%;
   /* transform: translate(-50%,-50%); */
   background-image: url(https://ak-media.theory.com/i/theory/1012-ESSENTIAL_DUOS_WEB?$defaultMedia$);

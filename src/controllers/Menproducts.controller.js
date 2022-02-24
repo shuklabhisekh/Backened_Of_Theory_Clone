@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const Product = require("../models/product.model");
+const Bag = require("../models/bag.model");
 
 router.post("/", async (req, res) => {
   try {
@@ -15,8 +16,24 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const products = await Product.find({ cateoregy: "men" }).lean().exec();
-    return res.render("ejs/menproducts", { products });
+    let products;
+    const q = req.query.sorting;
+    if (!q) {
+      products = await Product.find({ type: "Men" }).lean().exec();
+    }
+    if (q && q == "low") {
+      products = await Product.find({ type: "Men" })
+        .sort({ price: 1 })
+        .lean()
+        .exec();
+    } else if (q == "high") {
+      products = await Product.find({ type: "Men" })
+        .sort({ price: -1 })
+        .lean()
+        .exec();
+    }
+    const bags = await Bag.find().populate("productId").lean().exec();
+    return res.render("ejs/menproducts", { products, bags });
 
     // res.send(product);
   } catch (err) {

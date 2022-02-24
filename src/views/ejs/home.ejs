@@ -28,7 +28,7 @@
     />
   </head>
   <body>
-    <%- include("navbar.ejs") -%>
+    <%- include("navbar.ejs" , {bags}) -%>
     <!--Silder -->
     <!-- <div id="offernav">
        
@@ -442,17 +442,6 @@
   src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
 ></script>
 <script>
-  function searchData() {
-    let search = document.querySelector("#Search").value;
-    console.log(search);
-    localStorage.setItem("query", search);
-    window.location.href = "./pages/searchresult.html";
-  }
-
-  let c = JSON.parse(localStorage.getItem("cart")) || [];
-  let countBag = document.querySelector(".cart-count");
-  countBag.textContent = c.length;
-
   let check = true;
   function shownav() {
     let leftSide = document.querySelector(".header--left");

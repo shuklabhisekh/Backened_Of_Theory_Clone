@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <%- include("navbar.ejs") -%>
+    <%- include("navbar.ejs",{bags}) -%>
     <div class="product">
       <%- include("productFilter.ejs" , {type: "Men"}) -%>
       <!--Product Filter end -->
@@ -100,11 +100,16 @@
           <% products.map(function(product , index) { %> <% if(index <= 1){%>
           <div>
             <div class="product-imgs">
-              <div>
-                <img class="img1" src="<%=product.imges[0] %>" />
-                <img class="img2" src="<%=product.imges[1] %>" />
+              <div onclick="productDetail('<%= product._id %>')">
+                <img class="img1" src="<%=product.images[0] %>" />
+                <img class="img2" src="<%=product.images[1] %>" />
               </div>
-              <div class="hoverCart">Quick Add</div>
+              <div
+                class="hoverCart"
+                onclick="addCart('<%= JSON.stringify(product) %>')"
+              >
+                Quick Add
+              </div>
               <span>
                 <i class="fa fa-heart-o heart-icon" style="font-size: 24px"></i>
               </span>
@@ -131,11 +136,16 @@
           <% products.map(function(product , index) { %> <% if(index > 1){%>
           <div>
             <div class="product-imgs">
-              <div>
-                <img class="img1" src="<%=product.imges[0] %>" />
-                <img class="img2" src="<%=product.imges[1] %>" />
+              <div onclick="productDetail('<%= product._id %>')">
+                <img class="img1" src="<%=product.images[0] %>" />
+                <img class="img2" src="<%=product.images[1] %>" />
               </div>
-              <div class="hoverCart">Quick Add</div>
+              <div
+                class="hoverCart"
+                onclick="addCart('<%= JSON.stringify(product) %>')"
+              >
+                Quick Add
+              </div>
               <span
                 ><i class="fa fa-heart-o heart-icon" style="font-size: 20px"></i
               ></span>
@@ -164,32 +174,20 @@
 </html>
 
 <script type="text/javascript" src="../scripts/showSort.js"></script>
+<script type="text/javascript" src="../scripts/header.js"></script>
+<script type="text/javascript" src="../scripts/Addcart.js"></script>
 <script>
   function sortByprice(name) {
+    console.log(name);
     if (name == "Low") {
-      men.sort(function (a, b) {
-        return (
-          Number(a.price.slice(2).replace(",", "")) -
-          Number(b.price.slice(2).replace(",", ""))
-        );
-      });
+      window.location.href = `/menproducts/?sorting=low`;
+    } else {
+      window.location.href = `/menproducts/?sorting=high`;
     }
-    if (name == "High") {
-      men.sort(function (a, b) {
-        return (
-          Number(b.price.slice(2).replace(",", "")) -
-          Number(a.price.slice(2).replace(",", ""))
-        );
-      });
-    }
-
-    console.log(men, main);
-    appendData(men, main);
   }
 
-  let c = JSON.parse(localStorage.getItem("cart"));
-  let countBag = document.querySelector(".cart-count");
-  countBag.textContent = c.length;
+  function productDetail(product_id) {
+    // console.log(product);
+    window.location.href = `/productdetails/${product_id}`;
+  }
 </script>
-
-<script type="text/javascript" src="../scripts/header.js"></script>

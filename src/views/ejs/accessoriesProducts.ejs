@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <%- include("navbar.ejs") -%>
+    <%- include("navbar.ejs",{bags}) -%>
     <div class="product">
       <div class="product-filter">
         <p>Women</p>
@@ -150,7 +150,7 @@
             </ul>
           </div>
           <div>
-            <p class="sorting_header">Sort</p>
+            <p class="sorting_header" onclick="hideShow()">Sort</p>
             <div class="sorting_div">
               <ul>
                 <li class="sortPrice" id="Recommended">RECOMMENDED</li>
@@ -164,7 +164,39 @@
         </div>
 
         <!--Append function -->
-        <div class="products-show"></div>
+        <div class="products-show">
+          <% products.map(function(product ) { %>
+          <div>
+            <div class="product-imgs">
+              <div onclick="productDetail('<%= product._id %>')">
+                <img class="img1" src="<%=product.images[0] %>" />
+                <img class="img2" src="<%=product.images[1] %>" />
+              </div>
+              <div
+                class="hoverCart"
+                onclick="addCart('<%= JSON.stringify(product) %>')"
+              >
+                Quick Add
+              </div>
+              <span
+                ><i class="fa fa-heart-o heart-icon" style="font-size: 20px"></i
+              ></span>
+            </div>
+            <div class="products-name">
+              <div>
+                <div class="Colors-plate">
+                  <span class="tan"></span>
+                  <span class="active-color-border black"></span>
+                  <span class="lightslategrey"></span>
+                </div>
+              </div>
+              <p><%= product.name %></p>
+              <p><%= product.price%></p>
+            </div>
+          </div>
+
+          <% }); %>
+        </div>
       </div>
     </div>
 
@@ -173,73 +205,21 @@
   </body>
 </html>
 
-<script type="text/javascript" src="../scripts/productData.js"></script>
-<script type="module">
-  import navbar from "../components/navbar.js";
-  import footer from "../components/footer.js";
-  import appendData from "../scripts/appendData.js";
-  let nav = document.getElementById("navbar");
-  nav.innerHTML = navbar();
-
-  let foot = document.getElementById("footer");
-  foot.innerHTML = footer();
-
-  let main = document.querySelector(".products-show");
-  appendData(accessoriesdata, main);
-
-  //SOrting function
-  let sort_header = document.querySelector(".sorting_header");
-  let sort_div = document.querySelector(".sorting_div");
-  let show = true;
-  sort_header.addEventListener("click", function () {
-    if (show) {
-      sort_div.style.display = "block";
-    } else {
-      sort_div.style.display = "none";
-    }
-    show = !show;
-  });
-
-  //sort by price
-  let p = document.querySelectorAll(".sortPrice");
-  for (let i = 0; i < p.length; i++) {
-    p[i].addEventListener("click", function () {
-      sort_div.style.display = "none";
-      if (this.id == "Low" || this.id == "High") {
-        sort_header.innerHTML = `Sort (Price ${this.id})`;
-      } else {
-        sort_header.innerHTML = `Sort (${this.id})`;
-      }
-
-      show = !show;
-      sortByprice(this.id);
-    });
-  }
-
-  function sortByprice(name) {
-    if (name == "Low") {
-      women.sort(function (a, b) {
-        return (
-          Number(a.price.slice(2).replace(",", "")) -
-          Number(b.price.slice(2).replace(",", ""))
-        );
-      });
-    }
-    if (name == "High") {
-      women.sort(function (a, b) {
-        return (
-          Number(b.price.slice(2).replace(",", "")) -
-          Number(a.price.slice(2).replace(",", ""))
-        );
-      });
-    }
-
-    appendData(accessoriesdata, main);
-  }
-
-  let c = JSON.parse(localStorage.getItem("cart"));
-  let countBag = document.querySelector(".cart-count");
-  countBag.textContent = c.length;
-</script>
-
+<script type="text/javascript" src="../scripts/showSort.js"></script>
 <script type="text/javascript" src="../scripts/header.js"></script>
+<script type="text/javascript" src="../scripts/Addcart.js"></script>
+<script>
+  function sortByprice(name) {
+    console.log(name);
+    if (name == "Low") {
+      window.location.href = `/accessoriesProducts/?sorting=low`;
+    } else {
+      window.location.href = `/accessoriesProducts/?sorting=high`;
+    }
+  }
+
+  function productDetail(product_id) {
+    // console.log(product);
+    window.location.href = `/productdetails/${product_id}`;
+  }
+</script>

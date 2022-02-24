@@ -22,7 +22,7 @@
     />
   </head>
   <body>
-    <%- include("navbar.ejs") -%>
+    <%- include("navbar.ejs")-%>
 
     <div id="shoppingnames">
       <p id="darkclr">SHOPPING BAG</p>
@@ -33,7 +33,7 @@
       <i class="fal fa-angle-right arr"></i>
       <p id="grayclr">REVIEW</p>
     </div>
-
+    <% if(bags.length != 0){%>
     <div id="maincart">
       <div id="cartdiv">
         <div id="tabledata">
@@ -49,6 +49,49 @@
             </thead>
             <tbody>
               <!-- Append el  -->
+              <% bags.map(function(bag){%>
+              <tr>
+                <td>
+                  <img class="image" src="<%=bag.productId.images[0] %>" />
+                </td>
+                <td><p><%=bag.productId.name %></p></td>
+                <td><p><%=bag.productId.price%></p></td>
+                <td>
+                  <div>
+                    <select
+                      class="select_qty"
+                      onchange="getquantity(this.value , '<%= JSON.stringify(bag)%>')"
+                    >
+                      <option value="1"><%=bag.quantity%></option>
+                      <% if(bag.quantity != 1){%>
+                      <option value="1">1</option>
+                      <%}%> <% if(bag.quantity != 2){%>
+                      <option value="2">2</option>
+                      <%}%> <% if(bag.quantity != 3){%>
+                      <option value="3">3</option>
+                      <%}%> <% if(bag.quantity != 4){%>
+                      <option value="4">4</option>
+                      <%}%> <% if(bag.quantity != 5){%>
+                      <option value="5">5</option>
+                      <%}%>
+                    </select>
+                  </div>
+                  <p class="edit">Edit</p>
+                </td>
+                <td>
+                  <p class="sTotal">
+                    <%= "₹"+(+bag.productId.price.slice(1).replace(',', '') *
+                    bag.quantity)+".00"%>
+                  </p>
+                  <p
+                    class="edit"
+                    onclick="removeItem('<%= JSON.stringify(bag)%>')"
+                  >
+                    Remove
+                  </p>
+                </td>
+              </tr>
+              <% })%>
             </tbody>
           </table>
         </div>
@@ -57,22 +100,22 @@
       <div id="promocode">
         <div id="promodiv">
           <h4>Promo Code</h4>
-          <hr style="background: black; height: 0.2px; border: 0" />
+          <hr style="background: #707070; height: 0.2px; border: 0" />
 
           <input type="text" placeholder="Promo Code" id="code" />
           <button id="apply">APPLY</button>
         </div>
         <div id="orderdiv">
           <h4>Order Summary</h4>
-          <hr style="background: black; height: 0.2px; border: 0" />
+          <hr style="background: #707070; height: 0.2px; border: 0" />
 
           <div id="subTotal">
             <p>Sub-Total</p>
-            <p id="Price"></p>
+            <p id="Price"><%= sum %></p>
           </div>
           <div id="Total">
             <p>Total</p>
-            <p id="Price2"></p>
+            <p id="Price2"><%= sum %></p>
           </div>
         </div>
 
@@ -81,7 +124,11 @@
         >
       </div>
     </div>
-
+    <%} else {%>
+    <div id="cartempty">
+      <h1>Your Shopping Cart Is Empty</h1>
+    </div>
+    <%}%>
     <div id="Recommend">
       <h2>Recommended for you</h2>
 
@@ -149,29 +196,46 @@
       </div>
     </div>
 
-    <div id="cartempty">
-      <h1>Your Shopping Cart Is Empty</h1>
-    </div>
-
     <%- include("footer.ejs") -%>
   </body>
 </html>
 
-<script type="module">
-  import navbar from "../components/navbar.js";
-  import footer from "../components/footer.js";
-  // console.log(navbar);
-  let navbarbox = document.getElementById("navbar");
-
-  navbarbox.innerHTML = navbar();
-
-  let footerbox = document.getElementById("footerbox");
-  footerbox.innerHTML = footer();
-
-  let c = JSON.parse(localStorage.getItem("cart"));
-  let countBag = document.querySelector(".cart-count");
-  countBag.textContent = c.length;
-</script>
-
-<script src="../scripts/Addcart.js"></script>
+<!-- <script src="../scripts/Addcart.js"></script> -->
 <script src="../scripts/header.js"></script>
+
+<script>
+  //product remove
+  function removeItem(product) {
+    var product = JSON.parse(product);
+    let id = product._id;
+    fetch("/cart/" + id, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => console.log(res));
+    window.location.reload();
+  }
+
+  //product update
+  function getquantity(quantity, product) {
+    var product = JSON.parse(product);
+    let id = product._id;
+    fetch("/cart/" + id, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+
+      .then((res) => console.log(res));
+    window.location.reload();
+  }
+</script>

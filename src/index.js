@@ -13,44 +13,34 @@ app.set("views", path.join(__dirname, "views/"));
 app.set("view engine", "ejs");
 
 //HOME PAGE
-app.get("/", async (req, res) => {
-  return res.render("ejs/home");
-});
+const homeController = require("./controllers/home.controller");
+app.use("/", homeController);
 
 //-------------------------------------------
 //ACCESORIES PAGE
-app.get("/accesories", async (req, res) => {
-  return res.render("ejs/accesories");
-});
-
-//ACCESORIES PRODUCT PAGE
-app.get("/accessoriesProducts", async (req, res) => {
-  return res.render("ejs/accessoriesProducts");
-});
+const accesoriesController = require("./controllers/accessories.controller");
+app.use("/accesories", accesoriesController);
 
 //--------------------------------------------
 //WOMENPAGE PAGE
-app.get("/womenpage", async (req, res) => {
-  return res.render("ejs/womenpage");
-});
+const womenpageController = require("./controllers/womenpage.controller");
+app.use("/womenpage", womenpageController);
 
 //----------------------------------------------------
 //MEN PAGE
-app.get("/manpage", async (req, res) => {
-  return res.render("ejs/manPagr");
-});
+const menpageController = require("./controllers/menpage.controller");
+app.use("/menpage", menpageController);
 
 //----------------------------------------------------
 //ABOUT PAGE
-app.get("/about", async (req, res) => {
-  return res.render("ejs/about");
-});
+const aboutController = require("./controllers/about.controller");
+app.use("/about", aboutController);
 
 //------------------------------------------------------
 //ADD CART PAGE
-app.get("/cart", async (req, res) => {
-  return res.render("ejs/AddCart");
-});
+// app.get("/cart", async (req, res) => {
+//   return res.render("ejs/AddCart");
+// });
 
 //--------------------------------------------------------
 //LOGIN PAGE
@@ -65,6 +55,22 @@ app.use("/womenproducts", womenproductController);
 //MEN PRODUCT CONTROLLER
 const menproductController = require("./controllers/Menproducts.controller");
 app.use("/menproducts", menproductController);
+
+//ACCESSORIES PRODUCT CONTROLLER
+const accessoriesController = require("./controllers/accessoriesproducts.controller");
+app.use("/accessoriesProducts", accessoriesController);
+
+//SEARCH PRODUCT CONTROLLERS
+const searchProdductController = require("./controllers/searchResult.controller");
+app.use("/searchresult", searchProdductController);
+
+//PRODUCT DETAILS CONTROLLERS
+const detailController = require("./controllers/products.controller");
+app.use("/productdetails", detailController);
+
+//BAG CONTROLLERS
+const bagController = require("./controllers/bag.controller");
+app.use("/cart", bagController);
 
 const start = async (req, res) => {
   await connect();

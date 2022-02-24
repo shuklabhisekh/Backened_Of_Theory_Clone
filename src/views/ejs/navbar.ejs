@@ -133,7 +133,7 @@
               </div>
             </li>
             <li class="nav-hover">
-              <a href="/manpage">Men</a>
+              <a href="/menpage">Men</a>
               <div class="hover men_hover">
                 <div class="hover--navbar">
                   <div>
@@ -317,12 +317,12 @@
             <li>
               <a href="">Stores</a>
             </li>
-            <li>
+            <li id="s">
               <a href="/login">Sign In</a>
             </li>
             <li>
               <div class="header--cart">
-                <span class="cart-count">0</span>
+                <span class="cart-count"><%=bags.length%></span>
                 <a href="/cart"
                   ><img
                     src="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/images/icons/minicart.svg"
@@ -335,3 +335,11 @@
     </div>
   </body>
 </html>
+
+<script>
+  function searchData() {
+    let search = document.querySelector("#Search").value;
+    console.log(search);
+    window.location.href = `/searchresult/?search=${search}`;
+  }
+</script>

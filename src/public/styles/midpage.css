@@ -230,4 +230,13 @@
   .smallbox3 > div:nth-child(6) {
     display: none;
   }
+
+  .imgpants--links {
+    font-size: 9px;
+    padding: 0;
+  }
+
+  .imgpants {
+    margin-top: 3%;
+  }
 }
