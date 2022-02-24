@@ -32,7 +32,7 @@
         border: 1px solid rgb(0, 0, 0);
         font-size: 26px;
         border-collapse: collapse;
-        padding: 15px;
+        padding: 70px;
     }
     th{
         background-color: rgb(230, 230, 230);
@@ -42,8 +42,8 @@
     <div id="buttons">
         <div>
             <h2>Add Product</h2>
-            <input type="url" placeholder="image1" id="image1" />
-            <input type="url" placeholder="image2" id="image2" />
+            <input type="text" placeholder="image1" id="image1" />
+            <input type="text" placeholder="image2" id="image2" />
             <input type="text" placeholder="name" id="name" />
             <input type="number" placeholder="price" id="price" />
             <input type="text" placeholder="category" id="category">
@@ -52,8 +52,8 @@
           </div>
           <div>
             <h2>Update Product</h2>
-            <input type="url" placeholder="image1" id="image1Update" />
-            <input type="url" placeholder="image2" id="image2Update" />
+            <input type="text" placeholder="image1" id="image1Update" />
+            <input type="text" placeholder="image2" id="image2Update" />
             <input type="text" placeholder="name" id="nameUpdate" />
             <input type="number" placeholder="price" id="priceUpdate" />
             <input type="text" placeholder="category" id="categoryUpdate">
@@ -82,7 +82,7 @@
                    <th>Type</th>
                </tr>
         </thead>
-           <tbody id="tbody"></tbody>
+           <tbody id="showbody"></tbody>
        </table>
    </div>
 </body>
@@ -91,6 +91,7 @@
 <script>
     // Function to create database
     async function addProduct(){
+        // let arrayData=[]
         try {
             let data= {
             image1:document.getElementById("image1").value,
@@ -101,6 +102,8 @@
             type:document.getElementById("type").value,
         }
         data=JSON.stringify(data)
+        // arrayData.push(data)
+        console.log(data,"data")
         let response= await fetch('http://127.0.0.1:4000/products',{mode:"no-cors"},{
             // mode:"no-cors",
             method:'POST',
@@ -111,77 +114,51 @@
             }
         })
         let d= await response.json()
-        //  displayData(d)
+        console.log(d)
 
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
       
     }
-//function to append on dom
-displayData()
-  async function displayData(){
-    try {
-        //     let data= {
-        //     id:document.getElementById("id").value,
-        //     name:document.getElementById("name").value,
-        //     price:document.getElementById("price").value
-        // }
-        // data=JSON.stringify(data)
-        let response= await fetch('http://localhost:4000/products',{mode:"no-cors"})
-        // let response= await fetch('http://127.0.0.1:3000/api/products',{
-        //     method:'GET',
-        //     body:data,
-        //     headers:{
-        //         "Content-Type":'application/json'
-        //     }
-        // })
-        let d= await response.json()
-        console.log(d,"iajoj")
-         showData(d)
-        // d.forEach((elem)=>{
-        //     console.log(elem)
-        //     let display=document.getElementById("display")
-        //     let tbody=document.getElementById("tbody")
-        //     let trow=document.createElement("tr")
-        //     let th1=document.createElement("td")
-        //     th1.textContent=elem.id
-        //     let th2=document.createElement("td")
-        //     th2.textContent=elem.name
-        //     let th3=document.createElement("td")
-        //     th3.textContent=elem.price
 
-        //     trow.append(th1,th2,th3)
-        //     console.log(trow)
-        //     tbody.append(trow)
-        //     display.append(tbody)
-        // })
-
+vikram()
+    async function vikram(){
+        try {
+            let response = await fetch("http://127.0.0.1:4000/products")
+            let store = await response.json()
+            showData(store.products)
+            // console.log(store)
         } catch (error) {
-            console.log(error)
+            
         }
-   }
+    }
 
     function showData(data){
-       console.log(data,"huahk")
+    //    console.log(data,"huahk")
         let display=document.getElementById("display")
 
-            let tableBody=document.getElementById("tbody")
+            let tableBody=document.getElementById("showbody")
             tableBody.innerText=""
        data.map((elem)=>{
-            console.log(elem,"test")
+            // console.log(elem,"test")
             
+
             
             let trow=document.createElement("tr")
             let th0=document.createElement("td")
             let images1 = document.createElement("img")
-            images1.textContent= elem.image1
-            th0.textContent=elem.image1
+            images1.src= elem.image1
+            th0.append(images1)
+            // console.log(images1,"omages1")
 
+        
             let th1=document.createElement("td")
             let images2 = document.createElement("img")
-            images2.textContent= elem.image2
-            th1.textContent=elem.image2
+            images2.src= elem.image2
+            th1.append(images2)
+            // console.log(images2,"lja")
+
 
             let th2=document.createElement("td")
             th2.textContent=elem.name
@@ -224,7 +201,7 @@ displayData()
         let d = await response.json()
 
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
        
     }
