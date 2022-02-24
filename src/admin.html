@@ -101,11 +101,13 @@
             type:document.getElementById("type").value,
         }
         data=JSON.stringify(data)
-        let response= await fetch('http://localhost:4000/products',{mode:"no-cors"},{
+        let response= await fetch('http://127.0.0.1:4000/products',{mode:"no-cors"},{
+            // mode:"no-cors",
             method:'POST',
             body:data,
             headers:{
-                "Content-Type":'application/json'
+                "Content-Type":'application/json',
+                // 'Access-Control-Allow-Origin':'*',
             }
         })
         let d= await response.json()
@@ -126,7 +128,7 @@ displayData()
         //     price:document.getElementById("price").value
         // }
         // data=JSON.stringify(data)
-        let response= await fetch('http://localhost:4000/products')
+        let response= await fetch('http://localhost:4000/products',{mode:"no-cors"})
         // let response= await fetch('http://127.0.0.1:3000/api/products',{
         //     method:'GET',
         //     body:data,
@@ -211,10 +213,12 @@ displayData()
             }
             data=JSON.stringify(data)
             let response= await fetch(`http://127.0.0.1:3000/api/products/${idChange}`,{
+            // mode:"no-cors",
             method:'PUT',
             body:data,
             headers:{
-                "Content-Type":'application/json'
+                "Content-Type":'application/json',
+                // 'Access-Control-Allow-Origin':'*',
             }
         })
         let d = await response.json()
