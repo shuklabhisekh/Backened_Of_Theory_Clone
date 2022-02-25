@@ -19,6 +19,12 @@
   <body>
     <div id="vnavbar">
       <!-- top NavBar -->
+      <div id="vtopblackbar">
+        <p>Free Shipping To India On All Orders</p>
+      </div>
+      <div id="vtheoryhome">
+        <p><a href="/">Theory</a></p>
+      </div>
     </div>
 
     <div id="vmain">
@@ -45,11 +51,10 @@
 
       <div id="vcartshow">
         <!-- Product Details Space which will be Dynamic -->
-
         <div>
           <!-- Table Div  -->
 
-          <table>
+          <table class="products-order">
             <thead>
               <tr>
                 <th width="50%">Order Summary</th>
@@ -60,6 +65,27 @@
             </thead>
             <tbody>
               <!-- Append el  -->
+              <% bags.map((bag)=>{%>
+              <tr>
+                <td>
+                  <div class="order">
+                    <img src="<%= bag.productId.images[0]%>" class="image00v" />
+                    <div>
+                      <h3><%= bag.productId.name%></h3>
+                      <p>
+                        <%= "₹"+(+bag.productId.price.slice(1).replace(',', '')
+                        * bag.quantity)+".00"%>
+                      </p>
+                    </div>
+                  </div>
+                </td>
+
+                <td><span><%= bag.quantity%></span></td>
+                <td><span><%= bag.productId.price%></span></td>
+
+                <td></td>
+              </tr>
+              <%})%>
             </tbody>
           </table>
         </div>
@@ -68,7 +94,7 @@
         <!-- Total Price Div -->
         <div>Items total</div>
         <div>
-          <span>₹ &nbsp;</span><span class="displaypricev"></span
+          <span>₹ &nbsp;</span><span class="displaypricev"><%= sum %></span
           ><span>.00</span><span id="vdiscount">&nbsp; Inc. all Discount</span>
         </div>
       </div>
@@ -149,7 +175,9 @@
               </tr>
               <tr>
                 <div class="form-group">
-                  <td><label for="">Email: </label></td>
+                  <td>
+                    <label for="">Email <span id="vstar">*</span></label>
+                  </td>
                   <td>
                     <input
                       class="form-control"
@@ -162,7 +190,9 @@
               </tr>
               <tr>
                 <div class="form-group">
-                  <td><label for="">Phone: </label></td>
+                  <td>
+                    <label for="">Phone<span id="vstar">*</span></label>
+                  </td>
                   <td>
                     <input
                       class="form-control"
@@ -175,14 +205,18 @@
               </tr>
               <tr>
                 <div class="form-group">
-                  <td><label for="">address: </label></td>
+                  <td>
+                    <label for="">Address<span id="vstar">*</span> </label>
+                  </td>
                   <td><input class="form-control" type="text" /></td>
                 </div>
               </tr>
               <tr>
                 <div class="form-group">
-                  <td><label for="">Total amount: </label></td>
                   <td>
+                    <label for="">Total amount<span id="vstar">*</span> </label>
+                  </td>
+                  <td class="amout-block">
                     <span>₹</span>
                     <input
                       class="form-control--amount"
@@ -201,11 +235,11 @@
           <h2>Delivery Address</h2>
 
           <div id="vboxflex3">
-            <div id="vradio"><input id="radio" type="checkbox" /></div>
+            <div id="vradio"><input id="radio" type="radio" checked /></div>
             <div id="vdet">Default (same as billing address)</div>
           </div>
           <div id="vboxflex3">
-            <div id="vradio"><input id="radio" type="checkbox" /></div>
+            <div id="vradio"><input id="radio" type="radio" /></div>
             <div id="vdet">
               I will pay all applicable duties, taxes and fees on delivery.
             </div>
@@ -221,7 +255,7 @@
         <div id="vshipflex">
           <div id="vfreebox">
             <div>
-              <input type="radio" />
+              <input type="radio" checked />
             </div>
             <div>
               <p class="vfree">Free</p>
@@ -240,14 +274,14 @@
       <div id="vshipbox1">
         <h2>Duties & Taxes</h2>
         <div id="vboxflex3">
-          <div id="vradio"><input id="radio1" type="checkbox" /></div>
+          <div id="vradio"><input id="radio1" type="radio" checked /></div>
           <div id="vdet1">
             Prepay ₹ <span class="displaypricev1"></span> .00 for duties, taxes
             and fees now to guarantee no additional charges on delivery.
           </div>
         </div>
         <div id="vboxflex3">
-          <div id="vradio"><input id="radio1" type="checkbox" /></div>
+          <div id="vradio"><input id="radio1" type="radio" /></div>
           <div id="vdet1">
             I will pay all applicable duties, taxes and fees on delivery.
           </div>
@@ -400,10 +434,10 @@
             <p>₹ 00.00 (Free)</p>
           </div>
           <div id="vprice">
-            <p><b>Total For Your Order</b></p>
-            <p>
+            <h1><b>Total For Your Order</b></h1>
+            <h1>
               <b>₹ <span class="displaypricev3"><%=sum%></span>.00</b>
-            </p>
+            </h1>
           </div>
 
           <p id="vall">
@@ -423,14 +457,16 @@
 
       <!-- Footer Part -->
       <div id="vfoot">
-        <!-- <p>Contact Us | Help | Terms & Conditions | Privacy Policy</p>
-            <img src="https://www.global-e.com/sectigo_trust_seal_sm_82x32.png" alt="">
-            <p>Sectigo Wildcard SSL</p> -->
+        <p>
+          Contact Us&nbsp;&nbsp; |&nbsp; Help&nbsp; | &nbsp; Terms &
+          Conditions&nbsp; |&nbsp; Privacy Policy
+        </p>
+        <img
+          src="https://www.global-e.com/sectigo_trust_seal_sm_82x32.png"
+          alt=""
+        />
+        <p>Sectigo Wildcard SSL</p>
       </div>
     </div>
   </body>
 </html>
-
-<script type="module" src="../scripts/checkOutHeaderFooter.js"></script>
-<script src="../scripts/cartShow.js"></script>
-<script></script>

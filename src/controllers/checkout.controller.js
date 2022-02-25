@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     bags.map((bag) => {
       sum += +bag.productId.price.slice(1).replace(",", "") * bag.quantity;
     });
-    return res.render("ejs/checkout", { sum });
+    return res.render("ejs/checkout", { bags, sum });
   } catch (err) {
     res.send(err);
   }

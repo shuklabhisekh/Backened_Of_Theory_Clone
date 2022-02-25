@@ -1,5 +1,17 @@
 body {
   margin: 0px;
+  font-family: Theory-web-ul;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #cecece;
 }
 
 #vmain {
@@ -53,7 +65,7 @@ body {
 }
 #vlanguage > p {
   margin: 0px;
-  font-size: 17px;
+  font-size: 14px;
   padding-top: 7px;
   font-weight: 600;
 }
@@ -72,11 +84,11 @@ body {
 #vcartshow {
   width: 80%;
   /* margin: auto; */
-  margin-left: 5%;
+  margin-left: 2%;
   overflow: auto;
 
   /* border: 1px solid black; */
-  height: 400px;
+  /* height: 400px; */
   margin-top: 5px;
 }
 
@@ -102,10 +114,12 @@ body {
 }
 
 #vbox1 > h2 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a5a5a5;
   padding: 5px 10px;
   margin-bottom: 5px;
-  /* font-family: Theory-web-ul; */
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Theory-web-ul;
 }
 
 #vbox2 {
@@ -139,7 +153,9 @@ body {
   padding: 0px 8px;
   border: 1px solid black;
 }
-
+input:focus {
+  outline: none;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -159,13 +175,15 @@ input::-webkit-inner-spin-button {
 }
 
 #vbox2 > h2 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a5a5a5;
+  font-size: 18px;
   padding: 5px 10px;
-  /* font-family: Theory-web-ul; */
+  font-weight: bold;
+  font-family: Theory-web-ul;
 }
 
 #vradio {
-  flex: 0.5;
+  /* flex: 0.5; */
   padding: 10px 8px;
 }
 #radio {
@@ -175,7 +193,9 @@ input::-webkit-inner-spin-button {
 
 #vdet {
   flex: 10;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 2px;
   padding-top: 10px;
 }
 
@@ -188,11 +208,14 @@ input::-webkit-inner-spin-button {
   /* height: 150px; */
   /* border-bottom: 1px solid rgb(206, 206, 206); */
   font-family: Theory-web-ul;
+  margin-bottom: 40px;
 }
 
 #vshipbox > h2 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a5a5a5;
   padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #vshipflex {
@@ -204,10 +227,13 @@ input::-webkit-inner-spin-button {
 #vfreebox {
   display: flex;
 }
+#vfreebox > div:first-child {
+  margin-top: 5px;
+}
 .vfree {
   /* border: 1px solid black; */
   margin: 5px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -233,14 +259,23 @@ input::-webkit-inner-spin-button {
   margin: 10px;
 }
 
+#vprice > h1 {
+  font-size: 20px;
+  padding-left: 10px;
+}
+
 #vshipbox1 > h2 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a5a5a5;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #vboxflex3 {
   width: 95%;
   display: flex;
-  margin-bottom: 5px;
+  text-align: left;
+  /* margin-bottom: 5px; */
 }
 
 #radio1 {
@@ -250,8 +285,10 @@ input::-webkit-inner-spin-button {
 
 #vdet1 {
   flex: 10;
-  font-size: 16px;
+  font-size: 14px;
   padding-top: 10px;
+  margin-top: 3px;
+  font-weight: 600;
 }
 
 /* payment Box */
@@ -260,13 +297,14 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: space-between;
   padding: 0px 5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a5a5a5;
 }
 
-#vpaymentname > h2,
-h5 {
-  /* border: 1px solid black; */
-  margin: 10px;
+#vpaymentname > h2 {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
 }
 #vpaymentname > h5 {
   padding-top: 9px;
@@ -301,6 +339,12 @@ h5 {
   /* border: 1px solid black; */
   height: 80px;
   /* background-color: rgb(242,242,242); */
+}
+
+.order {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
 }
 #vimg2 {
   width: 100%;
@@ -369,34 +413,45 @@ h5 {
 
 #vtopspace {
   margin-left: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+a {
+  color: #000;
+  text-decoration: none;
 }
 
 #vbutton {
-  padding: 18px 70px;
-  font-size: 23px;
+  padding: 15px 60px;
+  font-size: 20px;
   color: white;
   background-color: black;
   margin-top: 30px;
+  margin-left: 18px;
+  border: none;
+  cursor: pointer;
 }
 
 #vprice {
   display: flex;
   justify-content: space-between;
-  padding: 0px 15px;
+  padding: 0px 5px;
   /* border-bottom: 1px solid black; */
-  font-size: 17px;
+  font-size: 15px;
 }
 
 #vall {
   padding: 0px 15px;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: bold;
 }
 #vfoot {
   text-align: center;
-  margin-top: 30px;
-  font-size: 18px;
+  margin-top: 83px;
+  font-size: 15px;
   line-height: 40px;
   font-family: Theory-web-ul;
+  font-weight: bold;
 }
 
 #vfoot > p:nth-child(3) {
@@ -412,32 +467,36 @@ h5 {
   /* border-top: 1px solid black; */
 }
 
-table {
+.products-order table {
   /* width: 100%; */
   border-collapse: collapse;
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
   font-family: Theory-web-ul;
+  font-weight: 700;
+}
+.products-order tr td {
+  /* padding-top: 10px; */
+  font-weight: 100;
+  border-bottom: 1px dashed #d0d0d0;
+}
+
+.products-order td span {
+  display: block;
+  margin-top: -50px;
 }
 
 #vamountshow {
   font-family: Theory-web-ul;
 }
 th {
-  border-bottom: 1px solid black;
-}
-
-.showimagev {
-  width: 50%;
-}
-.showimagev > td:nth-child(1) {
-  /* border: 1px solid black; */
-  width: 20%;
-  border-bottom: none;
+  border-bottom: 1px solid #a5a5a5;
+  text-align: left;
+  padding: 10px;
 }
 
 .image00v {
-  width: 95%;
+  width: 20%;
   /* border: 1px solid black; */
 }
 
@@ -448,6 +507,7 @@ th {
   margin-top: 5px;
   height: 60px;
   display: flex;
+  font-weight: bold;
   justify-content: right;
 }
 #vamountshow > div {
@@ -485,13 +545,22 @@ hr {
   border-spacing: 0 0.8em;
 }
 .form_checkout input {
-  padding: 10px 80px;
+  padding: 10px;
+  width: 180%;
+  border: 1px solid #000;
 }
 .form_checkout label {
-  padding: 10px 0;
+  padding: 10px;
   padding-right: 70px;
+  font-weight: bold;
+  font-size: 15px;
 }
 .form-control--amount {
-  border: 0;
+  border: none !important;
   padding: 10px 0 !important;
+}
+
+.amout-block {
+  display: flex;
+  align-items: center;
 }

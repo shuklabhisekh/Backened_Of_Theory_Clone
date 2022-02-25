@@ -119,9 +119,7 @@
           </div>
         </div>
 
-        <a href="/checkout">
-          <button id="checkoutbtn">CONTINUE TO CHECKOUT</button></a
-        >
+        <button id="checkoutbtn" onclick="check()">CONTINUE TO CHECKOUT</button>
       </div>
     </div>
     <%} else {%>
@@ -237,5 +235,14 @@
 
       .then((res) => console.log(res));
     window.location.reload();
+  }
+
+  function check() {
+    let user = JSON.parse(localStorage.getItem("loginData"));
+    if (typeof user == "string") {
+      window.location.href = "/login";
+    } else {
+      window.location.href = "/checkout";
+    }
   }
 </script>

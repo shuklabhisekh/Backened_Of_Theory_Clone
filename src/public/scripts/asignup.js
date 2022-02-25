@@ -102,7 +102,6 @@ async function signup(e) {
     });
   } else if (data.status === "ok") {
     alert("Registration Successfull");
-
     var Login = document.querySelector(".login");
     Login.style.display = "block";
     var SignUp = document.querySelector(".signup");

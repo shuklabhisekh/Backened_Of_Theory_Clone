@@ -85,6 +85,10 @@ app.use("/about", aboutController);
 const userController = require("./controllers/user.controller");
 app.use("/login", userController);
 
+//OPT CONTROLLER
+const optController = require("./controllers/otp.controller");
+app.use("/otp", optController);
+
 //WOMEN PRODUCT CONTROLLER
 const womenproductController = require("./controllers/Womenproducts.controller");
 app.use("/womenproducts", womenproductController);
