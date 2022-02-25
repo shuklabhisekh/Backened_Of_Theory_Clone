@@ -317,8 +317,14 @@
             <li>
               <a href="">Stores</a>
             </li>
-            <li id="s">
+            <li id="signin">
               <a href="/login">Sign In</a>
+            </li>
+            <li id="nameof">
+              <div></div>
+            </li>
+            <li id="signout">
+              <div><a href="#">Sign Out</a></div>
             </li>
             <li>
               <div class="header--cart">
@@ -341,5 +347,33 @@
     let search = document.querySelector("#Search").value;
     console.log(search);
     window.location.href = `/searchresult/?search=${search}`;
+  }
+
+  // Username Showcase New data added from here
+
+  let username = JSON.parse(localStorage.getItem("loginData"));
+
+  let signout = document.getElementById("signout");
+  let signin = document.getElementById("signin");
+
+  if (username != null && username != "") {
+    console.log(username.data);
+
+    signout.style.display = "block";
+
+    signin.style.display = "none";
+
+    let nameof = document.getElementById("nameof");
+    nameof.style.display = "block";
+    nameof.textContent = `Welcome ${username.data} | `;
+  }
+
+  signout.addEventListener("click", logout);
+
+  function logout() {
+    signout.style.display = "none";
+    signin.style.display = "block";
+    localStorage.setItem("loginData", JSON.stringify(""));
+    window.location.reload();
   }
 </script>

@@ -242,3 +242,14 @@ body {
     overflow-x: hidden;
   }
 }
+
+/* Only this two id added in navbar css  */
+
+#signout {
+  display: none;
+  margin-left: -10px;
+}
+
+#nameof {
+  display: none;
+}

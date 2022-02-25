@@ -71,18 +71,27 @@
           <!------ Create Account Form start------->
           <form action="#" class="signup">
             <div class="field" id="ak-name-box">
-              <input
-                type="text"
-                id="ak-sign-input"
-                placeholder="*First Name"
-                required
-              />
-              <input
-                type="text"
-                id="ak-sign-input"
-                placeholder="*Last Name"
-                required
-              />
+              <div class="s_input">
+                <input
+                  type="text"
+                  id="ak-sign-input"
+                  class="first_name"
+                  placeholder="*First Name"
+                  required
+                  data-errors="name is not valid"
+                />
+                <p id="first_name" class="errr"></p>
+              </div>
+              <div class="s_input">
+                <input
+                  type="text"
+                  id="ak-sign-input"
+                  class="last_name"
+                  placeholder="*Last Name"
+                  required
+                />
+                <p id="last_name" class="errr"></p>
+              </div>
             </div>
             <!-- <div class="field">
                         
@@ -95,6 +104,7 @@
                 placeholder="*Email Address"
                 required
               />
+              <p id="email" class="errr"></p>
             </div>
             <div class="field">
               <input
@@ -112,12 +122,14 @@
                 placeholder="*Password (8 - 255 characters)"
                 required
               />
+              <p id="password" class="errr"></p>
             </div>
             <div class="field">
               <input
                 type="password"
                 id="ak-signup-input"
                 placeholder="*Confirm Password"
+                required
               />
             </div>
             <div id="ak-birth-day">
@@ -227,15 +239,6 @@
     <%- include("footer.ejs") -%>
   </body>
 </html>
-<script type="module">
-  import navbar from "../components/navbar.js";
-  import footer from "../components/footer.js";
-  let nav = document.getElementById("navbar");
-  nav.innerHTML = navbar();
-
-  let foot = document.getElementById("footer");
-  foot.innerHTML = footer();
-</script>
 
 <script type="text/javascript" src="../scripts/header.js"></script>
 <script src="../scripts/asignup.js"></script>

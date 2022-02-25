@@ -1,339 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> checkout | Theory</title>
-    <link rel="shortcut icon" href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico">
-    <link rel="stylesheet" href="../styles/checkout.css">
-    <link rel="stylesheet" href="../styles/font.css">
-    <script src="https://kit.fontawesome.com/683b4b40e3.js" 	crossorigin="anonymous"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkout | Theory</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico"
+    />
+    <link rel="stylesheet" href="../styles/checkout.css" />
+    <link rel="stylesheet" href="../styles/font.css" />
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div id="vnavbar">
-        <!-- top NavBar -->
+      <!-- top NavBar -->
     </div>
 
     <div id="vmain">
+      <div id="voptions">
+        <div id="vlanguage"><p>Change Language</p></div>
+        <div id="vselectoptions">
+          <select>
+            <option>English - United States</option>
+            <option>English</option>
+            <option>Nederlands</option>
+            <option>Cestina</option>
+            <option>Dansk</option>
+            <option>Deutsch</option>
+            <option>Italiano</option>
+            <option>Portugues</option>
+            <option>Turkce</option>
+            <option>Chinese - Taiwan</option>
+            <option>Hindi</option>
+            <option>Polska</option>
+            <option>Norsk</option>
+          </select>
+        </div>
+      </div>
 
-        <div id="voptions">
+      <div id="vcartshow">
+        <!-- Product Details Space which will be Dynamic -->
 
-            <div id="vlanguage"><p>Change Language</p></div>
-            <div id="vselectoptions">
-                <select>
-                    <option>English - United States</option>
-                    <option>English</option>
-                    <option>Nederlands</option>
-                    <option>Cestina</option>
-                    <option>Dansk</option>
-                    <option>Deutsch</option>
-                    <option>Italiano</option>
-                    <option>Portugues</option>
-                    <option>Turkce</option>
-                    <option>Chinese - Taiwan</option>
-                    <option>Hindi</option>
-                    <option>Polska</option>
-                    <option>Norsk</option>
+        <div>
+          <!-- Table Div  -->
 
+          <table>
+            <thead>
+              <tr>
+                <th width="50%">Order Summary</th>
+                <th width="16%">Quantity</th>
+                <th width="16%">Price</th>
+                <th width="16%">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Append el  -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="vamountshow">
+        <!-- Total Price Div -->
+        <div>Items total</div>
+        <div>
+          <span>₹ &nbsp;</span><span class="displaypricev"></span
+          ><span>.00</span><span id="vdiscount">&nbsp; Inc. all Discount</span>
+        </div>
+      </div>
 
-                </select>
+      <div id="vaddressBox">
+        <!-- <form action="/paynow" method="post">
+          <div id="vbox1">
+            <h2>Billing Address</h2>
+
+            <div id="vboxflex">
+              <div id="vlabel">First Name <span id="vstar">*</span></div>
+              <div id="vinput"><input type="text" name="fname" /></div>
             </div>
+            <div id="vboxflex">
+              <div id="vlabel">Last Name <span id="vstar">*</span></div>
+              <div id="vinput"><input type="text" name="lname" /></div>
+            </div>
+            <div id="vboxflex">
+              <div id="vlabel">Email <span id="vstar">*</span></div>
+              <div id="vinput"><input type="text" name="email" /></div>
+            </div>
+            <div id="vboxflex">
+              <div id="vlabel">Address Line 1 <span id="vstar">*</span></div>
+              <div id="vinput"><input type="text" /></div>
+            </div>
+            <div id="vboxflex">
+              <div id="vlabel">Address Line 2</div>
+              <div id="vinput"><input type="text" /></div>
+            </div>
+            <div id="vboxflex">
+              <div id="vlabel">City / Suburb <span id="vstar">*</span></div>
+              <div id="vinput"><input type="text" /></div>
+            </div>
+            <div id="vboxflex">
+              <div id="vlabel">Zip / Postcode <span id="vstar">*</span></div>
+              <div id="vinput">
+                <input
+                  type="number"
+                  placeholder="6 digits, for example : 908650"
+                />
+              </div>
+            </div>
+            <div id="vboxflex">
+              <div id="vlabel">Mobile Phone <span id="vstar">*</span></div>
+              <div id="vinput"><input type="text" name="phone" /></div>
+            </div>
+          </div>
+          <input type="Number" name="amount" />
+          <input type="submit" value="pay now" />
+        </form> -->
 
+        <div id="vbox1">
+          <h2>Billing Address</h2>
+          <form class="form_checkout" action="/paynow" method="post" id="form1">
+            <table>
+              <tr>
+                <div class="form-group">
+                  <td>
+                    <label for="">First Name <span id="vstar">*</span></label>
+                  </td>
+                  <td>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="name"
+                      value=""
+                    />
+                  </td>
+                </div>
+              </tr>
+              <tr>
+                <div class="form-group">
+                  <td>
+                    <label for="">Last Name <span id="vstar">*</span></label>
+                  </td>
+                  <td><input class="form-control" type="text" value="" /></td>
+                </div>
+              </tr>
+              <tr>
+                <div class="form-group">
+                  <td><label for="">Email: </label></td>
+                  <td>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="email"
+                      value=""
+                    />
+                  </td>
+                </div>
+              </tr>
+              <tr>
+                <div class="form-group">
+                  <td><label for="">Phone: </label></td>
+                  <td>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="phone"
+                      value=""
+                    />
+                  </td>
+                </div>
+              </tr>
+              <tr>
+                <div class="form-group">
+                  <td><label for="">address: </label></td>
+                  <td><input class="form-control" type="text" /></td>
+                </div>
+              </tr>
+              <tr>
+                <div class="form-group">
+                  <td><label for="">Total amount: </label></td>
+                  <td>
+                    <span>₹</span>
+                    <input
+                      class="form-control--amount"
+                      type="text"
+                      name="amount"
+                      value="<%=sum%>"
+                    />
+                  </td>
+                </div>
+              </tr>
+            </table>
+          </form>
         </div>
 
-        <div id="vcartshow">
+        <div id="vbox2">
+          <h2>Delivery Address</h2>
 
-            <!-- Product Details Space which will be Dynamic -->
+          <div id="vboxflex3">
+            <div id="vradio"><input id="radio" type="checkbox" /></div>
+            <div id="vdet">Default (same as billing address)</div>
+          </div>
+          <div id="vboxflex3">
+            <div id="vradio"><input id="radio" type="checkbox" /></div>
+            <div id="vdet">
+              I will pay all applicable duties, taxes and fees on delivery.
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Shipping Method -->
+
+      <div id="vshipbox">
+        <h2>Shipping Method</h2>
+
+        <div id="vshipflex">
+          <div id="vfreebox">
             <div>
-
-                <!-- Table Div  -->
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th width=50%>Order Summary</th>
-                            <th width=16%>Quantity</th>
-                            <th width=16%>Price</th>
-                            <th width=16%>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Append el  -->
-                    </tbody>
-                
-                </table>
- 
+              <input type="radio" />
             </div>
-           
-
+            <div>
+              <p class="vfree">Free</p>
+              <p class="vpre">Prepayment of duties and taxes supported</p>
+            </div>
+          </div>
+          <div>
+            <p class="vfree">Express Courier (Air)</p>
+          </div>
+          <div>
+            <p class="vfree">5 to 6 business days</p>
+          </div>
         </div>
-        <div id="vamountshow">
-            <!-- Total Price Div -->
-            <div>Items total</div>
-            <div><span>₹ &nbsp;</span><span class="displaypricev"></span><span>.00</span><span id="vdiscount">&nbsp; Inc. all Discount</span></div>
+      </div>
+
+      <div id="vshipbox1">
+        <h2>Duties & Taxes</h2>
+        <div id="vboxflex3">
+          <div id="vradio"><input id="radio1" type="checkbox" /></div>
+          <div id="vdet1">
+            Prepay ₹ <span class="displaypricev1"></span> .00 for duties, taxes
+            and fees now to guarantee no additional charges on delivery.
+          </div>
         </div>
-
-
-        <div id="vaddressBox">
-
-            <div id="vbox1">
-
-                <h2>Billing Address</h2>
-
-
-                <div id="vboxflex">
-                    <div id="vlabel">First Name <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Last Name <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Email <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Country <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Address Line 1 <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Address Line 2</div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">City / Suburb <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Zip / Postcode <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="number" placeholder="6 digits, for example : 908650"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Mobile Phone <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="text"></div>
-                </div>
-
-
-            </div>
-            <div id="vbox2">
-
-                <h2>Delivery Address</h2>
-
-                <div id="vboxflex3">   
-                    <div id="vradio"><input id="radio" type="checkbox" ></div>
-                    <div id="vdet">Default (same as billing address)</div>
-                </div>
-                <div id="vboxflex3">   
-                    <div id="vradio"><input id="radio" type="checkbox" ></div>
-                    <div id="vdet">I will pay all applicable duties, taxes and fees on delivery.</div>
-                </div>
-                
-
-
-            </div>
-
+        <div id="vboxflex3">
+          <div id="vradio"><input id="radio1" type="checkbox" /></div>
+          <div id="vdet1">
+            I will pay all applicable duties, taxes and fees on delivery.
+          </div>
         </div>
+      </div>
 
+      <!-- Payment Box -->
 
-        <!-- Shipping Method -->
+      <div id="vaddressBox">
+        <!-- <div id="vbox1">
+          <div id="vpaymentname">
+            <h2>Payment</h2>
+            <h5>SECURE ENCRYPTED TRANSACTION</h5>
+          </div>
 
-        <div id="vshipbox">
+          <p>Please choose your payment method</p>
 
-            <h2>Shipping Method</h2>
-
-            <div id="vshipflex">
-
-                <div id="vfreebox">
-                    <div>
-                        <input type="radio">
-                    </div>
-                    <div>
-                        <p class="vfree">Free</p>
-                        <p class="vpre">Prepayment of duties and taxes supported</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="vfree">Express Courier (Air)</p>
-                </div>
-                <div>
-                    <p class="vfree">5 to 6 business days</p>
-                </div>
-
+          <div id="vflex">
+            <div id="vbord">
+              <img
+                id="vimg"
+                src="https://digital.hbs.edu/platform-digit/wp-content/uploads/sites/2/2020/02/visa-logo-png-2026-1.png"
+                alt=""
+              />
+            </div>
+            <div id="vbord">
+              <img
+                id="vimg"
+                src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c530.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div id="vflex1">
+            <div id="vbord1">
+              <img
+                id="vimg1"
+                src="https://cdn.freebiesupply.com/logos/thumbs/2x/visa-logo.png"
+                alt=""
+              />
+            </div>
+            <div id="vbord1">
+              <img
+                id="vimg2"
+                src="https://cdn.freebiesupply.com/logos/large/2x/mastercard-4-logo-png-transparent.png"
+                alt=""
+              />
             </div>
 
+            <div id="vbord1">
+              <img
+                id="vimg1"
+                src="https://1000logos.net/wp-content/uploads/2016/10/American-Express-Color.png"
+                alt=""
+              />
+            </div>
+
+            <div id="vbord1">
+              <img
+                id="vimg3"
+                src="https://1000logos.net/wp-content/uploads/2021/05/Diners-Club-International-logo.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div id="vboxflex">
+            <div id="vlabel">Card number <span id="vstar">*</span></div>
+            <div id="vinput"><input type="number" /></div>
+          </div>
+          <div id="vboxflex">
+            <div id="vlabel">Expiry date <span id="vstar">*</span></div>
+            <div class="vinput vcardflex">
+              <select class="vmonth">
+                <option>Month</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+
+              <select class="vyear">
+                <option>Year</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>2029</option>
+                <option>2030</option>
+                <option>2031</option>
+                <option>2032</option>
+                <option>2033</option>
+                <option>2034</option>
+                <option>2035</option>
+                <option>2036</option>
+                <option>2037</option>
+                <option>2038</option>
+                <option>2039</option>
+                <option>2040</option>
+                <option>2041</option>
+                <option>2042</option>
+              </select>
+            </div>
+          </div>
+          <div id="vboxflex">
+            <div id="vcode">Security code <span id="vstar">*</span></div>
+            <div class="vinputcvv"><input type="text" /></div>
+            <p class="vthis">
+              <u>What is this?</u><i class="fas fa-info-circle"></i>
+            </p>
+          </div>
+
+          <p id="vtopspace">
+            By clicking place order and pay, you agree to purchase your item(s)
+            from Global-e as merchant of record for this transaction, on
+            Global-e’s Terms and Conditions and Privacy Policy. Global-e is an
+            international fulfilment service provider to Theory.
+          </p>
+
+          <button id="vbutton">PAY AND PLACE ORDER</button>
+        </div> -->
+
+        <div id="vbox2">
+          <div id="vpaymentname">
+            <h2>Billing Summary</h2>
+          </div>
+
+          <div id="vprice">
+            <p>Items total</p>
+            <p>₹ <span class="displaypricev2"><%=sum%></span>.00</p>
+          </div>
+          <div id="vprice">
+            <p>Shipping</p>
+            <p>₹ 0.00</p>
+          </div>
+          <div id="vprice">
+            <p>Duties, taxes & fees</p>
+            <p>₹ 00.00 (Free)</p>
+          </div>
+          <div id="vprice">
+            <p><b>Total For Your Order</b></p>
+            <p>
+              <b>₹ <span class="displaypricev3"><%=sum%></span>.00</b>
+            </p>
+          </div>
+
+          <p id="vall">
+            All applicable duties, taxes and fees are included in the total
+            amount of your order. We guarantee you will not be required to pay
+            any additional cost on delivery.
+          </p>
+          <p id="vtopspace">
+            By clicking place order and pay, you agree to purchase your item(s)
+            from Global-e as merchant of record for this transaction, on
+            Global-e’s Terms and Conditions and Privacy Policy. Global-e is an
+            international fulfilment service provider to Theory.
+          </p>
+          <button id="vbutton" form="form1">PAY AND PLACE ORDER</button>
         </div>
+      </div>
 
-
-        <div id="vshipbox1">
-
-            <h2>Duties & Taxes</h2>
-            <div id="vboxflex3">   
-                <div id="vradio"><input id="radio1" type="checkbox" ></div>
-                <div id="vdet1">Prepay ₹ <span class="displaypricev1"></span> .00 for duties, taxes and fees now to guarantee no additional charges on delivery.</div>
-            </div>
-            <div id="vboxflex3">   
-                <div id="vradio"><input id="radio1" type="checkbox" ></div>
-                <div id="vdet1">I will pay all applicable duties, taxes and fees on delivery.</div>
-            </div>
-
-            
-
-        </div>
-
-
-        <!-- Payment Box -->
-
-
-        <div id="vaddressBox">
-
-            <div id="vbox1">
-
-                <div id="vpaymentname">
-                    <h2>Payment</h2>
-                    <h5>SECURE ENCRYPTED TRANSACTION</h5>
-                </div>
-
-                <p>Please choose your payment method</p>
-
-                <div id="vflex">
-                    <div id="vbord">
-                        <img id="vimg" src="https://digital.hbs.edu/platform-digit/wp-content/uploads/sites/2/2020/02/visa-logo-png-2026-1.png" alt="">
-                    </div>
-                    <div  id="vbord"> <img id="vimg" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c530.png" alt=""></div>
-                </div>
-                <div id="vflex1">
-                    <div id="vbord1">
-                        <img id="vimg1" src="https://cdn.freebiesupply.com/logos/thumbs/2x/visa-logo.png" alt="">
-
-                    </div>
-                    <div  id="vbord1"> <img id="vimg2" src="https://cdn.freebiesupply.com/logos/large/2x/mastercard-4-logo-png-transparent.png" alt=""></div>
-
-                    <div id="vbord1">
-                        <img id="vimg1" src="https://1000logos.net/wp-content/uploads/2016/10/American-Express-Color.png" alt="">
-                    </div>
-
-                    <div  id="vbord1"> <img id="vimg3" src="https://1000logos.net/wp-content/uploads/2021/05/Diners-Club-International-logo.png" alt=""></div>
-                </div>
-
-
-
-                <div id="vboxflex">
-                    <div id="vlabel">Card number <span id="vstar">*</span></div>
-                    <div id="vinput"><input type="number"></div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vlabel">Expiry date <span id="vstar">*</span></div>
-                    <div class="vinput vcardflex">
-                        <select class="vmonth">
-                            <option>Month</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                        </select>
-
-                        <select class="vyear">
-                            <option>Year</option>
-                            <option>2022</option>
-                            <option>2023</option>
-                            <option>2024</option>
-                            <option>2025</option>
-                            <option>2026</option>
-                            <option>2027</option>
-                            <option>2028</option>
-                            <option>2029</option>
-                            <option>2030</option>
-                            <option>2031</option>
-                            <option>2032</option>
-                            <option>2033</option>
-                            <option>2034</option>
-                            <option>2035</option>
-                            <option>2036</option>
-                            <option>2037</option>
-                            <option>2038</option>
-                            <option>2039</option>
-                            <option>2040</option>
-                            <option>2041</option>
-                            <option>2042</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="vboxflex">
-                    <div id="vcode">Security code <span id="vstar">*</span></div>
-                    <div class="vinputcvv"><input type="text"></div>
-                    <p class="vthis"><u>What is this?</u><i class="fas fa-info-circle"></i></p>
-                </div>
-                
-                <p id="vtopspace"> By clicking place order and pay, you agree to purchase your item(s) from Global-e as merchant of record for this transaction, on Global-e’s Terms and Conditions and Privacy Policy. Global-e is an international fulfilment service provider to Theory. </p>
-
-
-                <button id="vbutton">PAY AND PLACE ORDER</button>
-
-            </div>
-
-
-
-            <div id="vbox2">
-
-                <div id="vpaymentname">
-                    <h2>Billing Summary</h2>
-                </div>
-
-
-                <div  id="vprice">
-                    <p>Items total</p>
-                    <p>₹ <span class="displaypricev2"></span>.00</p>
-                </div>
-                <div  id="vprice">
-                    <p>Shipping</p>
-                    <p>₹ 0.00</p>
-                </div>
-                <div  id="vprice">
-                    <p>Duties, taxes & fees</p>
-                    <p>₹ 00.00 (Free)</p>
-                </div>
-                <div  id="vprice">
-                    <p><b>Total For Your Order</b></p>
-                    <p><b>₹ <span class="displaypricev3"></span>.00</b></p>
-                </div>
-
-                <p id="vall">All applicable duties, taxes and fees are included in the total amount of your order. We guarantee you will not be required to pay any additional cost on delivery.</p>
-
-
-
-            </div>
-
-
-        </div>
-
-
-        <!-- Footer Part -->
-        <div id="vfoot">
-            <!-- <p>Contact Us | Help | Terms & Conditions | Privacy Policy</p>
+      <!-- Footer Part -->
+      <div id="vfoot">
+        <!-- <p>Contact Us | Help | Terms & Conditions | Privacy Policy</p>
             <img src="https://www.global-e.com/sectigo_trust_seal_sm_82x32.png" alt="">
             <p>Sectigo Wildcard SSL</p> -->
-        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
-
 
 <script type="module" src="../scripts/checkOutHeaderFooter.js"></script>
 <script src="../scripts/cartShow.js"></script>
+<script></script>
