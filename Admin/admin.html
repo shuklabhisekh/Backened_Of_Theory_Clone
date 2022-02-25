@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #buttons{
+        /* border: 1px solid red; */
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    #buttons>div {
+      width: 14%;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      height: 300px;
+    }
+    input,button {
+      margin-top: 10px;
+    }
+    #display{
+        /* width: 10%; */
+        margin: auto;
+        margin-top: 50px;
+        border:  1px solid red;
+    }
+    table,th,td{
+        border: 1px solid rgb(0, 0, 0);
+        font-size: 26px;
+        border-collapse: collapse;
+        padding: 70px;
+    }
+    th{
+        background-color: rgb(230, 230, 230);
+    }
+  </style>
+<body>
+    <div id="buttons">
+        <div>
+            <h2>Add Product</h2>
+            <input type="text" placeholder="image1" id="image1" />
+            <input type="text" placeholder="image2" id="image2" />
+            <input type="text" placeholder="name" id="name" />
+            <input type="number" placeholder="price" id="price" />
+            <input type="text" placeholder="category" id="category">
+            <input type="text" placeholder="type" id="type">
+            <button onclick="addProduct()">Add Product</button>
+          </div>
+          <div>
+            <h2>Update Product</h2>
+            <input type="text" placeholder="image1" id="image1Update" />
+            <input type="text" placeholder="image2" id="image2Update" />
+            <input type="text" placeholder="name" id="nameUpdate" />
+            <input type="number" placeholder="price" id="priceUpdate" />
+            <input type="text" placeholder="category" id="categoryUpdate">
+            <input type="text" placeholder="type" id="typeUpdate">
+
+            <button onclick="updateProduct()">Update Product</button>
+          </div>
+    
+          <div>
+            <h2>Delete Product</h2>
+      
+            <input type="text" id="delete_id" placeholder="Enter id to Delete" />
+      
+            <button onclick="deleteProduct()">Delete Product</button>
+          </div>
+    </div>
+   <!-- <div id="display">
+       <table>
+           <thead>
+               <tr>
+                   <th>Image 1</th>
+                   <th>Image 2</th>
+                   <th>Name</th>
+                   <th>Price</th>
+                   <th>Category</th>
+                   <th>Type</th>
+               </tr>
+        </thead>
+           <tbody id="showbody"></tbody>
+       </table>
+   </div> -->
+</body>
+</html>
+
+<script>
+    // Function to create database
+
+    async function addProduct(){
+       
+            let data= {
+            image1:document.getElementById("image1").value,
+            image2:document.getElementById("image2").value,
+            name:document.getElementById("name").value,
+            price:document.getElementById("price").value,
+            category:document.getElementById("category").value,
+            type:document.getElementById("type").value,
+        }
+        data=JSON.stringify(data)
+        console.log("data",data)
+
+
+        let response= await fetch('http://localhost:4006/products',{
+            method:'POST',
+            body:data,
+            headers:{
+                "Content-Type":"application/json",
+            }
+        })
+        let d = await response.json()
+        console.log("d",d)
+    if(d != undefined){
+        console.log(d.message);
+        alert(d.message)
+    }
+    else{
+
+        alert("Product added successfully");
+    } 
+    } 
+    
+
+vikram()
+    async function vikram(){
+        try {
+            let response = await fetch("http://127.0.0.1:4006/products")
+            let store = await response.json()
+            showData(store.products)
+            // console.log(store)
+        } catch (error) {
+            
+        }
+    }
+
+
+
+    // Update Product
+    async function updateProduct(){
+        var name=document.getElementById("nameUpdate").value
+       
+            let data={
+                image1:document.getElementById("image1Update").value,
+                image2:document.getElementById("image2Update").value,
+                name:document.getElementById("nameUpdate").value,
+                price:document.getElementById("priceUpdate").value,
+                category:document.getElementById("categoryUpdate").value,
+                type:document.getElementById("typeUpdate").value,
+            }
+            data=JSON.stringify(data)
+            let response= await fetch(`http://localhost:4006/products?name=${name}`,{
+            // mode:"no-cors",
+            method:'PATCH',
+            body:data,
+            headers:{
+                "Content-Type":'application/json',
+                // 'Access-Control-Allow-Origin':'*',
+            }
+        })
+        let d = await response.json()
+         console.log("d",d);
+
+       
+       
+    }
+
+
+
+    //Function to delete from database
+    async function deleteProduct(){
+        try {
+            let id=document.getElementById("delete_id").value
+            let response= await fetch(`http://127.0.0.1:4006/products/${id}`,{mode:"no-cors"},{
+                method:'DELETE',
+                headers:{
+                'Content-Type':'application/json'
+            }
+            })
+
+            let d= await response.json()
+
+            console.log(d)
+        } catch (error) {
+            
+        }
+    }
+</script>
