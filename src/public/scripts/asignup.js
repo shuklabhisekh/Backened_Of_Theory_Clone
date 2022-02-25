@@ -101,7 +101,10 @@ async function signup(e) {
       }
     });
   } else if (data.status === "ok") {
-    alert("Registration Successfull");
+    // alert("Registration Successfull");
+    alert("verify otp..");
+    localStorage.setItem("otp", data.otp);
+    window.location.href = "/otp";
     var Login = document.querySelector(".login");
     Login.style.display = "block";
     var SignUp = document.querySelector(".signup");
@@ -140,7 +143,7 @@ async function signIn(e) {
   // console.log("data:", data);
   if (data.status === "ok") {
     alert("Login Successfully");
-
+    getuserbag(data.user._id);
     let username = document.querySelector(".ak-login-email").value;
 
     // console.log(username);
@@ -149,12 +152,31 @@ async function signIn(e) {
 
     setTimeout(function () {
       window.location.href = "/";
-    }, 1000);
+    }, 100);
   } else {
     alert(data.message);
   }
 }
 
+//GET USER BAGS DATA
+async function getuserbag(data) {
+  var userbagdata = await fetch(`/userbag`);
+  userbagdata = await userbagdata.json();
+
+  for (var i = 0; i < userbagdata.length; i++) {
+    if (userbagdata[i].userId == data) {
+      setbag(userbagdata[i]._id);
+      return;
+    }
+  }
+  return false;
+}
+
+async function setbag(id) {
+  var userbagdata = await fetch(`/userbag/${id}`);
+  userbagdata = await userbagdata.json();
+  // console.log("data from user bag", userbagdata);
+}
 let getUser = async (user, token) => {
   let url = `/users?email=${user}`;
   try {
@@ -166,9 +188,10 @@ let getUser = async (user, token) => {
     });
     let data = await responce.json();
 
-    console.log(data);
+    // console.log(data);
     let obj = {
       data: data.first_name,
+      id: data._id,
       token,
     };
     localStorage.setItem("loginData", JSON.stringify(obj));

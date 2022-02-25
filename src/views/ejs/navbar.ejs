@@ -345,7 +345,7 @@
 <script>
   function searchData() {
     let search = document.querySelector("#Search").value;
-    console.log(search);
+    // console.log(search);
     window.location.href = `/searchresult/?search=${search}`;
   }
 
@@ -355,9 +355,9 @@
 
   let signout = document.getElementById("signout");
   let signin = document.getElementById("signin");
-
+  let nameof = document.getElementById("nameof");
   if (username != null && username != "") {
-    console.log(username.data);
+    // console.log(username.data);
 
     signout.style.display = "block";
 
@@ -366,14 +366,40 @@
     let nameof = document.getElementById("nameof");
     nameof.style.display = "block";
     nameof.textContent = `Welcome ${username.data} | `;
+    // window.location.reload();
   }
 
+  //SIGN IN AND GET DATA OF USER BAG
+
+  //SIGN OUT AND STORE DATA TO USER BAG
   signout.addEventListener("click", logout);
 
   function logout() {
+    setuserbag(username.id);
     signout.style.display = "none";
+    nameof.style.display = "none";
     signin.style.display = "block";
     localStorage.setItem("loginData", JSON.stringify(""));
-    window.location.reload();
+    setTimeout(function () {
+      window.location.href = "/";
+    }, 100);
+  }
+
+  async function setuserbag(id) {
+    var bagdata = await fetch("/cart/getall");
+    bagdata = await bagdata.json();
+    // console.log(bagdata);
+    const data = {
+      userId: id,
+      products: bagdata,
+    };
+    let response = await fetch("/userbag", {
+      method: "POST",
+      body: JSON.stringify(data),
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 </script>

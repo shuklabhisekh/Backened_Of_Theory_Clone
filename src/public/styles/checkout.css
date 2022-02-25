@@ -16,7 +16,9 @@ body {
 
 #vmain {
   /* border: 1px solid black; */
-  width: 100%;
+  width: 85%;
+  margin: auto;
+  /* margin: 0 45px; */
   /* height: 100px; */
   padding-top: 95px;
 }
@@ -55,7 +57,7 @@ body {
   margin-top: 15px;
   gap: 15px;
   justify-content: end;
-  width: 80%;
+  /* width: 80%; */
   margin-left: 5%;
   font-family: Theory-web-ul;
 
@@ -82,23 +84,25 @@ body {
 /* option Ends */
 
 #vcartshow {
-  width: 80%;
-  /* margin: auto; */
-  margin-left: 2%;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
   overflow: auto;
-
-  /* border: 1px solid black; */
-  /* height: 400px; */
-  margin-top: 5px;
+  padding: 10px;
 }
 
+#vcartshow > div:first-child {
+  flex: 2;
+  height: 60vh;
+  overflow-y: auto;
+}
 /* Cart Ends */
 
 /* 1st Box Startks */
 
 #vaddressBox {
   /* border:1px solid black; */
-  width: 80%;
+  /* width: 80%; */
   /* margin: auto; */
   margin-top: 40px;
   display: flex;
@@ -109,7 +113,7 @@ body {
 
 #vbox1 {
   /* border: 1px solid red; */
-  flex: 1;
+  flex: 1.8;
   /* height: 100px; */
 }
 
@@ -413,8 +417,8 @@ input::-webkit-inner-spin-button {
 
 #vtopspace {
   margin-left: 15px;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 13px;
+  /* font-weight: bold; */
 }
 a {
   color: #000;
@@ -442,8 +446,8 @@ a {
 
 #vall {
   padding: 0px 15px;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 13px;
+  /* font-weight: bold; */
 }
 #vfoot {
   text-align: center;
@@ -464,12 +468,13 @@ a {
 
 #vcartshow {
   padding: 15px;
-  /* border-top: 1px solid black; */
 }
 
 .products-order table {
   /* width: 100%; */
   border-collapse: collapse;
+  border-top: 1px solid #a5a5a5;
+  border-left: 1px solid #a5a5a5;
   font-size: 15px;
   text-align: left;
   font-family: Theory-web-ul;
@@ -478,12 +483,17 @@ a {
 .products-order tr td {
   /* padding-top: 10px; */
   font-weight: 100;
-  border-bottom: 1px dashed #d0d0d0;
+  border-top: 1px dashed #d0d0d0;
+}
+
+.products-order tr:first-child td {
+  border-top: none;
 }
 
 .products-order td span {
   display: block;
   margin-top: -50px;
+  margin-left: 15px;
 }
 
 #vamountshow {
@@ -497,22 +507,29 @@ th {
 
 .image00v {
   width: 20%;
+  object-fit: contain;
   /* border: 1px solid black; */
 }
 
+.order h3 {
+  font-size: 15px;
+  max-width: 85%;
+}
+
 #vamountshow {
-  width: 80%;
-  margin-left: 5%;
-  /* border: 1px solid black; */
-  margin-top: 5px;
+  width: 61%;
+  margin-left: 2%;
+  border-top: 1px solid #a5a5a5;
+  margin-top: -10px;
   height: 60px;
   display: flex;
+  padding: 10px;
   font-weight: bold;
   justify-content: right;
 }
 #vamountshow > div {
   /* border: 1px solid black; */
-  font-size: 20px;
+  font-size: 15px;
 }
 #vamountshow > div:nth-child(1) {
   /* padding-left: 150px; */
@@ -532,7 +549,7 @@ th {
 hr {
   width: 196.5%;
   border: 0.1px solid black;
-  /* height: 0px; */
+  height: 0px;
   background-color: black;
 }
 
@@ -545,9 +562,11 @@ hr {
   border-spacing: 0 0.8em;
 }
 .form_checkout input {
-  padding: 10px;
+  padding: 9px 10px;
+  padding-right: 15px;
   width: 180%;
   border: 1px solid #000;
+  border-radius: 2px;
 }
 .form_checkout label {
   padding: 10px;

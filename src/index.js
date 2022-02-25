@@ -113,6 +113,9 @@ app.use("/productdetails", detailController);
 const bagController = require("./controllers/bag.controller");
 app.use("/cart", bagController);
 
+//USER BAG CONTROLLER
+const userbagController = require("./controllers/userbag.controller");
+app.use("/userbag", userbagController);
 //CHECKOUT
 const checkController = require("./controllers/checkout.controller");
 app.use("/checkout", checkController);

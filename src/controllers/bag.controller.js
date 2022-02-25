@@ -43,4 +43,9 @@ router.get("/", async (req, res) => {
   return res.render("ejs/AddCart", { bags, sum });
 });
 
+router.get("/getall", async (req, res) => {
+  const bags = await Bag.find().lean().exec();
+  return res.send(bags);
+});
+
 module.exports = router;

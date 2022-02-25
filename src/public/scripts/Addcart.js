@@ -141,6 +141,30 @@ function productDetail(product_id) {
 async function addCart(product) {
   var product = JSON.parse(product);
   var productId = product._id;
+  fetch("/cart/getall")
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      var result = findproduct(res, productId);
+      if (!result) {
+        post_product(productId);
+      } else {
+        patch_product(result);
+      }
+    });
+}
+
+function findproduct(bags, id) {
+  for (var i = 0; i < bags.length; i++) {
+    if (bags[i].productId == id) {
+      return [bags[i]._id, bags[i].quantity];
+    }
+  }
+  return false;
+}
+
+async function post_product(productId) {
   const result = await fetch("/cart", {
     method: "POST",
     headers: {
@@ -150,6 +174,25 @@ async function addCart(product) {
       productId,
     }),
   }).then((res) => res.json());
-  // alert("Item Removed");
+  // alert("post method");
+  window.location.reload();
+}
+
+function patch_product(bag) {
+  var quantity = bag[1] + 1;
+  fetch("/cart/" + bag[0], {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      quantity,
+    }),
+  })
+    .then((res) => {
+      return res.json();
+    })
+
+    .then((res) => console.log(res));
   window.location.reload();
 }
