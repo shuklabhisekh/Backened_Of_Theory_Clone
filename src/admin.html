@@ -17,7 +17,7 @@
       width: 14%;
       text-align: center;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      height: 300px;
+      height: 330px;
     }
     input,button {
       margin-top: 10px;
@@ -42,8 +42,8 @@
     <div id="buttons">
         <div>
             <h2>Add Product</h2>
-            <input type="text" placeholder="image1" id="image1" />
-            <input type="text" placeholder="image2" id="image2" />
+            <input type="url" placeholder="image1" id="image1" />
+            <input type="url" placeholder="image2" id="image2" />
             <input type="text" placeholder="name" id="name" />
             <input type="number" placeholder="price" id="price" />
             <input type="text" placeholder="category" id="category">
@@ -52,6 +52,8 @@
           </div>
           <div>
             <h2>Update Product</h2>
+            <input type="text" id="idUpdate" placeholder="Enter id to Update" />
+
             <input type="text" placeholder="image1" id="image1Update" />
             <input type="text" placeholder="image2" id="image2Update" />
             <input type="text" placeholder="name" id="nameUpdate" />
@@ -90,6 +92,7 @@
 
 <script>
     // Function to create database
+   
     async function addProduct(){
         try {
             let data= {
@@ -109,12 +112,14 @@
                 "Content-Type":"application/json",
             }
         })
+       
+        
         let d = await response.json()
         console.log(d)
         console.log("kuhk")
 
         } catch (error) {
-            // console.log(error)
+            console.log(error)
         }
       
     }
@@ -186,7 +191,7 @@ vikram()
                 type:document.getElementById("typeUpdate").value,
             }
             data=JSON.stringify(data)
-            let response= await fetch(`http://127.0.0.1:4000/api/products/${idChange}`,{
+            let response= await fetch(`http://127.0.0.1:4000/products/${idChange}`,{
             // mode:"no-cors",
             method:'PUT',
             body:data,
