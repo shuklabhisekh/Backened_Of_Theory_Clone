@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+}
+.main {
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+.sidemenu {
+  width: 240px;
+  border: 1px solid black;
+  height: 99vh;
+  background: black;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+}
+
+.title h3 {
+  font-size: 25px;
+}
+
+.right_div {
+  flex: 1;
+  border: 1px solid black;
+  width: 82%;
+  margin-left: 17.5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.container {
+  padding: 10px;
+}
+.products_boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.products_boxes > div {
+  width: 40%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.big_boxes {
+  display: flex;
+  gap: 10px;
+}
+
+.big_boxes > div {
+  width: 50%;
+  height: 50vh;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.add_product {
+  width: 80%;
+  /* border: 1px solid black; */
+}
+.add_product form {
+  width: 50%;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid black;
+}
+.add_product label,
+.add_product input {
+  display: block;
+  padding: 10px;
+  width: 95%;
+}
+
+.add_product button {
+  display: block;
+  width: 100%;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.add_product select {
+  padding: 10px 15px;
+}

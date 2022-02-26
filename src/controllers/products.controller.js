@@ -3,15 +3,31 @@ const express = require("express");
 const router = express.Router();
 
 const Product = require("../models/product.model");
-const Bag = require("../models/bag.model");
 
-router.get("/:id", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id).lean().exec();
-    const bags = await Bag.find().populate("productId").lean().exec();
-    return res.render("ejs/productdetail", { product, bags });
+    const product = await Product.create(req.body);
+    return res.send(product);
   } catch (err) {
-    res.send(err);
+    return res.send(err.message);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    return res.status(200).send(product);
+  } catch (err) {
+    return res.send(err.message);
+  }
+});
+
+router.patch("/:id", async (req, res) => {
+  try {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body);
+    return res.status(200).send(product);
+  } catch (err) {
+    return res.status(500).send(err.message);
   }
 });
 

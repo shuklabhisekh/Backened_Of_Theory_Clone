@@ -128,33 +128,37 @@ async function signIn(e) {
     password: document.querySelector(".ak-login-pass").value,
   };
 
-  login_data = JSON.stringify(login_data);
-
-  let login_url = `/login`;
-  let response = await fetch(login_url, {
-    method: "POST",
-    body: login_data,
-
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let data = await response.json();
-  // console.log("data:", data);
-  if (data.status === "ok") {
-    alert("Login Successfully");
-    getuserbag(data.user._id);
-    let username = document.querySelector(".ak-login-email").value;
-
-    // console.log(username);
-    // console.log(data.token);
-    getUser(username, data.token);
-
-    setTimeout(function () {
-      window.location.href = "/";
-    }, 100);
+  if (login_data.email == "admin" && login_data.password == "admin") {
+    window.location.href = "/admin";
   } else {
-    alert(data.message);
+    login_data = JSON.stringify(login_data);
+
+    let login_url = `/login`;
+    let response = await fetch(login_url, {
+      method: "POST",
+      body: login_data,
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await response.json();
+    // console.log("data:", data);
+    if (data.status === "ok") {
+      alert("Login Successfully");
+      getuserbag(data.user._id);
+      let username = document.querySelector(".ak-login-email").value;
+
+      // console.log(username);
+      // console.log(data.token);
+      getUser(username, data.token);
+
+      setTimeout(function () {
+        window.location.href = "/";
+      }, 100);
+    } else {
+      alert(data.message);
+    }
   }
 }
 
@@ -199,3 +203,19 @@ let getUser = async (user, token) => {
     console.log(err);
   }
 };
+
+document
+  .getElementById("ak-status-check-btn")
+  .addEventListener("click", showingloader);
+
+function showingloader() {
+  document.onreadystatechange = function () {
+    if (document.readyState !== "complete") {
+      document.querySelector("body").style.visibility = "hidden";
+      document.querySelector("#loader").style.visibility = "visible";
+    } else {
+      document.querySelector("#loader").style.display = "none";
+      document.querySelector("body").style.visibility = "visible";
+    }
+  };
+}

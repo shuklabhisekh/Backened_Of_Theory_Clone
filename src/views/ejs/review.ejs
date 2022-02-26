@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/AddCart.css" />
+    <link rel="stylesheet" href="../styles/review.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+
+    <title>Cart's | Theory</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico"
+    />
+  </head>
+  <body>
+    <%- include("navbar.ejs")-%>
+    <div id="shoppingnames">
+      <p id="darkclr">SHOPPING BAG</p>
+      <i class="fal fa-angle-right arr"></i>
+      <p id="darkclr">SHIPPING</p>
+      <i class="fal fa-angle-right arr"></i>
+      <p id="darkclr">PAYMENT</p>
+      <i class="fal fa-angle-right arr"></i>
+      <p id="darkclr">REVIEW</p>
+    </div>
+
+    <div class="reviews" id="printableArea">
+      <div class="conform__order">
+        <img src="../imges/sucess.png" width="50px" height="50px" alt="" />
+        <h2>Your Order Confirmed !</h2>
+      </div>
+      <div class="revies_info">
+        <h4 id="name"></h4>
+        <p>Payment Details are ,</p>
+        <p>TXNID : <%= _result.TXNID %></p>
+        <p>Your order has been confirmed and will be shipping soon.</p>
+      </div>
+      <div class="order_info">
+        <div>
+          <h3>Order Date</h3>
+          <p><%= _result.TXNDATE %></p>
+        </div>
+        <div>
+          <h3>Order ID</h3>
+          <p><%= _result.ORDERID %></p>
+        </div>
+        <div style="margin-top: -13px">
+          <h3>Payment Method</h3>
+          <p style="line-height: 18px">
+            <%= _result.BANKNAME%> (<%= _result.PAYMENTMODE%>)
+          </p>
+        </div>
+        <div>
+          <h3>Address</h3>
+          <p id="address"></p>
+        </div>
+      </div>
+      <div class="order_products">
+        <% bags.map((bag)=>{%>
+        <div>
+          <div>
+            <img
+              src="<%= bag.productId.images[0]%>"
+              width="90px"
+              height="100px"
+              alt
+            />
+            <h4><%=bag.productId.name %></h4>
+          </div>
+
+          <p>Qty <%= bag.quantity %></p>
+          <p>
+            <%= "₹"+(+bag.productId.price.slice(1).replace(',', '') *
+            bag.quantity)+".00"%>
+          </p>
+        </div>
+
+        <%})%>
+      </div>
+      <div id="order_price">
+        <div class="order_price">
+          <p>Subtotal</p>
+          <p>₹<%= sum %>.00</p>
+        </div>
+        <div class="order_price">
+          <p>Express Shipping</p>
+          <p>₹15</p>
+        </div>
+        <div class="order_price">
+          <p>Taxes</p>
+          <p>₹0</p>
+        </div>
+        <div class="order_price">
+          <p>Discount</p>
+          <p>₹0</p>
+        </div>
+      </div>
+      <div class="order_total order_price">
+        <h3>Total</h3>
+        <p>₹<%= sum + 15 %>.00</p>
+      </div>
+      <div class="order_msg">
+        <p>
+          We'll send you shipping confirmation when your item(s) are on the way!
+          We appreciate , and hope you enjoy your purchase.
+        </p>
+        <h4>Thank you!</h4>
+        <p>Theory Team</p>
+      </div>
+    </div>
+
+    <div class="print_div">
+      <input
+        type="button"
+        onclick="printDiv('printableArea')"
+        class="button-52"
+        value="print"
+      />
+    </div>
+    <%- include("footer.ejs")-%>
+  </body>
+</html>
+<script type="text/javascript" src="../scripts/header.js"></script>
+
+<script>
+  function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+  }
+
+  var content = JSON.parse(localStorage.getItem("orderData"));
+  document.getElementById("name").innerHTML = `Hi ${content.name},`;
+  document.getElementById("address").innerHTML = `${content.address}`;
+  // console.log(content);
+</script>

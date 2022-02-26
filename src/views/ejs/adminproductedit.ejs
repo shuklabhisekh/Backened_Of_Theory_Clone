@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/font.css" />
+    <link rel="stylesheet" href="../styles/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <%-include("adminsidemenu.ejs")-%>
+      <div class="right_div">
+        <div class="navbar">
+          <div>Bar</div>
+          <div>profile</div>
+        </div>
+        <div class="container">
+          <h2>Add Product</h2>
+          <div class="add_product">
+            <form>
+              <label>Product Name</label>
+              <input type="text" id="name" />
+
+              <label>Product Price</label>
+              <input type="text" id="price" />
+              <label>Product Category</label>
+              <input type="text" id="category" />
+              <label>Image one</label>
+              <input type="text" id="image1" />
+              <label>Image two</label>
+              <input type="text" id="image2" />
+              <label>Product Type</label>
+              <select name="product" id="type">
+                <option>Men</option>
+                <option>women</option>
+                <option>Accessories</option>
+              </select>
+              <input
+                type="button"
+                value="Edit product"
+                onclick="updateProduct()"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  async function updateProduct() {
+    var product = JSON.parse(localStorage.getItem("editingItem"));
+    var productId = product._id;
+
+    var image1 = document.getElementById("image1").value;
+    var image2 = document.getElementById("image2").value;
+    var name = document.getElementById("name").value;
+    var price = document.getElementById("price").value;
+    var category = document.getElementById("category").value;
+    var type = document.getElementById("type").value;
+
+    var data = {};
+
+    if (image1 != "" && image2 != "") {
+      data["images"] = [image1, image2];
+    }
+    if (name != "") {
+      data["name"] = name;
+    }
+    if (price != "") {
+      data["price"] = price;
+    }
+    if (category != "") {
+      data["category"] = category;
+    }
+    if (type != "") {
+      data["type"] = type;
+    }
+
+    data = JSON.stringify(data);
+
+    let response = await fetch(`/products/${productId}`, {
+      // mode:"no-cors",
+      method: "PATCH",
+      body: data,
+      headers: {
+        "Content-Type": "application/json",
+        // 'Access-Control-Allow-Origin':'*',
+      },
+    });
+    let d = await response.json();
+    console.log("d", d);
+  }
+</script>

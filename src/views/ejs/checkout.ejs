@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>checkout | Theory</title>
     <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
       rel="shortcut icon"
       href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico"
     />
@@ -28,7 +34,16 @@
     </div>
 
     <div id="vmain">
-      <div id="voptions">
+      <div id="shoppingnames">
+        <p id="darkclr">SHOPPING</p>
+        <i class="fal fa-angle-right arr"></i>
+        <p id="darkclr">SHIPPING</p>
+        <i class="fal fa-angle-right arr"></i>
+        <p id="grayclr">PAYMENT</p>
+        <i class="fal fa-angle-right arr"></i>
+        <p id="grayclr">REVIEW</p>
+      </div>
+      <!-- <div id="voptions">
         <div id="vlanguage"><p>Change Language</p></div>
         <div id="vselectoptions">
           <select>
@@ -47,47 +62,60 @@
             <option>Norsk</option>
           </select>
         </div>
-      </div>
+      </div> -->
 
       <div id="vcartshow">
         <!-- Product Details Space which will be Dynamic -->
         <div>
           <!-- Table Div  -->
-
-          <table class="products-order">
-            <thead>
-              <tr>
-                <th width="40%">Order Summary</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Append el  -->
-              <% bags.map((bag)=>{%>
-              <tr>
-                <td>
-                  <div class="order">
-                    <img src="<%= bag.productId.images[0]%>" class="image00v" />
-                    <div>
-                      <h3><%= bag.productId.name%></h3>
-                      <p>
-                        <%= "₹"+(+bag.productId.price.slice(1).replace(',', '')
-                        * bag.quantity)+".00"%>
-                      </p>
+          <div id="product_table">
+            <table class="products-order">
+              <thead>
+                <tr>
+                  <th width="40%">Order Summary</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Append el  -->
+                <% bags.map((bag)=>{%>
+                <tr>
+                  <td>
+                    <div class="order">
+                      <img
+                        src="<%= bag.productId.images[0]%>"
+                        class="image00v"
+                      />
+                      <div>
+                        <h3><%= bag.productId.name%></h3>
+                        <p>
+                          <%= "₹"+(+bag.productId.price.slice(1).replace(',',
+                          '') * bag.quantity)+".00"%>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </td>
+                  </td>
 
-                <td><span><%= bag.quantity%></span></td>
-                <td><span><%= bag.productId.price%></span></td>
+                  <td><span><%= bag.quantity%></span></td>
+                  <td><span><%= bag.productId.price%></span></td>
 
-                <td></td>
-              </tr>
-              <%})%>
-            </tbody>
-          </table>
+                  <td></td>
+                </tr>
+                <%})%>
+              </tbody>
+            </table>
+          </div>
+          <div id="vamountshow">
+            <!-- Total Price Div -->
+            <div>Items total</div>
+            <div>
+              <span>₹ &nbsp;</span><span class="displaypricev"><%= sum %></span
+              ><span>.00</span
+              ><span id="vdiscount">&nbsp; Inc. all Discount</span>
+            </div>
+          </div>
         </div>
         <div id="vbox2">
           <div id="vpaymentname">
@@ -124,17 +152,18 @@
             Global-e’s Terms and Conditions and Privacy Policy. Global-e is an
             international fulfilment service provider to Theory.
           </p>
-          <button id="vbutton" form="form1">PAY AND PLACE ORDER</button>
+          <button id="vbutton" form="form1" onclick="getdata()">
+            PAY AND PLACE ORDER
+          </button>
         </div>
       </div>
-      <div id="vamountshow">
-        <!-- Total Price Div -->
+      <!-- <div id="vamountshow">
         <div>Items total</div>
         <div>
           <span>₹ &nbsp;</span><span class="displaypricev"><%= sum %></span
           ><span>.00</span><span id="vdiscount">&nbsp; Inc. all Discount</span>
         </div>
-      </div>
+      </div> -->
 
       <div id="vaddressBox">
         <!-- <form action="/paynow" method="post">
@@ -197,6 +226,7 @@
                       class="form-control"
                       type="text"
                       name="name"
+                      id="name"
                       value=""
                       required
                     />
@@ -208,7 +238,9 @@
                   <td>
                     <label for="">Last Name <span id="vstar">*</span></label>
                   </td>
-                  <td><input class="form-control" type="text" value="" /></td>
+                  <td>
+                    <input class="form-control" type="text" value="" />
+                  </td>
                 </div>
               </tr>
               <tr>
@@ -221,6 +253,7 @@
                       class="form-control"
                       type="text"
                       name="email"
+                      id="email"
                       value=""
                       required
                     />
@@ -248,7 +281,14 @@
                   <td>
                     <label for="">Address<span id="vstar">*</span> </label>
                   </td>
-                  <td><input class="form-control" type="text" /></td>
+                  <td>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="address"
+                      required
+                    />
+                  </td>
                 </div>
               </tr>
               <tr>
@@ -511,3 +551,14 @@
     </div>
   </body>
 </html>
+
+<script>
+  function getdata() {
+    var data = {
+      name: document.getElementById("name").value,
+      address: document.getElementById("address").value,
+      email: document.getElementById("email").value,
+    };
+    localStorage.setItem("orderData", JSON.stringify(data));
+  }
+</script>
