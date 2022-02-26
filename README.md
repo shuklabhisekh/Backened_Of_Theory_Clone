@@ -64,12 +64,6 @@ Ashiq Khan
 
 > <a href="https://www.linkedin.com/in/ashiq-khan-412709222" target="_blank">Linkedin</a>
 
-Ritu Bankey
-
-> <a href="https://github.com/Ritu1011" target="_blank">Github</a>
-
-> <a href="https://www.linkedin.com/in/ritu-bankey-857160211/" target="_blank">Linkedin</a>
-
 Sanket Thombre
 
 > <a href="https://github.com/sanket008" target="_blank">Github</a>
@@ -92,4 +86,4 @@ Vikram sharma
 
 > <a href="https://shuklabhisekh.medium.com/clone-of-theory-com-using-pure-html-css-advanced-js-c6503e028f1b" target="_blank">Clone of Theory.com</a>
 
-# Thank You :sparkling_heart:
+# Thank You :sparkling_stars:
