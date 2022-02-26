@@ -51,16 +51,19 @@ router.get("/:id",async(req,res)=>{
 
 router.patch("",async(req,res)=>{
     try {
-        const product = await Product.findOne({ name: req.query.name },req.body,{new:true})
-        res.send(product)
+       
+            const product = await Product.findOneAndUpdate({  name: req.query.name },req.body , { new: true })
+            res.send(product)
+        
+       
     } catch (err) {
         return res.status(500).send({ message: err.message });
     }
 })
 
-router.delete("/:id",async(req,res)=>{
+router.delete("",async(req,res)=>{
     try {
-        const product = await Product.findByIdAndDelete(req.params.id)
+        const product = await Product.findOneAndDelete({  name: req.query.name })
         res.send(product)
     } catch (err) {
         return res.status(500).send({ message: err.message });

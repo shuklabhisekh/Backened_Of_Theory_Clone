@@ -5,86 +5,264 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
-    #buttons{
+    body {
+    background-color: #2a323c;
+    font-family: "PT Sans Caption",sans-serif;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #9fa2a7;
+    line-height: 1.6;
+    }
+   
+    #backgroundImage>div{
+        color: white;
+        margin: auto;
+        /* border: 1px solid wheat; */
+        width: 20%;
+        margin-top: 80px;
+    }
+    #backgroundImage>div>div:first-child>a{
+        font-size: 45px;
+        color: white;
+        text-decoration: none;
+    }
+    /* #backgroundImage>div>div:last-child{
+        font-size: 20px;
+        margin: auto;
+        margin-top: 10px;
         /* border: 1px solid red; */
-        width: 100%;
+        /* width: 84%; */
+    
+    #whole-body{
+        display: flex;
+        /* border: 1px solid blue; */
+        
+    }
+    #buttons{
+        /* border: 2px solid red; */
+        width: 92%;
+        height:450px;
+        margin-left: 3%;
+        margin-top: 1%;
+        padding: 1%;
         display: flex;
         justify-content: space-around;
     }
-    #buttons>div {
-      width: 14%;
+    
+    #content {
+      /* border: 2px solid rgb(236, 234, 234); */
+      width: 50%;
+      border-radius: 5px;
+    
       text-align: center;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      height: 300px;
+      height: 100%;
+      background-color: #323c48;
+      color: white
+    }
+
+    #graph{
+        width: 50%;
+      border-radius: 5px;
+      margin-left: 25px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      height: 100%;
+      background-color: #323c48;
+      color: white 
     }
     input,button {
-      margin-top: 10px;
+      margin-top: 15px;
     }
-    #display{
-        /* width: 10%; */
+    h2{
+        margin-top: 16px;
+    }
+ 
+    #mySidebar{
+        border:  1px solid white;
+        flex-direction: column;
+        width: 18%;
+        height:710px;
+        background-color: rgb(255, 255, 255);
+    }
+    #right-side{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid red; */
+        width:85%
+    }
+    #right-head{
+        /* border: 2px solid green; */
+        display: flex;
+        justify-content: space-around;
+        width: 94%;
+        margin-left: 3%;
+    }
+    .box{
+        margin-top: 2%;
+        width: 23%;
+        height: 150px;
+       
+        border-radius: 5px;
+        text-align: center;
+        background-color: #323c48;
+        color: aliceblue;
+    }
+    
+    .in-buttons{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 0;
+        border: #2a323c;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    }
+    .in-buttons:focus{
+        background-color: #b7b9bd;
+        color: rgb(2, 1, 1);
+    }
+    .in-buttons:hover{
+        background-color: #b7b9bd;
+        color: rgb(8, 6, 6);
+        cursor: pointer;
+    }
+    .Theory_button{
+        border: transparent;
+        height: 50px;
+        background-color: #2a323c;
+        color: white;
+        font-size: 35px;
+        
+    }
+    h2{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .box>h1{
+        font-size: large;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #count{
+        margin-top: 15%;
+        font-size: 35px;
+        font-weight: 900;
+        line-height: 36px;
+        color: rgb(255, 255, 255);
+        font-family: "PT Sans Caption", sans-serif;
+    }
+    #content>div>button{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        height: 30px;
+        width: 150px;
+    }
+    #content>div>button:hover{
+        cursor: pointer;
+        background-color: #b7b9bd;
+        color: rgb(8, 6, 6);
+        border: #9fa2a7;
+
+    }
+    #content>div>input{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        height: 25px;
+        border-radius: 3px;
+    }
+    i{
+        margin-right: 9px;
+    }
+    .long{
+        width: 83%;
+    }
+    #content>div{
+        /* border: 1px solid red; */
+        width: 70%;
         margin: auto;
-        margin-top: 50px;
-        border:  1px solid red;
+        align-items: center;
     }
-    table,th,td{
-        border: 1px solid rgb(0, 0, 0);
-        font-size: 26px;
-        border-collapse: collapse;
-        padding: 70px;
+    #sign-out{
+        text-align: center;
+        margin-top:400px;
+        
     }
-    th{
-        background-color: rgb(230, 230, 230);
+    #sign-out>button{
+        width: 100%;
+        height: 35px;
+        background-color: #2a323c;
+        color: white;
+        font-size: large;
     }
+    #sign-out>button:hover{
+        background-color: #b7b9bd;
+        color: rgb(8, 6, 6);
+        cursor: pointer;
+    }
+    
   </style>
 <body>
+    
+<div id="whole-body">
+    <!-- Sidebar -->
+  <div class="admin-sidebar"  id="mySidebar">
+    <button onclick="sidebar_close()" style="width: 100%;" class="Theory_button">Theory</button>
+    <button onclick="addproduct_open()" href="#" id="addproduct" class="in-buttons"><i class="fa fa-plus"></i>Add Product</button>
+    <button onclick="updateproduct_open()" href="#"  class="in-buttons"><i class="fa fa-refresh"></i>Update Product</button>
+    <button onclick="deleteproduct_open()" href="#"  class="in-buttons"><i class="fa fa-trash"></i>Delete Product</button>
+    <div id="sign-out">
+        <button onclick="">Sign Out</button>
+    </div>
+  </div>
+
+  <!-- <div class="page-bar">
+    <button id="open" onclick="sidebar_open()">☰</button>
+  </div> -->
+  <div id="right-side">
+
+  <div id="right-head">
+      <div class="box"><h1>Men's Products</h1><div id="count">25</div></div>
+      <div class="box"><h1>Women's Products</h1><div id="count">25</div></div>
+      <div class="box"><h1>Accessories</h1><div id="count">25</div></div>
+      <div class="box"><h1>Total Products</h1><div id="count">25</div></div>
+  </div>
     <div id="buttons">
-        <div>
+        <div id="content">
+          <div id="add-product-button">
             <h2>Add Product</h2>
-            <input type="text" placeholder="image1" id="image1" />
-            <input type="text" placeholder="image2" id="image2" />
-            <input type="text" placeholder="name" id="name" />
-            <input type="number" placeholder="price" id="price" />
-            <input type="text" placeholder="category" id="category">
-            <input type="text" placeholder="type" id="type">
+            <input type="text" placeholder="Name" class="long" id="name" />
+            <input type="text" placeholder="Category" class="long" id="category">
+            <input type="text" placeholder="Image1" id="image1" />
+            <input type="text" placeholder="Image2" id="image2" />
+            <input type="number" placeholder="Price" id="price" />
+            <input type="text" placeholder="Type" id="type">
             <button onclick="addProduct()">Add Product</button>
           </div>
-          <div>
-            <h2>Update Product</h2>
-            <input type="text" placeholder="image1" id="image1Update" />
-            <input type="text" placeholder="image2" id="image2Update" />
-            <input type="text" placeholder="name" id="nameUpdate" />
-            <input type="number" placeholder="price" id="priceUpdate" />
-            <input type="text" placeholder="category" id="categoryUpdate">
-            <input type="text" placeholder="type" id="typeUpdate">
 
+          <div id="update-product-button"  style="display: none;">
+            <h2>Update Product</h2>
+            <input type="text" placeholder="Name" class="long" id="nameUpdate" />
+            <input type="text" placeholder="Category" class="long" id="categoryUpdate">
+            <input type="text" placeholder="Image1" id="image1Update" />
+            <input type="text" placeholder="Image2" id="image2Update" />
+            <input type="number" placeholder="Price" id="priceUpdate" />
+            <input type="text" placeholder="Type" id="typeUpdate">
             <button onclick="updateProduct()">Update Product</button>
           </div>
     
-          <div>
+          <div id="delete-product-button"  style="display: none;">
             <h2>Delete Product</h2>
-      
-            <input type="text" id="delete_id" placeholder="Enter id to Delete" />
-      
+            <input type="text" id="delete_name" class="long" placeholder="Enter name to Delete" />
             <button onclick="deleteProduct()">Delete Product</button>
           </div>
+        </div>
+        <div id="graph">
+
+        </div>
     </div>
-   <!-- <div id="display">
-       <table>
-           <thead>
-               <tr>
-                   <th>Image 1</th>
-                   <th>Image 2</th>
-                   <th>Name</th>
-                   <th>Price</th>
-                   <th>Category</th>
-                   <th>Type</th>
-               </tr>
-        </thead>
-           <tbody id="showbody"></tbody>
-       </table>
-   </div> -->
+  </div>
+</div>
+   
 </body>
 </html>
 
@@ -93,49 +271,38 @@
 
     async function addProduct(){
        
-            let data= {
-            image1:document.getElementById("image1").value,
-            image2:document.getElementById("image2").value,
-            name:document.getElementById("name").value,
-            price:document.getElementById("price").value,
-            category:document.getElementById("category").value,
-            type:document.getElementById("type").value,
-        }
-        data=JSON.stringify(data)
-        console.log("data",data)
+       let data= {
+       image1:document.getElementById("image1").value,
+       image2:document.getElementById("image2").value,
+       name:document.getElementById("name").value,
+       price:document.getElementById("price").value,
+       category:document.getElementById("category").value,
+       type:document.getElementById("type").value,
+   }
+   data=JSON.stringify(data)
+   console.log("data",data)
 
 
-        let response= await fetch('http://localhost:4006/products',{
-            method:'POST',
-            body:data,
-            headers:{
-                "Content-Type":"application/json",
-            }
-        })
-        let d = await response.json()
-        console.log("d",d)
-    if(d != undefined){
-        console.log(d.message);
-        alert(d.message)
-    }
-    else{
+   let response= await fetch('http://localhost:4006/products',{
+       method:'POST',
+       body:data,
+       headers:{
+           "Content-Type":"application/json",
+       }
+   })
+   let d = await response.json()
+   console.log("d",d)
+if(d.message != undefined){
+   console.log(d.message);
+   alert(d.message)
+}
+else{
 
-        alert("Product added successfully");
-    } 
-    } 
-    
+   alert("Product added successfully");
+} 
+} 
 
-vikram()
-    async function vikram(){
-        try {
-            let response = await fetch("http://127.0.0.1:4006/products")
-            let store = await response.json()
-            showData(store.products)
-            // console.log(store)
-        } catch (error) {
-            
-        }
-    }
+
 
 
 
@@ -151,7 +318,11 @@ vikram()
                 category:document.getElementById("categoryUpdate").value,
                 type:document.getElementById("typeUpdate").value,
             }
-            data=JSON.stringify(data)
+
+           
+            data=JSON.stringify(data);
+
+
             let response= await fetch(`http://localhost:4006/products?name=${name}`,{
             // mode:"no-cors",
             method:'PATCH',
@@ -163,29 +334,48 @@ vikram()
         })
         let d = await response.json()
          console.log("d",d);
-
        
        
     }
-
-
 
     //Function to delete from database
     async function deleteProduct(){
-        try {
-            let id=document.getElementById("delete_id").value
-            let response= await fetch(`http://127.0.0.1:4006/products/${id}`,{mode:"no-cors"},{
-                method:'DELETE',
-                headers:{
-                'Content-Type':'application/json'
-            }
-            })
+       
+       let delete_name=document.getElementById("delete_name").value
+       let response= await fetch(`http://localhost:4006/products?name=${delete_name}`,{
+           method:'DELETE',
+           headers:{
+           'Content-Type':'application/json'
+       }
+       })
 
-            let d= await response.json()
+       let d= await response.json()
 
-            console.log(d)
-        } catch (error) {
-            
-        }
-    }
+        console.log(d);     
+  
+}
+
+
+function sidebar_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("open").style.display = "none";
+}
+
+
+function addproduct_open() {
+  document.getElementById("add-product-button").style.display = "block";
+  document.getElementById("update-product-button").style.display = "none";
+  document.getElementById("delete-product-button").style.display = "none";
+}
+function updateproduct_open() {
+  document.getElementById("add-product-button").style.display = "none";
+  document.getElementById("update-product-button").style.display = "block";
+  document.getElementById("delete-product-button").style.display = "none";
+}
+function deleteproduct_open() {
+  document.getElementById("add-product-button").style.display = "none";
+  document.getElementById("update-product-button").style.display = "none";
+  document.getElementById("delete-product-button").style.display = "block";
+
+}
 </script>
