@@ -1,4 +1,4 @@
-# **_Theory.com Clone - Construct-Week-Project_**
+# **_Theory(Clone)_**
 
 ### _<u>Tech</u>_
 
