@@ -41,11 +41,11 @@ https://user-images.githubusercontent.com/69167064/150655248-fa21911d-0c24-420e-
 
 ### <u>Credits :</u>
 
-<b>Abhishek Shukla</b>
+- <b>Abhishek Shukla</b>
 
-> <a href="https://github.com/shuklabhisekh" target="_blank">Github</a>
+- <a href="https://github.com/shuklabhisekh" target="_blank">Github</a>
 
-> <a href="https://www.linkedin.com/in/shuklabhisekh/" target="_blank">Linkedin</a>
+- <a href="https://www.linkedin.com/in/shuklabhisekh/" target="_blank">Linkedin</a>
 
 <b>Ashiq Khan</b>
 
