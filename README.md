@@ -43,9 +43,9 @@ https://user-images.githubusercontent.com/69167064/150655248-fa21911d-0c24-420e-
 
 - <b>Abhishek Shukla</b>
 
-_ <a href="https://github.com/shuklabhisekh" target="_blank">Github</a>
+- <a href="https://github.com/shuklabhisekh" target="_blank">Github</a>
 
-_ <a href="https://www.linkedin.com/in/shuklabhisekh/" target="_blank">Linkedin</a>
+- <a href="https://www.linkedin.com/in/shuklabhisekh/" target="_blank">Linkedin</a>
 
 <b>Ashiq Khan</b>
 
