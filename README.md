@@ -12,7 +12,6 @@ Download or clone the Repo and Run Locally
 
 ### <u>Technologies we used</u>
 
-- HTML
 - CSS
 - JavaScript
 - MongoDB
@@ -42,31 +41,31 @@ https://user-images.githubusercontent.com/69167064/150655248-fa21911d-0c24-420e-
 
 ### <u>Credits :</u>
 
-Abhishek Shukla
+<b>Abhishek Shukla</b>
 
 > <a href="https://github.com/shuklabhisekh" target="_blank">Github</a>
 
 > <a href="https://www.linkedin.com/in/shuklabhisekh/" target="_blank">Linkedin</a>
 
-Ashiq Khan
+<b>Ashiq Khan</b>
 
 > <a href="https://github.com/ashiq352" target="_blank">Github</a>
 
 > <a href="https://www.linkedin.com/in/ashiq-khan-412709222" target="_blank">Linkedin</a>
 
-Sanket Thombre
+<b>Sanket Thombre</b>
 
 > <a href="https://github.com/sanket008" target="_blank">Github</a>
 
 > <a href="https://www.linkedin.com/in/sanket-thombre-13632b114" target="_blank">Linkedin</a>
 
-Shilpa Shingnapure
+<b>Shilpa Shingnapure</b>
 
 > <a href="https://github.com/shilpashingnapure" target="_blank">Github</a>
 
 > <a href="https://www.linkedin.com/in/shilpa-shingnapure-134b4320a/" target="_blank">Linkedin</a>
 
-Vikram sharma
+<b>Vikram sharma</b>
 
 > <a href="https://github.com/vikram-sharma1" target="_blank">Github</a>
 
