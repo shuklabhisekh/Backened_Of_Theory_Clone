@@ -4,7 +4,13 @@ We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</
 
 <div style='page-break-after: always'></div>
 
-### _<u>Tech</u>_
+### _<u>Installation</u>_
+
+Download or clone the Repo and Run Locally
+
+<div style='page-break-after: always'></div>
+
+### _<u>Technologies we used</u>_
 
 - HTML
 - CSS
@@ -18,11 +24,6 @@ All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 
 <div style='page-break-after: always'></div>
 
-### _<u>Installation</u>_
-
-Download or clone the Repo and Run Locally
-
-<div style='page-break-after: always'></div>
 
 ### _<u>Pages Build</u>_
 
