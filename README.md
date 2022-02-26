@@ -6,7 +6,11 @@ We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</
 
 ### <u>Run Locally</u>
 
-Download or clone the Repo and Run Locally
+Clone the project
+
+```
+git clone
+```
 
 <div style='page-break-after: always'></div>
 
