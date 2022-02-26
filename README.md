@@ -1,4 +1,4 @@
-# **_Theory(Clone)_**
+# **_Clone of Theory.com ![](https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw8de581eb/images/favicons/favicon2.ico)_**
 
 ### _<u>Tech</u>_
 
