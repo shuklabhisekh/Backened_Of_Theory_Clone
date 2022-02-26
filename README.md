@@ -71,7 +71,7 @@ https://user-images.githubusercontent.com/69167064/150655248-fa21911d-0c24-420e-
 
 > <a href="https://www.linkedin.com/in/vikram--sharma/" target="_blank">Linkedin</a>
 
-### _<u>You can read more about our project on our blog : </u>_
+### <u>You can read more about our project on our blog : </u>
 
 > <a href="https://shuklabhisekh.medium.com/clone-of-theory-com-using-pure-html-css-advanced-js-c6503e028f1b" target="_blank">Clone of Theory.com</a>
 
