@@ -4,13 +4,13 @@ We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</
 
 <div style='page-break-after: always'></div>
 
-### _<u>Installation</u>_
+### <u>Run Locally</u>
 
 Download or clone the Repo and Run Locally
 
 <div style='page-break-after: always'></div>
 
-### _<u>Technologies we used</u>_
+### <u>Technologies we used</u>
 
 - HTML
 - CSS
@@ -24,16 +24,7 @@ All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 
 <div style='page-break-after: always'></div>
 
-
-### _<u>Pages Build</u>_
-
-Home Page(Responsive)
-Sign In, Sign Up page,
-Product page, Search page, Cart & Chekout Page
-
-<div style='page-break-after: always'></div>
-
-### _<u>Functionalities</u>_
+### <u>Functionalities</u>
 
 1. Product Details
 2. Product Add & Remove from cart
@@ -43,13 +34,13 @@ Product page, Search page, Cart & Chekout Page
 
 <div style='page-break-after: always'></div>
 
-### _<u>Project Overview</u>_
+### <u>Project Overview</u>
 
 https://user-images.githubusercontent.com/69167064/150655248-fa21911d-0c24-420e-89a5-c78b6fbe0271.mp4
 
 <div style='page-break-after: always'></div>
 
-### _<u>Credits :</u>_
+### <u>Credits :</u>
 
 Abhishek Shukla
 
