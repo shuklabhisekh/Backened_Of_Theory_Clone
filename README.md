@@ -47,11 +47,11 @@ All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 
 ### <u>Functionalities</u>
 
-1. Product Details
-2. Product Add & Remove from cart
-3. Sorting Prices
-4. Search products through API on Homepage
-5. User Credential
+- Authentication
+- Search Functionality
+- Email Confirmation
+- Payment Integration
+- Sorting
 
 <div style='page-break-after: always'></div>
 
