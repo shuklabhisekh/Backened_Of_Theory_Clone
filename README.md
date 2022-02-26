@@ -9,7 +9,7 @@ We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</
 Clone the project
 
 ```
-git clone
+git clone https://github.com/shuklabhisekh/Backened_Of_Theory_Clone.git
 ```
 
 <div style='page-break-after: always'></div>
