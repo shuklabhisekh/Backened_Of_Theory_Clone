@@ -48,10 +48,11 @@ All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 ### <u>Functionalities</u>
 
 - Authentication
+- Login Confirmation
 - Search Functionality
-- Email Confirmation
-- Payment Integration
 - Sorting
+- Payment Integration
+- Order Confirmation
 
 <div style='page-break-after: always'></div>
 
