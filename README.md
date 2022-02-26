@@ -12,6 +12,16 @@ Clone the project
 git clone https://github.com/shuklabhisekh/Backened_Of_Theory_Clone.git
 ```
 
+Install npm packages
+```
+npm install
+```
+
+Run the surver
+```
+npm run server
+```
+
 <div style='page-break-after: always'></div>
 
 ### <u>Technologies we used</u>
