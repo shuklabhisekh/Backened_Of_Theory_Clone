@@ -1,12 +1,10 @@
 # Clone of Theory.com
 
-### _<u>Tech</u>_
-
 We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</a>, we try to implement basic e-commerce Functionalities
 
 <div style='page-break-after: always'></div>
 
-##### Tech we use
+### _<u>Tech</u>_
 
 - HTML
 - CSS
