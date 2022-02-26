@@ -16,7 +16,7 @@ We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</
 - Express
 - EJS
 
-All the data got stored in and called from ##### Mongo Atlas cloud database.
+All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 
 <div style='page-break-after: always'></div>
 
