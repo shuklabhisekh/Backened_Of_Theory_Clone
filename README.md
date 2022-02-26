@@ -1,6 +1,8 @@
 # Clone of Theory.com
 
-We make replica of <a href="https://www.theory.com" target="_blank">Theory.com</a>, we try to implement basic e-commerce Functionalities
+We make replica of , we try to implement basic e-commerce Functionalities
+
+In this project we have tried to make a clone of <a href="https://www.theory.com" target="_blank">Theory Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
 
 <div style='page-break-after: always'></div>
 
