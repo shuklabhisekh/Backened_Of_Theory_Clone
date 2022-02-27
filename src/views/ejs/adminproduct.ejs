@@ -11,24 +11,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <div class="main">
       <%-include("adminsidemenu.ejs")-%>
       <div class="right_div">
-        <div class="navbar">
-          <div>Bar</div>
-          <div>profile</div>
-        </div>
+        <%-include("adminnavbar.ejs")-%>
         <div class="container">
           <h2>Product List</h2>
         </div>
-        <div>
-          <table>
+        <div class="table">
+          <table class="productTable">
             <thead>
               <tr>
-                <th>sr no</th>
+                <th>Sr no</th>
                 <th>Product</th>
                 <th>Name</th>
                 <th>Category</th>
@@ -45,20 +46,27 @@
                 <td>
                   <img
                     src="<%= product.images[0]%>"
-                    width="40px"
-                    height="40px"
+                    width="55px"
+                    height="55px"
                     alt
+                    style="margin-top: 5px"
                   />
                 </td>
                 <td><%=product.name %></td>
                 <td><%= product.category%></td>
                 <td><%= product.price%></td>
                 <td><%= product.type%></td>
-                <td onclick="editItem('<%= JSON.stringify(product)%>')">
-                  edit
+                <td
+                  style="cursor: pointer"
+                  onclick="editItem('<%= JSON.stringify(product)%>')"
+                >
+                  <i class="fas fa-edit"></i>
                 </td>
-                <td onclick="deleteItem('<%= JSON.stringify(product)%>')">
-                  delete
+                <td
+                  style="cursor: pointer"
+                  onclick="deleteItem('<%= JSON.stringify(product)%>')"
+                >
+                  <i class="fa fa-trash-o"></i>
                 </td>
               </tr>
               <%})%>

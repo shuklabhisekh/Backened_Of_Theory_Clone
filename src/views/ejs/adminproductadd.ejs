@@ -17,10 +17,7 @@
     <div class="main">
       <%-include("adminsidemenu.ejs")-%>
       <div class="right_div">
-        <div class="navbar">
-          <div>Bar</div>
-          <div>profile</div>
-        </div>
+        <%-include("adminnavbar.ejs")-%>
         <div class="container">
           <h2>Add Product</h2>
           <div class="add_product">
@@ -42,7 +39,17 @@
                 <option>women</option>
                 <option>Accessories</option>
               </select>
-              <input type="button" value="Add product" onclick="addProduct()" />
+              <input
+                type="button"
+                value="Add product"
+                onclick="addProduct()"
+                style="
+                  background: blue;
+                  color: #fff;
+                  border: none;
+                  margin-top: 10px;
+                "
+              />
             </form>
           </div>
         </div>

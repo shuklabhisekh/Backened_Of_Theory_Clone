@@ -17,22 +17,25 @@
     <div class="main">
       <div class="sidemenu">
         <div class="title">
-          <h3>Theory</h3>
-          <p>ADMIN</p>
+          <h1>Theory</h1>
+          <p
+            style="
+              background: #fff;
+              color: #333;
+              padding: 8px;
+              border-radius: 4px;
+            "
+          >
+            ADMIN
+          </p>
         </div>
-        <p>Application</p>
-        <ul>
-          <li>Dashboard</li>
-          <li>
-            Catelog
-            <ul>
-              <li onclick="getproduct('productlist')">product list</li>
-              <li onclick="getproduct('addproduct')">Add product</li>
-              <li>category list</li>
-              <li>category</li>
-            </ul>
-          </li>
-          <li>Customers</li>
+        <p style="color: gray; margin-top: -5px; padding-left: 10px">
+          Application
+        </p>
+        <ul class="productlinks">
+          <li><a href="/admin">Dashboard</a></li>
+          <li onclick="getproduct('productlist')">Product list</li>
+          <li onclick="getproduct('addproduct')">Add product</li>
         </ul>
       </div>
     </div>

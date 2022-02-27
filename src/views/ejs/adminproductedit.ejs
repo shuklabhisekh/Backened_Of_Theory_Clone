@@ -17,12 +17,9 @@
     <div class="main">
       <%-include("adminsidemenu.ejs")-%>
       <div class="right_div">
-        <div class="navbar">
-          <div>Bar</div>
-          <div>profile</div>
-        </div>
+        <%-include("adminnavbar.ejs")-%>
         <div class="container">
-          <h2>Add Product</h2>
+          <h2>Edit Product</h2>
           <div class="add_product">
             <form>
               <label>Product Name</label>
@@ -46,6 +43,12 @@
                 type="button"
                 value="Edit product"
                 onclick="updateProduct()"
+                style="
+                  background: blue;
+                  color: #fff;
+                  border: none;
+                  margin-top: 10px;
+                "
               />
             </form>
           </div>
@@ -98,5 +101,11 @@
     });
     let d = await response.json();
     console.log("d", d);
+    if (d.message != undefined) {
+      console.log(d.message);
+      alert(d.message);
+    } else {
+      alert("Product edit successfully");
+    }
   }
 </script>
