@@ -239,7 +239,8 @@
 
   function check() {
     let user = JSON.parse(localStorage.getItem("loginData"));
-    if (typeof user == "string") {
+    console.log(user);
+    if (typeof user == "string" && user != null) {
       window.location.href = "/login";
     } else {
       window.location.href = "/checkout";
