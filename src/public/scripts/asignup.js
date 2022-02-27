@@ -25,9 +25,10 @@ function Click(sign) {
 
 document.querySelector(".signup").addEventListener("submit", signup);
 
+var loading = document.querySelector(".loading");
 //MAIN CHANGESS
 async function signup(e) {
-  showingloader();
+  loading.style.display = "block";
   let register_data;
   try {
     e.preventDefault();
