@@ -38,6 +38,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   // Route for verifiying payment
   // console.log("req body", req.body);
+  let email = req.query.email;
   const bags = await Bag.find().populate("productId").lean().exec();
   var sum = 0;
   bags.map((bag) => {
@@ -100,7 +101,7 @@ router.post("/", async (req, res) => {
             var _result = JSON.parse(response);
             if (_result.STATUS == "TXN_SUCCESS") {
               //send mail
-              sendmail(_result);
+              sendmail(_result, email);
               return res.render("ejs/review", { bags, sum, _result });
             } else {
               res.send("payment failed");
@@ -116,7 +117,7 @@ router.post("/", async (req, res) => {
   });
 });
 
-async function sendmail(_result) {
+async function sendmail(_result, email) {
   const accessToken = await oAuth2Client.getAccessToken();
   const bags = await Bag.find().populate("productId").lean().exec();
   var sum = 0;
@@ -142,11 +143,9 @@ async function sendmail(_result) {
   });
 
   const mailOptions = {
-    from: "vds9828#gmail.com>",
-    to: "angraphics5@gmail.com",
+    from: "vds9828@gmail.com>",
+    to: `${email}`,
     subject: "order placed",
-    // html: `<h3>Hello ${user.first_name},</h3><p>Thank you for choosing our Brand. Use the following OTP to complete your Sign Up procedures. OTP is valid for 5 minutes</p><p>OTP is <span style="background:blue;color:#fff">${otp}</span></p><p>Regards,</p>
-    // <p>Theory clone</p>`,
     html: data,
   };
 

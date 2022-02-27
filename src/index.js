@@ -154,9 +154,11 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
     params["ORDER_ID"] = "TEST_" + new Date().getTime();
     params["CUST_ID"] = paymentDetails.customerId;
     params["TXN_AMOUNT"] = paymentDetails.amount;
-    params["CALLBACK_URL"] = "http://localhost:5000/review";
     params["EMAIL"] = paymentDetails.customerEmail;
     params["MOBILE_NO"] = paymentDetails.customerPhone;
+    params[
+      "CALLBACK_URL"
+    ] = `http://localhost:5000/review/?email=${paymentDetails.customerEmail}`;
 
     checksum_lib.genchecksum(
       params,
