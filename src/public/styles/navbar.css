@@ -1,0 +1,255 @@
+@font-face {
+  font-family: Trade Gothic LH Extended;
+  src: url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+  src: local("TradeGothicLH-Extended"),
+    url("../font/TradeGothicLH-Extended.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Theory-web-ul;
+  src: url("../font/Theory-web-ul.ttf") format("truetype");
+  src: local("Theory-web-ul"),
+    url("../font/Theory-web-ul.ttf") format("truetype");
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #cecece;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+}
+
+#navbar {
+  font-size: 12px;
+  font-family: Trade Gothic LH Extended;
+  font-weight: 400;
+}
+
+.nav_scroll {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: #fff;
+}
+
+.nav_scroll .header--navbar {
+  display: none;
+}
+.header--navbar {
+  background: black;
+  color: #fff;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.Main--navbar {
+  display: flex;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+  color: #000000;
+  padding: 0px 25px;
+  padding-right: 15px;
+  height: 65px;
+  line-height: 65px;
+  font-weight: 400;
+  position: relative;
+}
+
+.Main--navbar a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+.header--left > ul,
+.header--right > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.header--center {
+  text-align: right;
+  flex-basis: 20%;
+  padding-top: 15px;
+}
+
+.header--serach {
+  border-bottom: 1px solid black;
+  display: inline-flex;
+  padding-bottom: 2px;
+}
+
+.header--serach input {
+  border: none;
+  width: 90px;
+  font-family: Trade Gothic LH Extended;
+  font-size: 12px;
+}
+.header--serach img {
+  cursor: pointer;
+}
+
+.header--serach input:focus {
+  border: none;
+  outline: none;
+}
+
+.header--cart {
+  margin-left: -10px;
+  font-family: Theory-web-ul;
+}
+
+.header--cart img {
+  margin-top: -5px;
+}
+
+.header--ship,
+.header--cart {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.header--ship span {
+  color: #444444;
+}
+
+.header--ship img {
+  margin-top: 2px;
+}
+
+.hover {
+  border: 1px solid #ccc;
+  margin: 0 2px;
+  padding: 15px 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  width: 97%;
+  line-height: 20px;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background: #fff;
+}
+
+.hover h3 {
+  margin-bottom: 10px;
+}
+
+.hover h4 {
+  font-size: 14px;
+}
+
+.accessories_hover.hover,
+.about_hover.hover {
+  padding-bottom: 0;
+}
+.hover--navbar {
+  display: flex;
+  gap: 30px;
+}
+
+.hover--navbar ul {
+  list-style: none;
+  line-height: 20px;
+  font-family: Theory-web-ul;
+}
+
+.nav-hover:hover .hover {
+  display: block;
+}
+
+.nav-hover:hover a {
+  text-decoration: underline;
+}
+
+.hover--navbar ul li a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.hover--navbar ul li a:hover {
+  text-decoration: underline !important;
+}
+
+#bar img {
+  width: 20px;
+  height: 20px;
+}
+
+#bar {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .header--navbar {
+    display: none;
+  }
+
+  .header--left > ul {
+    display: none;
+  }
+  .res__header--left.header--left > ul {
+    display: flex;
+    flex-direction: column;
+    width: 340%;
+    align-items: flex-start;
+    padding: 10px;
+    margin-left: -26px;
+    margin-top: 10px;
+    gap: 0;
+    font-size: 15px;
+    background-color: #fff;
+  }
+  .res__header--left.header--left > ul li:not(:last-child) {
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+
+  .res__header--left + .header--center {
+    margin-left: -65px;
+  }
+  .header--right > ul li:not(:last-child) {
+    display: none;
+  }
+  #bar {
+    display: block;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Only this two id added in navbar css  */
+
+#signout {
+  display: none;
+  margin-left: -10px;
+}
+
+#nameof {
+  display: none;
+}

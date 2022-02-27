@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/AddCart.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+
+    <title>Cart's | Theory</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico"
+    />
+  </head>
+  <body>
+    <%- include("navbar.ejs")-%>
+
+    <div id="shoppingnames">
+      <p id="darkclr">SHOPPING BAG</p>
+      <i class="fal fa-angle-right arr"></i>
+      <p id="grayclr">SHIPPING</p>
+      <i class="fal fa-angle-right arr"></i>
+      <p id="grayclr">PAYMENT</p>
+      <i class="fal fa-angle-right arr"></i>
+      <p id="grayclr">REVIEW</p>
+    </div>
+    <% if(bags.length != 0){%>
+    <div id="maincart">
+      <div id="cartdiv">
+        <div id="tabledata">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub-Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Append el  -->
+              <% bags.map(function(bag){%>
+              <tr>
+                <td>
+                  <img class="image" src="<%=bag.productId.images[0] %>" />
+                </td>
+                <td><p><%=bag.productId.name %></p></td>
+                <td><p><%=bag.productId.price%></p></td>
+                <td>
+                  <div>
+                    <select
+                      class="select_qty"
+                      onchange="getquantity(this.value , '<%= JSON.stringify(bag)%>')"
+                    >
+                      <option value="1"><%=bag.quantity%></option>
+                      <% if(bag.quantity != 1){%>
+                      <option value="1">1</option>
+                      <%}%> <% if(bag.quantity != 2){%>
+                      <option value="2">2</option>
+                      <%}%> <% if(bag.quantity != 3){%>
+                      <option value="3">3</option>
+                      <%}%> <% if(bag.quantity != 4){%>
+                      <option value="4">4</option>
+                      <%}%> <% if(bag.quantity != 5){%>
+                      <option value="5">5</option>
+                      <%}%>
+                    </select>
+                  </div>
+                  <p class="edit">Edit</p>
+                </td>
+                <td>
+                  <p class="sTotal">
+                    <%= "₹"+(+bag.productId.price.slice(1).replace(',', '') *
+                    bag.quantity)+".00"%>
+                  </p>
+                  <p
+                    class="edit"
+                    onclick="removeItem('<%= JSON.stringify(bag)%>')"
+                  >
+                    Remove
+                  </p>
+                </td>
+              </tr>
+              <% })%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="promocode">
+        <div id="promodiv">
+          <h4>Promo Code</h4>
+          <hr style="background: #707070; height: 0.2px; border: 0" />
+
+          <input type="text" placeholder="Promo Code" id="code" />
+          <button id="apply">APPLY</button>
+        </div>
+        <div id="orderdiv">
+          <h4>Order Summary</h4>
+          <hr style="background: #707070; height: 0.2px; border: 0" />
+
+          <div id="subTotal">
+            <p>Sub-Total</p>
+            <p id="Price"><%= sum %></p>
+          </div>
+          <div id="Total">
+            <p>Total</p>
+            <p id="Price2"><%= sum %></p>
+          </div>
+        </div>
+
+        <button id="checkoutbtn" onclick="check()">CONTINUE TO CHECKOUT</button>
+      </div>
+    </div>
+    <%} else {%>
+    <div id="cartempty">
+      <h1>Your Shopping Cart Is Empty</h1>
+    </div>
+    <%}%>
+    <div id="Recommend">
+      <h2>Recommended for you</h2>
+
+      <div id="rcmndData">
+        <div>
+          <img
+            src="https://ak-media.theory.com/i/theory/TH_K0701412_FKN_L0/CLAIRENE?$TH-Bestseller52x$"
+            alt=""
+          />
+          <div id="clr">
+            <div style="background-color: black"></div>
+            <div style="background-color: #8891b2"></div>
+            <div style="background-color: #30312c"></div>
+            <div style="background-color: #d6be9d"></div>
+            <div style="background-color: #fff6b8"></div>
+          </div>
+          <p>Clairene Jacket in Double-Face Wool</p>
+          <p>₹ 30,500.00</p>
+        </div>
+        <div>
+          <img
+            src="https://ak-media.theory.com/i/theory/TH_L0888704_XHX_L0/?$TH-Bestseller52x$"
+            alt=""
+          />
+          <div id="clr">
+            <div style="background-color: black"></div>
+            <div style="background-color: #8891b2"></div>
+            <div style="background-color: #30312c"></div>
+            <div style="background-color: #d6be9d"></div>
+            <div style="background-color: #fff6b8"></div>
+          </div>
+          <p>Crewneck Sweater in Cashmere</p>
+          <p>₹ 24,400.00</p>
+        </div>
+        <div>
+          <img
+            src="https://ak-media.theory.com/i/theory/TH_L0509208_001_L0/FWRD-SEAM-PANT?$TH-product-tile2x$"
+            alt=""
+          />
+          <div id="clr">
+            <div style="background-color: black"></div>
+            <div style="background-color: #8891b2"></div>
+            <div style="background-color: #30312c"></div>
+            <div style="background-color: #d6be9d"></div>
+            <div style="background-color: #fff6b8"></div>
+          </div>
+          <p>Seamed Pant in Eco Rosina Crepe</p>
+          <p>₹ 24,400.00</p>
+        </div>
+        <div>
+          <img
+            src="https://ak-media.theory.com/i/theory/TH_L1002526_001_L0/RUCHED-BD-SHIRT?$TH-product-tile2x$"
+            alt=""
+          />
+          <div id="clr">
+            <div style="background-color: black"></div>
+            <div style="background-color: #8891b2"></div>
+            <div style="background-color: #30312c"></div>
+            <div style="background-color: #d6be9d"></div>
+            <div style="background-color: #fff6b8"></div>
+          </div>
+          <p>Ruched Button Up Shirt in Strech Silk</p>
+          <p>₹ 12,600.00</p>
+        </div>
+      </div>
+    </div>
+
+    <%- include("footer.ejs") -%>
+  </body>
+</html>
+
+<!-- <script src="../scripts/Addcart.js"></script> -->
+<script src="../scripts/header.js"></script>
+
+<script>
+  //product remove
+  function removeItem(product) {
+    var product = JSON.parse(product);
+    let id = product._id;
+    fetch("/cart/" + id, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => console.log(res));
+    window.location.reload();
+  }
+
+  //product update
+  function getquantity(quantity, product) {
+    var product = JSON.parse(product);
+    let id = product._id;
+    fetch("/cart/" + id, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+
+      .then((res) => console.log(res));
+    window.location.reload();
+  }
+
+  function check() {
+    let user = JSON.parse(localStorage.getItem("loginData"));
+    console.log(user);
+    if (typeof user == "string" && user != null) {
+      window.location.href = "/login";
+    } else {
+      window.location.href = "/checkout";
+    }
+  }
+</script>

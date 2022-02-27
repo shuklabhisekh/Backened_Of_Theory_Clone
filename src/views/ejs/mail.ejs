@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .reviews {
+        border: 1px solid #a5a5a5;
+        font-family: Theory-web-ul;
+        width: 60%;
+        color: black;
+        margin: auto;
+        padding: 15px;
+        font-size: 16px;
+        border-radius: 2px;
+        margin-bottom: 50px;
+      }
+      /* .reviews h2 {
+        padding: 20px 0;
+      } */
+
+      .order_info {
+        display: flex;
+        align-items: center;
+        gap: 10%;
+        justify-content: space-between;
+        border-top: 1px solid #a5a5a5;
+        border-bottom: 1px solid #a5a5a5;
+        /* padding: 20px 0; */
+        /* height: 120px; */
+      }
+
+      .order_info > div {
+        line-height: 12px;
+        margin-right: 45px;
+        /* font-size: 20px; */
+      }
+
+      .revies_info {
+        line-height: 10px;
+        margin: 20px 0;
+      }
+
+      .order_total {
+        padding: 30px 0;
+        /* border-top: 1px solid #333; */
+        border-bottom: 1px solid #a5a5a5;
+        font-weight: bold;
+      }
+
+      .conform__order {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      #order_price {
+        line-height: 20px;
+        padding: 8px;
+        border-bottom: 1px solid #a5a5a5;
+      }
+      .order_price {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .order_msg {
+        line-height: 20px;
+        padding: 20px 0;
+      }
+
+      .order_msg p {
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+
+      .order_products {
+        padding: 20px 0;
+        border-bottom: 1px solid #a5a5a5;
+      }
+      .order_products > div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .order_products > div > div {
+        display: flex;
+        width: 300px;
+      }
+
+      .order_products > div > div img {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reviews">
+      <div class="conform__order">
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png"
+          width="50px"
+          height="50px"
+          alt=""
+          style="margin-top: 12px"
+        />
+        <h2 style="margin-left: 10px; margin-top: -50px">
+          Your Order Confirmed !
+        </h2>
+      </div>
+      <div class="revies_info">
+        <h4>Hi,</h4>
+        <p>Payment Details are ,</p>
+        <p>TXNID : <%= _result.TXNID %></p>
+        <p>Your order has been confirmed and will be shipping soon.</p>
+      </div>
+      <div class="order_info">
+        <div>
+          <h3>Order Date</h3>
+          <p><%= _result.TXNDATE %></p>
+        </div>
+        <div>
+          <h3>Order ID</h3>
+          <p><%= _result.ORDERID %></p>
+        </div>
+        <div>
+          <h3>Payment Method</h3>
+          <p style="line-height: 18px">
+            <%= _result.BANKNAME%> (<%= _result.PAYMENTMODE%>)
+          </p>
+        </div>
+      </div>
+      <div class="order_products">
+        <% bags.map((bag)=>{%>
+        <div>
+          <div style="width: 350px; margin-right: 15px">
+            <img
+              src="<%= bag.productId.images[0]%>"
+              width="90px"
+              height="100px"
+              alt
+            />
+            <p><%=bag.productId.name %></p>
+          </div>
+
+          <p style="margin-right: 100px">Qty <%= bag.quantity %></p>
+          <p>
+            <%= "₹"+(+bag.productId.price.slice(1).replace(',', '') *
+            bag.quantity)+".00"%>
+          </p>
+        </div>
+
+        <%})%>
+      </div>
+      <div id="order_price">
+        <div class="order_price">
+          <p style="width: 550px">Subtotal</p>
+          <p>₹<%= sum %>.00</p>
+        </div>
+        <div class="order_price">
+          <p style="width: 550px">Express Shipping</p>
+          <p>₹15</p>
+        </div>
+        <div class="order_price">
+          <p style="width: 550px">Taxes</p>
+          <p>₹0</p>
+        </div>
+        <div class="order_price">
+          <p style="width: 550px">Discount</p>
+          <p>₹0</p>
+        </div>
+      </div>
+      <div class="order_total order_price">
+        <h3 style="width: 550px">Total</h3>
+        <p>₹<%= sum + 15 %>.00</p>
+      </div>
+      <div class="order_msg">
+        <p>
+          We'll send you shipping confirmation when your item(s) are on the way!
+          We appreciate , and hope you enjoy your purchase.
+        </p>
+        <h4>Thank you!</h4>
+        <p>Theory Team</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  var content = JSON.parse(localStorage.getItem("orderData"));
+  document.getElementById("name").innerHTML = `Hi ${content.name},`;
+  document.getElementById("address").innerHTML = `${content.address}`;
+  // console.log(content);
+</script>

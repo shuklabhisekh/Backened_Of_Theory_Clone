@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/font.css" />
+    <link rel="stylesheet" href="../styles/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <%-include("adminsidemenu.ejs")-%>
+      <div class="right_div">
+        <%-include("adminnavbar.ejs")-%>
+        <div class="container">
+          <h2>Dashboard</h2>
+          <div class="products_boxes">
+            <div>
+              <h2>Total Women</h2>
+              <p><%= womenLength %></p>
+            </div>
+            <div>
+              <h2>Total Men</h2>
+              <p><%= menLength %></p>
+            </div>
+            <div>
+              <h2>Total Accessories</h2>
+              <p><%= accLength %></p>
+            </div>
+            <div>
+              <h2>Total</h2>
+              <p><%= totalLength %></p>
+            </div>
+          </div>
+          <div class="big_boxes">
+            <div>
+              <div class="chart">
+                <canvas id="myChart1"></canvas>
+              </div>
+            </div>
+            <div>
+              <div class="chart">
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const labels = ["Total user data", "total data"];
+  var p = Math.floor((100 / 145) * 100);
+  var remain = 100 - p;
+  console.log(p, remain);
+  const data = {
+    labels: ["totalUser", "users"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [p, remain],
+        backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const config = {
+    type: "doughnut",
+    data: data,
+    options: {},
+  };
+
+  const myChart = new Chart(document.getElementById("myChart"), config);
+
+  const labels1 = ["January", "February", "March", "April"];
+
+  const data1 = {
+    labels: labels1,
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [65, 59, 80, 85],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.1,
+      },
+    ],
+  };
+
+  const config1 = {
+    type: "line",
+    data: data1,
+    options: {},
+  };
+  const myChart1 = new Chart(document.getElementById("myChart1"), config1);
+</script>

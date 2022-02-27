@@ -1,0 +1,245 @@
+#offernav {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  background-image: url("https://ak-media.theory.com/i/theory/0112-EOSSSALE25-DESKTOPv3?$defaultMedia$");
+  background-size: 100% 100%;
+  color: white;
+  font-family: Theory-web-ul;
+}
+
+#offernav > a,
+#mySlides a {
+  font-size: 10.928px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+#shopwomen {
+  color: white;
+  font-weight: 400;
+  line-height: 15px;
+  margin-left: 71%;
+}
+#shopmen {
+  color: white;
+  font-weight: 400;
+  line-height: 15px;
+  margin-left: 100px;
+}
+
+.sale {
+  font-size: 13px;
+  font-weight: 100;
+  color: rgb(211, 205, 205);
+  margin-left: 165px;
+}
+
+#imageslide {
+  width: 100%;
+  height: 685px;
+  display: block;
+  overflow: hidden;
+  font-family: Theory-web-ul;
+  position: relative;
+}
+
+.slider {
+  position: relative;
+}
+
+.prev-arrow {
+  position: absolute;
+  z-index: 55;
+  top: 40%;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.next-arrow {
+  position: absolute;
+  z-index: 55;
+  top: 40%;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.prev-arrow::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  display: block;
+}
+
+.prev-arrow::after {
+  content: "";
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 2px;
+  left: -1px;
+  border-width: 0 2px 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.next-arrow::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  display: block;
+}
+
+.next-arrow::after {
+  content: "";
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 2px;
+  left: -1px;
+  border-width: 0 2px 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.prev-arrow {
+  transform: rotate(-142deg);
+}
+
+.next-arrow {
+  transform: rotate(40deg);
+}
+.slider {
+  display: flex;
+}
+
+.slider-div {
+  position: relative;
+}
+.slider-div img {
+  width: 100%;
+}
+
+.slider-div > div {
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  transform: translate(-50%, -51%);
+  color: #fff;
+  font-family: Theory-web-ul;
+  text-align: center;
+}
+.slider-div > div h2 {
+  font-family: Trade Gothic LH Extended;
+  font-size: 23.8089px;
+  line-height: 28.5707px;
+  margin: 50px 0px 25px;
+}
+
+.slider-div > div p {
+  font-size: 13.7624px;
+  line-height: 20px;
+  margin: 10px 0px;
+  margin-bottom: 20px;
+}
+.slider-div > div a {
+  font-size: 8.53268px;
+  font-weight: 400;
+  padding-bottom: 2px;
+  letter-spacing: 1.33333px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+@keyframes slide {
+  0% {
+    left: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #offernav {
+    background-image: url("https://ak-media.theory.com/i/theory/0112-EOSSSALE25-MOBILEv3?$defaultMobileMedia$");
+    height: 35vh;
+    position: relative;
+    z-index: -1;
+  }
+
+  #shopwomen {
+    margin-left: 0;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #shopmen {
+    margin-left: 0;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider-div > div {
+    font-size: 8px;
+    color: #fff;
+  }
+
+  .slider-div > div h2 {
+    margin: 0;
+    font-size: 10px;
+  }
+  .slider-div > div a {
+    color: #fff;
+    border-color: #fff;
+    font-size: 5px;
+  }
+  .slider-div > div p {
+    display: none;
+  }
+
+  .next-arrow {
+    width: 25px;
+    height: 25px;
+    right: 10px;
+  }
+  .prev-arrow {
+    width: 25px;
+    height: 25px;
+    left: 10px;
+    top: 43%;
+  }
+
+  .slider-div img {
+    height: 50vh;
+  }
+
+  .imgpants--child {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+
+
+/* slide css*/
+.menSection#slider{
+width: 80%;
+height: 600px;
+position:absolute;
+left: 10%;
+top: 50%;
+/* transform: translate(-50%,-50%); */
+background-image: url(https://ak-media.theory.com/i/theory/1012-mens-hero-04?$defaultMedia$);
+background-size: 100% 100%;
+animation: slider 9s infinite;
+}
+@keyframes slider {
+0%{ background-image: url(https://ak-media.theory.com/i/theory/1012-mens-hero-04?$defaultMedia$);}
+60%{background-image: url( https://ak-media.theory.com/i/theory/1012-mens-hero-02?$defaultMedia$ );}
+100%{background-image: url(https://ak-media.theory.com/i/theory/HillesNOCOPY@2x?$defaultMedia$);}
+
+}

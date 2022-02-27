@@ -1,0 +1,611 @@
+body {
+  margin: 0px;
+  font-family: Theory-web-ul;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #cecece;
+}
+
+#shoppingnames {
+  width: 35%;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: Theory-web-ul;
+}
+
+.arr {
+  margin-left: 40px;
+  margin-right: 20px;
+  font-size: 16px;
+  color: gray;
+}
+
+#grayclr {
+  color: gray;
+}
+#vmain {
+  /* border: 1px solid black; */
+  width: 85%;
+  margin: auto;
+  /* margin: 0 45px; */
+  /* height: 100px; */
+  padding-top: 95px;
+}
+#vnavbar {
+  width: 100%;
+
+  border-bottom: 1px solid rgb(167, 167, 167);
+  position: fixed;
+  background-color: white;
+}
+#vtopblackbar {
+  background-color: black;
+  color: white;
+  margin: 0px;
+}
+#vtopblackbar > p {
+  margin: 0px;
+  font-family: Trade Gothic LH Extended;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px;
+}
+#vtheoryhome > p {
+  font-size: 42px;
+  margin: 8px;
+  text-align: center;
+  font-family: Trade Gothic LH Extended;
+  font-weight: bolder;
+}
+
+/* navBar Ends */
+
+#voptions {
+  display: flex;
+  /* border: 1px solid black; */
+  margin-top: 15px;
+  gap: 15px;
+  justify-content: end;
+  /* width: 80%; */
+  margin-left: 5%;
+  font-family: Theory-web-ul;
+
+  /* margin: auto; */
+  padding: 10px 0px;
+  margin-top: 20px;
+}
+#vlanguage > p {
+  margin: 0px;
+  font-size: 14px;
+  padding-top: 7px;
+  font-weight: 600;
+}
+
+#vselectoptions > select {
+  background-color: transparent;
+  border: 1px solid gray;
+  height: 35px;
+  border-radius: 5px;
+  padding: 3px 0px;
+  font-weight: 550;
+}
+
+/* option Ends */
+
+#vcartshow {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  overflow: auto;
+  padding: 10px;
+}
+
+#vcartshow > div:first-child {
+  flex: 2;
+  overflow: hidden;
+  /* height: 60vh;
+  overflow-y: auto; */
+}
+
+#product_table {
+  height: 60vh;
+  overflow-y: auto;
+}
+/* Cart Ends */
+
+/* 1st Box Startks */
+
+#vaddressBox {
+  /* border:1px solid black; */
+  /* width: 80%; */
+  /* margin: auto; */
+  margin-top: 40px;
+  display: flex;
+  gap: 35px;
+  margin-left: 2%;
+  font-family: Theory-web-ul;
+}
+
+#vbox1 {
+  /* border: 1px solid red; */
+  flex: 1.8;
+  /* height: 100px; */
+}
+
+#vbox1 > h2 {
+  border-bottom: 1px solid #a5a5a5;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Theory-web-ul;
+}
+
+#vbox2 {
+  /* border: 1px solid blue; */
+  flex: 1;
+}
+
+#vboxflex {
+  width: 95%;
+  padding: 5px 10px;
+  /* border: 1px solid black; */
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#vlabel {
+  /* border: 1px solid black; */
+
+  flex: 1;
+  font-size: 16px;
+  padding-top: 10px;
+}
+#vinput {
+  flex: 2;
+}
+
+#vinput > input {
+  width: 98%;
+  height: 32px;
+  font-size: 13px;
+  padding: 0px 8px;
+  border: 1px solid black;
+}
+input:focus {
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#vstar {
+  font-size: 10px;
+}
+
+/* right Side Second Box */
+
+#vboxflex2 {
+  width: 95%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#vbox2 > h2 {
+  border-bottom: 1px solid #a5a5a5;
+  font-size: 18px;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-family: Theory-web-ul;
+}
+
+#vradio {
+  /* flex: 0.5; */
+  padding: 10px 8px;
+}
+#radio {
+  height: 18px;
+  width: 15px;
+}
+
+#vdet {
+  flex: 10;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  padding-top: 10px;
+}
+
+/* Shipping Method  */
+
+#vshipbox {
+  /* border: 1px solid black; */
+  width: 81%;
+  margin-left: 2%;
+  /* height: 150px; */
+  /* border-bottom: 1px solid rgb(206, 206, 206); */
+  font-family: Theory-web-ul;
+  margin-bottom: 40px;
+}
+
+#vshipbox > h2 {
+  border-bottom: 1px solid #a5a5a5;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#vshipflex {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 35px; */
+}
+
+#vfreebox {
+  display: flex;
+}
+#vfreebox > div:first-child {
+  margin-top: 5px;
+}
+.vfree {
+  /* border: 1px solid black; */
+  margin: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.vpre {
+  /* border: 1px solid black; */
+  margin: 5px;
+  margin-left: 20px;
+  color: gray;
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+#vshipbox1 {
+  /* border: 1px solid black; */
+  width: 81%;
+  margin-left: 2%;
+  /* margin-top: 55px; */
+  /* height: 170px; */
+  /* border-bottom: 1px solid rgb(206, 206, 206); */
+  font-family: Theory-web-ul;
+}
+#vprice > p {
+  margin: 10px;
+}
+
+#vprice > h1 {
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+#vshipbox1 > h2 {
+  border-bottom: 1px solid #a5a5a5;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#vboxflex3 {
+  width: 95%;
+  display: flex;
+  text-align: left;
+  /* margin-bottom: 5px; */
+}
+
+#radio1 {
+  height: 18px;
+  width: 15px;
+}
+
+#vdet1 {
+  flex: 10;
+  font-size: 14px;
+  padding-top: 10px;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+/* payment Box */
+
+#vpaymentname {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px;
+  border-bottom: 1px solid #a5a5a5;
+}
+
+#vpaymentname > h2 {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+#vpaymentname > h5 {
+  padding-top: 9px;
+}
+
+#vflex {
+  display: flex;
+  width: 30%;
+  gap: 10px;
+}
+#vbord {
+  /* border: 1px solid black; */
+  height: 70px;
+  background-color: rgb(242, 242, 242);
+}
+
+#vbord:hover {
+  border: 1px solid rgb(78, 78, 78);
+  background-color: white;
+}
+
+#vimg {
+  width: 100%;
+  padding-top: 20px;
+}
+#vflex1 {
+  display: flex;
+  width: 50%;
+  gap: 10px;
+}
+#vbord1 {
+  /* border: 1px solid black; */
+  height: 80px;
+  /* background-color: rgb(242,242,242); */
+}
+
+.order {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+#vimg2 {
+  width: 100%;
+  /* padding-top: 20px; */
+}
+#vimg3 {
+  width: 65%;
+  padding-top: 10px;
+}
+#vimg1 {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.vcardflex {
+  display: flex;
+  /* width: 30%; */
+  gap: 20px;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+.vinput {
+  flex: 2;
+}
+#vcode {
+  flex: 1.8;
+  /* border: 1px solid black; */
+  padding-top: 10px;
+}
+
+.vmonth {
+  flex: 1;
+}
+.vyear {
+  flex: 1;
+}
+
+.vmonth,
+.vyear {
+  background-color: transparent;
+  border: 1px solid gray;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.vinputcvv {
+  flex: 1;
+  /* border: 1px solid black; */
+}
+.vinputcvv > input {
+  /* border: 1px solid black; */
+  height: 30px;
+}
+.vthis {
+  flex: 2;
+}
+
+.vthis > u {
+  font-size: 10.5px;
+  /* border: 1px solid black; */
+  margin: 0px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+#vtopspace {
+  margin-left: 15px;
+  font-size: 13px;
+  /* font-weight: bold; */
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+#vbutton {
+  padding: 15px 60px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  margin-top: 30px;
+  margin-left: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+#vprice {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px;
+  /* border-bottom: 1px solid black; */
+  font-size: 15px;
+}
+
+#vall {
+  padding: 0px 15px;
+  font-size: 13px;
+  /* font-weight: bold; */
+}
+#vfoot {
+  text-align: center;
+  margin-top: 83px;
+  font-size: 15px;
+  line-height: 40px;
+  font-family: Theory-web-ul;
+  font-weight: bold;
+}
+
+#vfoot > p:nth-child(3) {
+  /* border: 1px solid black; */
+  font-size: 8px;
+  margin: 0px;
+}
+
+/* Table CSS */
+
+#vcartshow {
+  padding: 15px;
+}
+
+.products-order table {
+  /* width: 100%; */
+  border-collapse: collapse;
+  border-top: 1px solid #a5a5a5;
+  border-left: 1px solid #a5a5a5;
+  font-size: 15px;
+  text-align: left;
+  font-family: Theory-web-ul;
+  font-weight: 700;
+}
+.products-order tr td {
+  /* padding-top: 10px; */
+  font-weight: 100;
+  border-top: 1px dashed #d0d0d0;
+}
+
+.products-order tr:first-child td {
+  border-top: none;
+}
+
+.products-order td span {
+  display: block;
+  margin-top: -50px;
+  margin-left: 15px;
+}
+
+#vamountshow {
+  font-family: Theory-web-ul;
+}
+th {
+  border-bottom: 1px solid #a5a5a5;
+  text-align: left;
+  padding: 10px;
+}
+
+.image00v {
+  width: 20%;
+  object-fit: contain;
+  /* border: 1px solid black; */
+}
+
+.order h3 {
+  font-size: 15px;
+  max-width: 85%;
+}
+
+#vamountshow {
+  /* width: 61%; */
+  margin-left: 2%;
+  border-top: 1px solid #a5a5a5;
+  /* margin-top: -10px; */
+  height: 60px;
+  display: flex;
+  padding: 10px;
+  font-weight: bold;
+  justify-content: right;
+}
+#vamountshow > div {
+  /* border: 1px solid black; */
+  font-size: 15px;
+}
+#vamountshow > div:nth-child(1) {
+  /* padding-left: 150px; */
+  width: 12%;
+  padding-left: 60px;
+
+  text-align: left;
+}
+
+#vamountshow > div:nth-child(2) {
+  /* padding-left: 150px; */
+  width: 15%;
+  padding-left: 60px;
+  text-align: left;
+}
+
+hr {
+  width: 196.5%;
+  border: 0.1px solid black;
+  height: 0px;
+  background-color: black;
+}
+
+#vdiscount {
+  font-size: 9px;
+}
+
+.form_checkout table {
+  border-collapse: separate;
+  border-spacing: 0 0.8em;
+}
+.form_checkout input {
+  padding: 9px 10px;
+  padding-right: 15px;
+  width: 180%;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.form_checkout label {
+  padding: 10px;
+  padding-right: 70px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.form-control--amount {
+  border: none !important;
+  padding: 10px 0 !important;
+}
+
+.amout-block {
+  display: flex;
+  align-items: center;
+}

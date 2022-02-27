@@ -1,0 +1,189 @@
+body{
+	font-family:Theory-web-ul;
+}
+
+.about-bg{
+	height: 66vh;
+	border-bottom: 1px solid #ccc;
+	background-image: url('../imges/about-bg.jpg');
+	background-position: bottom;
+	color:#fff;
+	position: relative;
+	letter-spacing:1.33333px
+}
+
+.about-bg > div{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50% , -50%);
+}
+
+.about-bg > div > p{
+	font-size: 50px;
+	line-height: 60px;
+	margin-left: 15px;
+}
+.about-link{
+	display: flex;
+	gap:20px;
+	font-size: 22px;
+	margin-top:10px;
+
+}
+
+.pip--line{
+	border-right:2px solid #fff;
+}
+
+.about-1{
+	display: flex;
+	margin: auto;
+	gap:25px;
+	width: 80%;
+	padding:20px 10px;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	
+}
+.about-img{
+	flex-basis:220%;
+	margin-left:5%;
+}
+
+.about-img > img{
+	width:100%;
+}
+
+.about-mod{
+	font-size: 50px;
+}
+
+.about-header-mod{
+	font-size: 32px;
+}
+
+.about-detail{
+	font-size: 14px;
+	margin-top: 10px;
+}
+.about-detail p{
+	line-height: 20px;
+	margin-bottom: 20px;
+	padding-right: 10px;
+}
+.about-detail p:last-child{
+	font-style: italic;
+}
+
+.about-2{
+	width: 100%;
+	height:auto;
+}
+
+.about-2 img{
+	width: 100%;
+	height: auto;
+}
+
+.about-3{
+	padding: 15px 10px;
+}
+.about3--detail{
+	width: 45%;
+	margin: auto;
+	font-size: 14px;
+	margin-left:30%;
+	margin-top:2%;
+	
+}
+
+.about3--detail > p{
+	padding-right:50px;
+	line-height: 20px;
+}
+.about-philosophy{
+	display: flex;
+	width: 80%;
+	gap:20px;
+	margin: auto;
+	margin-top:2.5%;
+	
+}
+
+.about-philosophy > div{
+	width: 40%;
+	height:73vh;
+}
+
+.philo-bg-1{
+	background-image: url('../imges/about-img3.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.philo-bg-2{
+	background-image: url('../imges/about-img4.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.philo-bg-3{
+	background-image: url('../imges/about-img5.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.about-philo-detail{
+	margin-top:100%;
+	height:15vh;
+	padding:15px 0;
+	color:#212529;
+	background-color: white;
+    opacity: 0.8;
+}
+
+.about-philo-detail p:last-child{
+	margin-left:30px;
+	font-size: 14px;
+	line-height: 20px;
+	padding-right:20px;
+}
+
+.about-philo-detail--head{
+	font-size: 20px;
+	line-height: 22px;
+}
+
+.about-4 img{
+	width: 100%;
+	margin: 15px 0;
+}
+.about-4{
+	position: relative;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.about-4 > div{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50% , -50%);
+}
+
+.about-4 > div p{
+	width: 60%;
+	font-size: 14px;
+	margin: auto;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+.about-4 > div a{
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #fff;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../styles/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/product.css" />
+    <title>Women's Clothes | Theory</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dw580c9d16/images/favicons/favicon2.ico"
+    />
+  </head>
+  <body>
+    <%- include("navbar.ejs" , {bags}) -%>
+    <div class="product">
+      <%- include("productFilter.ejs" , {type:"Women"}) -%>
+
+      <!--Product Filter end -->
+      <div class="products-side">
+        <h2>New Arrivals</h2>
+        <div class="product-sorting">
+          <div>
+            <ul>
+              <li><%= products.length %> Results</li>
+              <li>
+                <div class="filter-head">
+                  <p>Colors</p>
+                  <i class="fa fa-angle-down"></i>
+                </div>
+                <!-- <div class="filter-option">
+								<ul>
+									<li>New Arrivals</li>
+									<li>Bestsellers</li>
+									<li>Pant Theory</li>
+									<li>Cashmere Shop</li>
+									<li>Sweaters + Outerwear</li>
+									<li>The New 9 To 5</li>
+									<li>Theory For Good</li>
+								</ul>
+							</div> -->
+              </li>
+              <li>
+                <div class="filter-head">
+                  <p>Size</p>
+                  <i class="fa fa-angle-down"></i>
+                </div>
+                <!-- <div class="filter-option">
+								<ul>
+									<li>New Arrivals</li>
+									<li>Bestsellers</li>
+									<li>Pant Theory</li>
+									<li>Cashmere Shop</li>
+									<li>Sweaters + Outerwear</li>
+									<li>The New 9 To 5</li>
+									<li>Theory For Good</li>
+								</ul>
+							</div> -->
+              </li>
+              <li>
+                <div class="filter-head">
+                  <p>Categorey</p>
+                  <i class="fa fa-angle-down"></i>
+                </div>
+                <!-- <div class="filter-option">
+								<ul>
+									<li>New Arrivals</li>
+									<li>Bestsellers</li>
+									<li>Pant Theory</li>
+									<li>Cashmere Shop</li>
+									<li>Sweaters + Outerwear</li>
+									<li>The New 9 To 5</li>
+									<li>Theory For Good</li>
+								</ul>
+							</div> -->
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="sorting_header" onclick="hideShow()">Sort</p>
+            <div class="sorting_div">
+              <ul>
+                <li class="sortPrice" id="Recommended">RECOMMENDED</li>
+                <li class="sortPrice" id="Newest">NEWEST</li>
+                <li class="sortPrice" id="Best sellers">BEST SELLERS</li>
+                <li class="sortPrice" id="High">PRICE HIGH</li>
+                <li class="sortPrice" id="Low">PRICE LOW</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!--Big PHOTOS-->
+        <div class="product_big--img">
+          <% products.map(function(product , index) { %> <% if(index <= 1){%>
+          <div>
+            <div class="product-imgs">
+              <div onclick="productDetail('<%= product._id %>')">
+                <img class="img1" src="<%=product.images[0] %>" />
+                <img class="img2" src="<%=product.images[1] %>" />
+              </div>
+              <div
+                class="hoverCart"
+                onclick="addCart('<%= JSON.stringify(product) %>')"
+              >
+                Quick Add
+              </div>
+              <span>
+                <i class="fa fa-heart-o heart-icon" style="font-size: 24px"></i>
+              </span>
+            </div>
+            <div class="products-name">
+              <div class="Colors-plate">
+                <span class="black"></span>
+                <span class="active-color-border lightslategrey"></span>
+                <span class="florwhite"></span>
+                <span class="darkslategrey"></span>
+                <span class="tan"></span>
+                <p>+2</p>
+              </div>
+              <p><%= product.name %></p>
+              <p><%= product.price%></p>
+            </div>
+          </div>
+
+          <% } %> <% }); %>
+        </div>
+
+        <!--Append function -->
+        <div class="products-show">
+          <% products.map(function(product , index) { %> <% if(index > 1){%>
+          <div>
+            <div class="product-imgs">
+              <div onclick="productDetail('<%= product._id %>')">
+                <img class="img1" src="<%=product.images[0] %>" />
+                <img class="img2" src="<%=product.images[1] %>" />
+              </div>
+              <div
+                class="hoverCart"
+                onclick="addCart('<%= JSON.stringify(product) %>')"
+              >
+                Quick Add
+              </div>
+              <span
+                ><i class="fa fa-heart-o heart-icon" style="font-size: 20px"></i
+              ></span>
+            </div>
+            <div class="products-name">
+              <div>
+                <div class="Colors-plate">
+                  <span class="tan"></span>
+                  <span class="active-color-border black"></span>
+                  <span class="lightslategrey"></span>
+                </div>
+              </div>
+              <p><%= product.name %></p>
+              <p><%= product.price%></p>
+            </div>
+          </div>
+
+          <% } %> <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer -->
+    <%- include("footer.ejs") -%>
+  </body>
+</html>
+
+<script type="text/javascript" src="../scripts/showSort.js"></script>
+<script type="text/javascript" src="../scripts/header.js"></script>
+<script type="text/javascript" src="../scripts/Addcart.js"></script>
+<script>
+  function sortByprice(name) {
+    console.log(name);
+    if (name == "Low") {
+      window.location.href = `/womenproducts/?sorting=low`;
+    } else {
+      window.location.href = `/womenproducts/?sorting=high`;
+    }
+  }
+</script>

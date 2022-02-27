@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/font.css" />
+    <link rel="stylesheet" href="../styles/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="sidemenu">
+        <div class="title">
+          <h1>Theory</h1>
+          <p
+            style="
+              background: #fff;
+              color: #333;
+              padding: 8px;
+              border-radius: 4px;
+            "
+          >
+            ADMIN
+          </p>
+        </div>
+        <p style="color: gray; margin-top: -5px; padding-left: 10px">
+          Application
+        </p>
+        <ul class="productlinks">
+          <li><a href="/admin">Dashboard</a></li>
+          <li onclick="getproduct('productlist')">Product list</li>
+          <li onclick="getproduct('addproduct')">Add product</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function getproduct(query) {
+    if (query == "productlist") {
+      window.location.href = "/admin/productlist";
+    } else if (query == "addproduct") {
+      window.location.href = "/admin/productadd";
+    }
+  }
+</script>

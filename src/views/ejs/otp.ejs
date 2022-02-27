@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .otp__parent {
+        width: 100%;
+        height: 30vh;
+        margin-top: 3%;
+        text-align: center;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+      .otp__parent > input {
+        display: inline-block;
+        width: 10%;
+        height: 60%;
+        font-size: 50px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 3px;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        font-family: Trade Gothic LH Extended;
+      }
+      .otp__parent + div {
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: -20px;
+      }
+      button {
+        padding: 15px 25px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      p {
+        font-size: 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("navbar.ejs" , {bags})-%>
+    <h1>Email Verification OTP</h1>
+    <div class="otp__parent">
+      <input type="text" maxlength="1" id="num1" />
+      <input type="text" maxlength="1" id="num2" />
+      <input type="text" maxlength="1" id="num3" />
+      <input type="text" maxlength="1" id="num4" />
+    </div>
+
+    <div>
+      <button onclick="checkotp()">VERIFY OTP</button>
+    </div>
+    <%- include("footer.ejs")-%>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function checkotp() {
+    let sendotp = localStorage.getItem("otp");
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+    let num3 = document.getElementById("num3");
+    let num4 = document.getElementById("num4");
+    let otp = num1.value + num2.value + num3.value + num4.value;
+    if (otp == sendotp) {
+      window.location.href = "/login";
+    } else {
+      num1.style.border = "2px solid red";
+      num2.style.border = "2px solid red";
+      num3.style.border = "2px solid red";
+      num4.style.border = "2px solid red";
+    }
+  }
+</script>
