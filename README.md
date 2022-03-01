@@ -106,6 +106,6 @@ https://user-images.githubusercontent.com/69167064/150655248-fa21911d-0c24-420e-
 
 > <a href="https://www.linkedin.com/in/vikram--sharma/" target="_blank">Linkedin</a>
 
-### <u>You can read more about our project on our blog : <a href="https://shuklabhisekh.medium.com/clone-of-theory-com-using-pure-html-css-advanced-js-c6503e028f1b" target="_blank">Clone of Theory.com</a> </u>
+### <u>You can read more about our project on our blog : <a href="https://shuklabhisekh.medium.com/clone-of-theory-com-including-frontend-backend-6db940b42d23" target="_blank">Clone of Theory.com</a> </u>
 
 # Thank You :sparkling_heart:
