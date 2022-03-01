@@ -4,6 +4,12 @@ In this project we have tried to make a clone of <a href="https://www.theory.com
 
 <div style='page-break-after: always'></div>
 
+### <u>Deployed Link</u>
+
+Deployed with AWS - http://ec2-13-127-17-86.ap-south-1.compute.amazonaws.com:5000/
+
+Deployed with Herokuapp - https://theory-clone-backend.herokuapp.com/
+
 ### <u>Run Locally</u>
 
 Clone the project
