@@ -274,16 +274,16 @@ input:focus {
 }
 
 .loading {
-  border: 8px solid #f3f3f3;
+  border: 8px solid white;
   border-radius: 50%;
-  border-top: 8px solid #3498db;
-  width: 20px;
-  height: 20px;
+  border-top: 8px solid black;
+  width: 15px;
+  height: 15px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   position: absolute;
-  left: 485px;
-  bottom: -175px;
+  left: 440px;
+  bottom: -145px;
   z-index: 5;
   display: none;
 }
