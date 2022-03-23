@@ -6,14 +6,14 @@ In this project we have tried to make a clone of <a href="https://www.theory.com
 
 ### <u>Deployed Link</u>
 
-Deployed with AWS 
+<!-- Deployed with AWS 
 ``` 
-http://ec2-13-127-17-86.ap-south-1.compute.amazonaws.com:5000/
+http://ec2-13-127-17-86.ap-south-1.compute.amazonaws.com:5000/ -->
  ```
 
 Deployed with Herokuapp 
 ```
- https://theory-clone-backend.herokuapp.com/
+https://backend-theory.herokuapp.com/
  ```
 
 ### <u>Run Locally</u>
