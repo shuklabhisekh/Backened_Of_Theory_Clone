@@ -8,8 +8,8 @@ In this project we have tried to make a clone of <a href="https://www.theory.com
 
 <!-- Deployed with AWS 
 ``` 
-http://ec2-13-127-17-86.ap-south-1.compute.amazonaws.com:5000/ -->
- ```
+http://ec2-13-127-17-86.ap-south-1.compute.amazonaws.com:5000/
+ ``` -->
 
 Deployed with Herokuapp 
 ```
