@@ -1,4 +1,4 @@
-# Clone of Theory.com  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp;    &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; <img src="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dwe2f8eb1f/images/favicons/favicon2.ico"/> 
+# Clone of Theory.com  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp;    &nbsp;   &nbsp;   &nbsp;    <img src="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dwe2f8eb1f/images/favicons/favicon2.ico"/> 
 
 In this project we have tried to make a clone of <a href="https://www.theory.com" target="_blank">Theory Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
 
