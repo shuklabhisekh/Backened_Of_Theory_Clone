@@ -1,4 +1,4 @@
-# Clone of Theory.com
+# Clone of Theory.com  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp; &nbsp;   <img src="https://www.theory.com/on/demandware.static/Sites-theory2_US-Site/-/default/dwcd718ab4/images/logo.png"/> 
 
 In this project we have tried to make a clone of <a href="https://www.theory.com" target="_blank">Theory Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
 
